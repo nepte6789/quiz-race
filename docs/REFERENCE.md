@@ -21,7 +21,7 @@ Bản dựng dùng 60 giây/câu, nghỉ 6 giây mặc định; hai giá trị c
 
 ## Phần bổ sung theo yêu cầu
 
-Chibi nữ tự vẽ bằng SVG: tóc hai bên, váy tím/hồng, hai bông cổ vũ. Nhân vật chạy theo quỹ đạo vòng ở vùng thấp, không chạy qua ô hỏi hoặc che các dòng điểm. Khi có sự kiện đúng, dừng quỹ đạo 4,5 giây, tung bông và cánh hoa, nhảy mừng và hiện tên người thắng. Nhận snapshot thông thường không tạo lại hiệu ứng. Reduce motion giữ thông báo và tắt chuyển động.
+Ba chibi nữ tự vẽ bằng SVG, mỗi mẫu có tóc và màu váy riêng (hồng, tím, xanh ngọc), mắt có ánh sáng, má hồng, váy xếp ly, hai bông cổ vũ. Các nhân vật chọn đích ngẫu nhiên độc lập từ dưới tiêu đề hai bảng trở xuống, có lực tách nhẹ để hạn chế chồng lên nhau. Không chạy lên câu hỏi; khi đi ngang bảng giảm độ đậm để giữ khả năng đọc. Khi có sự kiện đúng, cả ba dừng 4,5 giây, tung bông/cánh hoa từ ba vị trí, nhảy mừng và hiện lời tung hô. Nhận snapshot thông thường không tạo lại hiệu ứng. Reduce motion giữ thông báo và tắt chuyển động.
 
 Không sao chép khung chat, nút Follow, đồng hồ điện thoại, tên hay avatar người trong video thành dữ liệu giả của ứng dụng. Mẫu trong ảnh kiểm tra của repo là người chơi thử, có hậu tố “thử”.
 

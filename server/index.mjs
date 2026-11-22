@@ -119,6 +119,7 @@ const staticFiles = new Set([
   "overlay.js",
   "speech.js",
   "chibi.js",
+  "roaming.js",
   "fonts/be-vietnam-pro-600.ttf",
   "fonts/be-vietnam-pro-800.ttf",
 ]);
