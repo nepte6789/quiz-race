@@ -1,3 +1,4 @@
+import { Engagement } from "./engagement.mjs";
 import { randomInt } from "node:crypto";
 export const normalize = (x) =>
   String(x ?? "")
@@ -105,6 +106,8 @@ export class Game {
       sound: true,
       speech: true,
       voice: "female",
+      heartGoal: 1000,
+      leaderboardMode: "segment",
       ...saved.settings,
     };
     this.players = new Map((saved.players || []).map((p) => [p.id, p]));
@@ -124,6 +127,8 @@ export class Game {
     this.lastEvent = null;
     this.winners = [];
     this.giftRevision = 0;
+    this.leaderboards = {};
+    this.engagement = new Engagement(this.settings.heartGoal);
   }
   configure(p) {
     if (this.live && p.mode && p.mode !== "first")
@@ -135,6 +140,7 @@ export class Game {
       ["duration", 5, 300],
       ["breakTime", 1, 20],
       ["points", 1, 100],
+      ["heartGoal", 100, 100000],
     ])
       if (p[k] !== undefined) {
         const v = Number(p[k]);
@@ -142,6 +148,11 @@ export class Game {
         s[k] = Math.min(max, Math.max(min, Math.round(v)));
       }
     if (p.mode && ["first", "all"].includes(p.mode)) s.mode = p.mode;
+    if (p.leaderboardMode !== undefined) {
+      if (!["total", "segment"].includes(p.leaderboardMode))
+        throw Error("Chọn bảng tổng hoặc chặng");
+      s.leaderboardMode = p.leaderboardMode;
+    }
     if (p.voice !== undefined) {
       if (!["female", "male"].includes(p.voice))
         throw Error("Chọn giọng nữ hoặc nam.");
@@ -156,6 +167,7 @@ export class Game {
         s[k] = p[k];
         this.deck = [];
       }
+    this.engagement.setGoal(s.heartGoal);
     this.version++;
   }
   next() {
@@ -174,11 +186,13 @@ export class Game {
         [this.deck[i], this.deck[j]] = [this.deck[j], this.deck[i]];
       }
     }
+    if (this.phase === "question") this.reveal("skip");
+    this.roundBoosted = this.engagement.begin();
     this.current = this.deck.pop();
     this.round++;
     this.phase = "question";
     this.roundMode = this.live ? "first" : this.settings.mode;
-    this.roundPoints = this.settings.points;
+    this.roundPoints = this.settings.points * (this.roundBoosted ? 2 : 1);
     this.roundDuration = this.settings.duration;
     this.startedAt = this.now();
     this.endsAt = this.startedAt + this.settings.duration * 1000;
@@ -208,6 +222,8 @@ export class Game {
     this.paused = false;
     this.nextAt = this.now() + this.settings.breakTime * 1000;
     this.reason = reason;
+    if (this.engagement.finish(this.round, this.revealedAt))
+      this.nextAt = Math.max(this.nextAt, this.revealedAt + 22000);
     this.version++;
   }
   pause() {
@@ -257,6 +273,8 @@ export class Game {
       };
       this.players.set(id, p);
     }
+    const oldName = p.name,
+      oldAvatar = p.avatar;
     p.name = clean(name) || p.name;
     if (
       typeof avatar === "string" &&
@@ -264,13 +282,28 @@ export class Game {
       avatar.length < 1000
     )
       p.avatar = avatar;
+    if (oldName !== p.name || oldAvatar !== p.avatar) {
+      this.leaderboards = {};
+      const row = this.engagement.segmentScores.get(p.id);
+      if (row) {
+        row.name = p.name;
+        row.avatar = p.avatar;
+        this.engagement.cachedTop = null;
+      }
+    }
     return p;
   }
   setLive(active) {
     this.live = active;
     if (active) {
+      if (
+        this.engagement.demoHearts ||
+        [...this.players.keys()].some((id) => id.startsWith("demo:"))
+      )
+        this.engagement = new Engagement(this.settings.heartGoal);
       for (const id of this.players.keys())
         if (id.startsWith("demo:")) this.players.delete(id);
+      this.leaderboards = {};
       this.stop();
       this.winners = [];
       this.lastEvent = null;
@@ -316,31 +349,30 @@ export class Game {
     if (!this.answers.has(normalize(text))) return false;
     const p = this.player(id, name, avatar);
     if (!p) return false;
+    const firstPoint = p.correct === 0;
+    const beforeRank = this.roundMode === "first" ? this.rank(p) : 0;
     this.correct.add(id);
     p.score += this.roundPoints;
     p.correct++;
     p.order = ++this.scoreOrder;
+    this.leaderboards = {};
     this.accepted++;
+    const afterRank = this.roundMode === "first" ? this.rank(p) : 0;
     const w = {
       id: p.id,
       name: p.name,
       avatar: p.avatar,
       score: p.score,
       points: this.roundPoints,
-      ...(this.roundMode === "first"
-        ? {
-            rank:
-              1 +
-              [...this.players.values()].filter(
-                (other) =>
-                  other.score > p.score ||
-                  (other.score === p.score &&
-                    (other.order < p.order ||
-                      (other.order === p.order &&
-                        other.id.localeCompare(p.id) < 0))),
-              ).length,
-          }
-        : {}),
+      ...(this.roundMode === "first" ? { rank: afterRank } : {}),
+      ...this.engagement.correct(
+        p,
+        this.round,
+        this.roundPoints,
+        beforeRank,
+        afterRank,
+        firstPoint,
+      ),
     };
     if (this.winners.length < 20) this.winners.push(w);
     this.lastEvent = {
@@ -349,8 +381,28 @@ export class Game {
       name: p.name,
       answer: this.current.answer,
       points: this.roundPoints,
+      milestone: w.milestone,
+      streak: w.streak,
+      firstPoint: w.firstPoint,
     };
     if (this.roundMode === "first") this.reveal("winner");
+    return true;
+  }
+  rank(p) {
+    let rank = 1;
+    for (const other of this.players.values())
+      if (
+        other.score > p.score ||
+        (other.score === p.score &&
+          (other.order < p.order ||
+            (other.order === p.order && other.id.localeCompare(p.id) < 0)))
+      )
+        rank++;
+    return rank;
+  }
+  like({ count, msgId, demo = false }) {
+    if (!this.engagement.like(count, msgId, demo)) return false;
+    this.version++;
     return true;
   }
   gift({ id, name, avatar, diamonds }) {
@@ -366,12 +418,14 @@ export class Game {
     const p = this.player(id, name, avatar);
     if (!p) return false;
     p.diamonds += diamonds;
+    this.leaderboards.diamonds = null;
     this.giftRevision++;
     this.version++;
     return true;
   }
   top(key) {
-    return [...this.players.values()]
+    if (this.leaderboards[key]) return this.leaderboards[key];
+    return (this.leaderboards[key] = [...this.players.values()]
       .filter((p) => p[key] > 0)
       .sort(
         (a, b) =>
@@ -384,7 +438,8 @@ export class Game {
         avatar: p.avatar,
         score: p.score,
         diamonds: p.diamonds,
-      }));
+        badges: this.engagement.progress.get(p.id)?.fast ? ["Nhanh trí"] : [],
+      })));
   }
   snapshot() {
     const q = this.current;
@@ -402,6 +457,8 @@ export class Game {
       roundMode: this.roundMode,
       roundPoints: this.roundPoints,
       roundDuration: this.roundDuration,
+      roundBoosted: !!this.roundBoosted,
+      engagement: this.engagement.snapshot(this.round),
       question: q
         ? {
             id: q.id,
@@ -438,9 +495,16 @@ export class Game {
   }
   reset() {
     this.players.clear();
+    this.leaderboards = {};
     this.scoreOrder = 0;
     this.accepted = 0;
     this.totalComments = 0;
+    this.round = 0;
+    this.engagement = new Engagement(this.settings.heartGoal);
+    this.winners = [];
+    this.lastEvent = null;
+    this.current = null;
+    this.seen.clear();
     this.stop();
   }
   replaceBank(items) {

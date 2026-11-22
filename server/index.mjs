@@ -10,7 +10,7 @@ import { resolve, extname } from "node:path";
 import { fileURLToPath } from "node:url";
 import { WebSocketServer } from "ws";
 import { Game, validateBank } from "./engine.mjs";
-import { questionText } from "../public/speech.js";
+import { questionText, podiumText } from "../public/speech.js";
 import { announcement, WinnerVoice } from "./voice.mjs";
 import { LiveLink, normalizeUsername } from "./tiktok.mjs";
 import { AutoConnect } from "./auto-connect.mjs";
@@ -136,45 +136,46 @@ const server = http.createServer(async (req, res) => {
   const url = new URL(req.url, "http://localhost");
   if (
     req.method === "GET" &&
-    ["/api/winner-voice", "/api/question-voice"].includes(url.pathname)
+    ["/api/winner-voice", "/api/question-voice", "/api/podium-voice"].includes(
+      url.pathname,
+    )
   ) {
-    const isQuestion = url.pathname === "/api/question-voice";
-    const selectedVoice = game.settings.voice || "female";
-    if (
-      url.searchParams.has("voice") &&
-      url.searchParams.get("voice") !== selectedVoice
-    )
-      return json(res, 409, { error: "Giọng đọc đã thay đổi" });
-    const round = Number(url.searchParams.get("round")),
-      winner = game.winners[0];
-    if (
-      !game.settings.speech ||
-      (isQuestion
-        ? game.phase !== "question" || game.paused
-        : game.phase !== "reveal") ||
-      round !== game.round ||
-      (!isQuestion && !winner)
-    )
-      return json(res, 409, { error: "Không có nội dung cần đọc" });
+    const kind = url.pathname.includes("question")
+      ? "question"
+      : url.pathname.includes("podium")
+        ? "podium"
+        : "winner";
+    const selectedVoice = game.settings.voice || "female",
+      round = Number(url.searchParams.get("round")),
+      summary = game.engagement.summary;
+    const valid = () =>
+      game.settings.speech &&
+      round === game.round &&
+      selectedVoice === (game.settings.voice || "female") &&
+      (!url.searchParams.has("voice") ||
+        url.searchParams.get("voice") === selectedVoice) &&
+      (kind === "question"
+        ? game.phase === "question" && !game.paused
+        : kind === "podium"
+          ? game.phase === "reveal" &&
+            game.engagement.summary === summary &&
+            summary?.round === round &&
+            Date.now() >= summary.visibleAt
+          : game.phase === "reveal" && game.winners[0]);
+    if (!valid()) return json(res, 409, { error: "Không có nội dung cần đọc" });
+    const text =
+      kind === "question"
+        ? questionText(game.current)
+        : kind === "podium"
+          ? podiumText(summary)
+          : announcement(game.current.answer, game.winners[0].name);
     try {
       const audio = await voice.get(
-        isQuestion
-          ? `question:${round}:${game.current.id}`
-          : `${round}:${game.lastEvent?.id}`,
-        isQuestion
-          ? questionText(game.current)
-          : announcement(game.current.answer, winner.name),
+        `${game.engagement.session}:${kind}:${round}:${summary?.id || game.lastEvent?.id || game.current.id}`,
+        text,
         { voice: selectedVoice },
       );
-      if (
-        selectedVoice !== (game.settings.voice || "female") ||
-        round !== game.round ||
-        (isQuestion
-          ? game.phase !== "question" || game.paused
-          : game.phase !== "reveal") ||
-        !game.settings.speech
-      )
-        return json(res, 409, { error: "Nội dung đọc đã hết hạn" });
+      if (!valid()) return json(res, 409, { error: "Nội dung đọc đã hết hạn" });
       res.writeHead(200, {
         "Content-Type": "audio/mpeg",
         "Cache-Control": "no-store",
@@ -183,7 +184,7 @@ const server = http.createServer(async (req, res) => {
     } catch {
       return json(res, 503, {
         error:
-          "Giọng trực tuyến chưa sẵn sàng. Kiểm tra mạng hoặc cài giọng tiếng Việt đã chọn trên máy.",
+          "Giọng đọc chưa sẵn sàng. Kiểm tra mạng hoặc giọng tiếng Việt đã chọn.",
       });
     }
     return;
@@ -337,6 +338,17 @@ wss.on("connection", (ws) => {
         case "disconnect":
           auto.stop();
           await live.disconnect();
+          break;
+        case "demoLike":
+          if (
+            ["connected", "connecting", "retrying"].includes(
+              live.state.status,
+            ) ||
+            auto.state.enabled
+          )
+            throw Error("Ngắt LIVE thật trước khi thử.");
+          if (!game.like({ count: Number(m.count || 100), demo: true }))
+            throw Error("Số tim không hợp lệ");
           break;
         case "demoCorrect":
           if (

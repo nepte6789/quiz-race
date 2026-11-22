@@ -1,29 +1,320 @@
-import test from 'node:test';import assert from 'node:assert/strict';import {chatData,giftData} from '../server/tiktok.mjs';
-test('connector v2 nested user and common message IDs are mapped correctly',()=>{const c=chatData({user:{idStr:'123',nickname:'Lan',avatarThumb:{urlList:['https://example.com/a.jpg']}},common:{msgId:'456'},comment:'cai ghe'});assert.equal(c.id,'123');assert.equal(c.name,'Lan');assert.equal(c.msgId,'456');assert.equal(c.avatar,'https://example.com/a.jpg');assert.equal(chatData({comment:'missing user'}),null);});
-test('gift streak is ignored until final; nested diamond values and group IDs work',()=>{const e={user:{userId:'123',nickname:'Lan'},giftDetails:{giftType:1,diamondCount:5},giftId:9,groupId:'77',repeatCount:3,repeatEnd:false};assert.equal(giftData(e),null);const g=giftData({...e,repeatEnd:true});assert.equal(g.diamonds,15);assert.equal(g.key,'123:9:77');});
-test('legacy flat events remain supported, zero IDs do not collapse all events',()=>{assert.equal(chatData({userId:'99',comment:'ok',msgId:'0'}).msgId,undefined);const g=giftData({userId:'99',giftType:0,diamondCount:10,repeatCount:2,msgId:'88'});assert.equal(g.diamonds,20);assert.equal(g.key,'88');});
-import {EventEmitter} from 'node:events';import {Game} from '../server/engine.mjs';import {LiveLink} from '../server/tiktok.mjs';
-test('real chat locks first winner and notifies immediately in same event callback',async()=>{const g=new Game([{id:'test',category:'Test',type:'text',prompt:'Ghế',answer:'ghế'}]);const client=new EventEmitter();client.connect=async()=>{};client.disconnect=async()=>{};let wins=0;const live=new LiveLink(g,priority=>{if(priority==='winner'){wins++;assert.equal(g.phase,'reveal');assert.equal(g.winners[0].id,'1');}},{createClient:async()=>client});await live.connect('testchannel');g.next();for(let i=1;i<=4;i++)client.emit('chat',{user:{idStr:String(i),nickname:'Người '+i},common:{msgId:String(i)},comment:'ghe'});assert.equal(wins,1);assert.equal(g.accepted,1);await live.disconnect();});
-test('event timestamps map seconds and milliseconds without guessed ordering',()=>{assert.equal(chatData({userId:'1',comment:'ghe',common:{createTime:1700000000}}).sentAt,1700000000000);assert.equal(chatData({userId:'1',comment:'ghe',common:{createTime:1700000000123}}).timePrecision,1);});
-import {connectionError,normalizeUsername} from '../server/tiktok.mjs';
-test('accepts exact @username and profile/live URLs, rejects display names and other hosts',()=>{assert.equal(normalizeUsername(' @test.name_01 '),'test.name_01');assert.equal(normalizeUsername('https://www.tiktok.com/@test.name/live?x=1'),'test.name');assert.throws(()=>normalizeUsername('Tên Hiển Thị'));assert.throws(()=>normalizeUsername('https://fake.example/@test/live'));});
-test('offline, rate-limit, permission, room-id and network failures have actionable distinct diagnostics',()=>{assert.equal(connectionError({exception:{name:'UserOfflineError',message:"The requested user isn't online"}}).code,'OFFLINE');assert.equal(connectionError({name:'SignatureRateLimitError',retryAfter:30000}).code,'RATE_LIMIT');assert.equal(connectionError(Error('Failed due to lack of permission for Euler')).code,'SIGN_PERMISSION');assert.equal(connectionError(Error('Failed to retrieve Room ID from all sources.')).code,'ROOM_ID');assert.equal(connectionError({code:'ETIMEDOUT'}).code,'NETWORK');});
-test('diagnostics redact credentials and URL queries before reaching UI or logs',()=>{const d=connectionError(Error('Network token=secret-token api_key=secret-key Authorization=Bearer secret-bearer https://example.com/sign?sessionid=secret-session'));assert(!JSON.stringify(d).includes('secret-'));});
-function liveFixture(createClient,options={}){return new LiveLink(new Game([{id:'q',category:'Test',type:'text',prompt:'Test',answer:'ok'}]),()=>{},{createClient,delay:async()=>{},...options});}
-test('transient room-ID failure retries once; gift gallery does not block chat setup',async()=>{let count=0;const live=liveFixture(async(name,options)=>{assert.equal(options.enableExtendedGiftInfo,false);const c=new EventEmitter();c.disconnect=async()=>{};c.connect=async()=>{if(++count===1)throw Error('Failed to retrieve Room ID from all sources.');};return c;});await live.connect('@test');assert.equal(count,2);assert.equal(live.state.status,'connected');await live.disconnect();});
-test('offline and rate-limit failures are surfaced without retrying repeatedly',async()=>{for(const message of ["The requested user isn't online",'Rate limited']){let count=0;const live=liveFixture(async()=>{const c=new EventEmitter();c.disconnect=async()=>{};c.connect=async()=>{count++;throw Error(message);};return c;});await live.connect('test');assert.equal(count,1);assert.equal(live.state.status,'error');assert(live.state.detail.includes(message));}});
-test('disconnect during retry cancels the pending connection attempt',async()=>{let release,waiting;const blocked=new Promise(r=>waiting=r);let count=0;const live=liveFixture(async()=>{count++;const c=new EventEmitter();c.disconnect=async()=>{};c.connect=async()=>{throw Error('network timeout');};return c;},{delay:()=>{waiting();return new Promise(r=>release=r);}});const pending=live.connect('test');await blocked;await live.disconnect();release();await pending;assert.equal(count,1);assert.equal(live.state.status,'idle');});
-import {connectionOptions} from '../server/tiktok.mjs';
-test('EulerStream key alias is loaded server-side and legacy whitespace fallback works',()=>{
- assert.equal(connectionOptions({EULERSTREAM_API_KEY:' new ',SIGN_API_KEY:'old'}).signApiKey,'new');assert.equal(connectionOptions({EULERSTREAM_API_KEY:' ',SIGN_API_KEY:' old '}).signApiKey,'old');assert(!('signApiKey' in connectionOptions({})));assert.equal(connectionOptions({}).processInitialData,false);
+import test from "node:test";
+import assert from "node:assert/strict";
+import { chatData, giftData } from "../server/tiktok.mjs";
+test("connector v2 nested user and common message IDs are mapped correctly", () => {
+  const c = chatData({
+    user: {
+      idStr: "123",
+      nickname: "Lan",
+      avatarThumb: { urlList: ["https://example.com/a.jpg"] },
+    },
+    common: { msgId: "456" },
+    comment: "cai ghe",
+  });
+  assert.equal(c.id, "123");
+  assert.equal(c.name, "Lan");
+  assert.equal(c.msgId, "456");
+  assert.equal(c.avatar, "https://example.com/a.jpg");
+  assert.equal(chatData({ comment: "missing user" }), null);
 });
-test('different user payload shapes share identity; nested comment text is accepted',()=>{
- const aliases=new Map();const a=chatData({user:{idStr:'123',uniqueId:'lan',nickname:'Lan'},comment:'ok'},aliases);const b=chatData({userInfo:{uniqueId:'lan',avatar:{url_list:['https://example.com/avatar']}},comment:{text:'đúng'}},aliases);assert.equal(a.id,b.id);assert.equal(b.text,'đúng');assert.equal(b.avatar,'https://example.com/avatar');
+test("gift streak is ignored until final; nested diamond values and group IDs work", () => {
+  const e = {
+    user: { userId: "123", nickname: "Lan" },
+    giftDetails: { giftType: 1, diamondCount: 5 },
+    giftId: 9,
+    groupId: "77",
+    repeatCount: 3,
+    repeatEnd: false,
+  };
+  assert.equal(giftData(e), null);
+  const g = giftData({ ...e, repeatEnd: true });
+  assert.equal(g.diamonds, 15);
+  assert.equal(g.key, "123:9:77");
 });
-test('timeout ends a hung connection and discards late client events',async()=>{
- const client=new EventEmitter();let release;client.connect=()=>new Promise(r=>release=r);client.disconnect=async()=>{};
- const live=liveFixture(async()=>client,{connectTimeout:10,maxAttempts:1});await live.connect('test');assert.equal(live.state.code,'NETWORK');assert.equal(live.state.status,'error');release();client.emit('chat',{userId:'1',comment:'ok'});assert.equal(live.game.accepted,0);await live.disconnect();
+test("legacy flat events remain supported, zero IDs do not collapse all events", () => {
+  assert.equal(
+    chatData({ userId: "99", comment: "ok", msgId: "0" }).msgId,
+    undefined,
+  );
+  const g = giftData({
+    userId: "99",
+    giftType: 0,
+    diamondCount: 10,
+    repeatCount: 2,
+    msgId: "88",
+  });
+  assert.equal(g.diamonds, 20);
+  assert.equal(g.key, "88");
 });
-test('nonfatal SDK errors retain LIVE status; actual disconnect requests retry once',async()=>{
- const client=new EventEmitter();client.connect=async()=>{};client.disconnect=async()=>{};client.isConnected=true;let losses=0;const live=liveFixture(async()=>client,{onDisconnected:()=>losses++});await live.connect('test');client.emit('error',Error('network warning'));assert.equal(live.state.status,'connected');assert.equal(losses,0);client.emit('disconnected');assert.equal(live.state.status,'disconnected');assert.equal(losses,1);await live.disconnect();client.emit('disconnected');assert.equal(losses,1);
+import { EventEmitter } from "node:events";
+import { Game } from "../server/engine.mjs";
+import { LiveLink } from "../server/tiktok.mjs";
+test("real chat locks first winner and notifies immediately in same event callback", async () => {
+  const g = new Game([
+    {
+      id: "test",
+      category: "Test",
+      type: "text",
+      prompt: "Ghế",
+      answer: "ghế",
+    },
+  ]);
+  const client = new EventEmitter();
+  client.connect = async () => {};
+  client.disconnect = async () => {};
+  let wins = 0;
+  const live = new LiveLink(
+    g,
+    (priority) => {
+      if (priority === "winner") {
+        wins++;
+        assert.equal(g.phase, "reveal");
+        assert.equal(g.winners[0].id, "1");
+      }
+    },
+    { createClient: async () => client },
+  );
+  await live.connect("testchannel");
+  g.next();
+  for (let i = 1; i <= 4; i++)
+    client.emit("chat", {
+      user: { idStr: String(i), nickname: "Người " + i },
+      common: { msgId: String(i) },
+      comment: "ghe",
+    });
+  assert.equal(wins, 1);
+  assert.equal(g.accepted, 1);
+  await live.disconnect();
+});
+test("event timestamps map seconds and milliseconds without guessed ordering", () => {
+  assert.equal(
+    chatData({
+      userId: "1",
+      comment: "ghe",
+      common: { createTime: 1700000000 },
+    }).sentAt,
+    1700000000000,
+  );
+  assert.equal(
+    chatData({
+      userId: "1",
+      comment: "ghe",
+      common: { createTime: 1700000000123 },
+    }).timePrecision,
+    1,
+  );
+});
+import { connectionError, normalizeUsername } from "../server/tiktok.mjs";
+test("accepts exact @username and profile/live URLs, rejects display names and other hosts", () => {
+  assert.equal(normalizeUsername(" @test.name_01 "), "test.name_01");
+  assert.equal(
+    normalizeUsername("https://www.tiktok.com/@test.name/live?x=1"),
+    "test.name",
+  );
+  assert.throws(() => normalizeUsername("Tên Hiển Thị"));
+  assert.throws(() => normalizeUsername("https://fake.example/@test/live"));
+});
+test("offline, rate-limit, permission, room-id and network failures have actionable distinct diagnostics", () => {
+  assert.equal(
+    connectionError({
+      exception: {
+        name: "UserOfflineError",
+        message: "The requested user isn't online",
+      },
+    }).code,
+    "OFFLINE",
+  );
+  assert.equal(
+    connectionError({ name: "SignatureRateLimitError", retryAfter: 30000 })
+      .code,
+    "RATE_LIMIT",
+  );
+  assert.equal(
+    connectionError(Error("Failed due to lack of permission for Euler")).code,
+    "SIGN_PERMISSION",
+  );
+  assert.equal(
+    connectionError(Error("Failed to retrieve Room ID from all sources.")).code,
+    "ROOM_ID",
+  );
+  assert.equal(connectionError({ code: "ETIMEDOUT" }).code, "NETWORK");
+});
+test("diagnostics redact credentials and URL queries before reaching UI or logs", () => {
+  const d = connectionError(
+    Error(
+      "Network token=secret-token api_key=secret-key Authorization=Bearer secret-bearer https://example.com/sign?sessionid=secret-session",
+    ),
+  );
+  assert(!JSON.stringify(d).includes("secret-"));
+});
+function liveFixture(createClient, options = {}) {
+  return new LiveLink(
+    new Game([
+      { id: "q", category: "Test", type: "text", prompt: "Test", answer: "ok" },
+    ]),
+    () => {},
+    { createClient, delay: async () => {}, ...options },
+  );
+}
+test("transient room-ID failure retries once; gift gallery does not block chat setup", async () => {
+  let count = 0;
+  const live = liveFixture(async (name, options) => {
+    assert.equal(options.enableExtendedGiftInfo, false);
+    const c = new EventEmitter();
+    c.disconnect = async () => {};
+    c.connect = async () => {
+      if (++count === 1)
+        throw Error("Failed to retrieve Room ID from all sources.");
+    };
+    return c;
+  });
+  await live.connect("@test");
+  assert.equal(count, 2);
+  assert.equal(live.state.status, "connected");
+  await live.disconnect();
+});
+test("offline and rate-limit failures are surfaced without retrying repeatedly", async () => {
+  for (const message of ["The requested user isn't online", "Rate limited"]) {
+    let count = 0;
+    const live = liveFixture(async () => {
+      const c = new EventEmitter();
+      c.disconnect = async () => {};
+      c.connect = async () => {
+        count++;
+        throw Error(message);
+      };
+      return c;
+    });
+    await live.connect("test");
+    assert.equal(count, 1);
+    assert.equal(live.state.status, "error");
+    assert(live.state.detail.includes(message));
+  }
+});
+test("disconnect during retry cancels the pending connection attempt", async () => {
+  let release, waiting;
+  const blocked = new Promise((r) => (waiting = r));
+  let count = 0;
+  const live = liveFixture(
+    async () => {
+      count++;
+      const c = new EventEmitter();
+      c.disconnect = async () => {};
+      c.connect = async () => {
+        throw Error("network timeout");
+      };
+      return c;
+    },
+    {
+      delay: () => {
+        waiting();
+        return new Promise((r) => (release = r));
+      },
+    },
+  );
+  const pending = live.connect("test");
+  await blocked;
+  await live.disconnect();
+  release();
+  await pending;
+  assert.equal(count, 1);
+  assert.equal(live.state.status, "idle");
+});
+import { connectionOptions } from "../server/tiktok.mjs";
+test("EulerStream key alias is loaded server-side and legacy whitespace fallback works", () => {
+  assert.equal(
+    connectionOptions({ EULERSTREAM_API_KEY: " new ", SIGN_API_KEY: "old" })
+      .signApiKey,
+    "new",
+  );
+  assert.equal(
+    connectionOptions({ EULERSTREAM_API_KEY: " ", SIGN_API_KEY: " old " })
+      .signApiKey,
+    "old",
+  );
+  assert(!("signApiKey" in connectionOptions({})));
+  assert.equal(connectionOptions({}).processInitialData, false);
+});
+test("different user payload shapes share identity; nested comment text is accepted", () => {
+  const aliases = new Map();
+  const a = chatData(
+    { user: { idStr: "123", uniqueId: "lan", nickname: "Lan" }, comment: "ok" },
+    aliases,
+  );
+  const b = chatData(
+    {
+      userInfo: {
+        uniqueId: "lan",
+        avatar: { url_list: ["https://example.com/avatar"] },
+      },
+      comment: { text: "đúng" },
+    },
+    aliases,
+  );
+  assert.equal(a.id, b.id);
+  assert.equal(b.text, "đúng");
+  assert.equal(b.avatar, "https://example.com/avatar");
+});
+test("timeout ends a hung connection and discards late client events", async () => {
+  const client = new EventEmitter();
+  let release;
+  client.connect = () => new Promise((r) => (release = r));
+  client.disconnect = async () => {};
+  const live = liveFixture(async () => client, {
+    connectTimeout: 10,
+    maxAttempts: 1,
+  });
+  await live.connect("test");
+  assert.equal(live.state.code, "NETWORK");
+  assert.equal(live.state.status, "error");
+  release();
+  client.emit("chat", { userId: "1", comment: "ok" });
+  assert.equal(live.game.accepted, 0);
+  await live.disconnect();
+});
+test("nonfatal SDK errors retain LIVE status; actual disconnect requests retry once", async () => {
+  const client = new EventEmitter();
+  client.connect = async () => {};
+  client.disconnect = async () => {};
+  client.isConnected = true;
+  let losses = 0;
+  const live = liveFixture(async () => client, {
+    onDisconnected: () => losses++,
+  });
+  await live.connect("test");
+  client.emit("error", Error("network warning"));
+  assert.equal(live.state.status, "connected");
+  assert.equal(losses, 0);
+  client.emit("disconnected");
+  assert.equal(live.state.status, "disconnected");
+  assert.equal(losses, 1);
+  await live.disconnect();
+  client.emit("disconnected");
+  assert.equal(losses, 1);
+});
+test("fresh TikTok like deltas unlock community progress without reusing totalLikeCount", async () => {
+  const client = new EventEmitter();
+  client.connect = async () => {};
+  client.disconnect = async () => {};
+  const live = liveFixture(async () => client);
+  live.game.configure({ heartGoal: 100 });
+  await live.connect("test");
+  client.emit("like", {
+    likeCount: 60,
+    totalLikeCount: 9000,
+    common: { msgId: "like-a" },
+  });
+  client.emit("like", {
+    likeCount: 60,
+    totalLikeCount: 9000,
+    common: { msgId: "like-a" },
+  });
+  assert.equal(live.game.engagement.hearts, 60);
+  client.emit("like", { likeCount: 40, common: { msgId: "like-b" } });
+  assert.equal(live.game.engagement.queue, 1);
+  client.emit("like", { totalLikeCount: 99999 });
+  assert.equal(live.game.engagement.hearts, 100);
+  await live.disconnect();
+  client.emit("like", { likeCount: 100 });
+  assert.equal(live.game.engagement.hearts, 100);
 });

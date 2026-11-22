@@ -28,3 +28,7 @@ Không sao chép khung chat, nút Follow, đồng hồ điện thoại, tên hay
 ## Giới hạn độ giống
 
 Đã bám bố cục, màu chủ đạo, tỷ lệ chữ/ô, hai bảng và nhịp hỏi–thẻ thắng–mở lời giải. Hình chibi là phần vẽ mới; font dùng Be Vietnam Pro đặt sẵn và có đủ dấu. Giao diện TikTok thật, nội dung câu và độ trễ sự kiện phụ thuộc phiên LIVE; không thể bảo đảm khớp từng pixel trên mọi thiết bị.
+
+## Các lớp tương tác bổ sung
+
+Thanh tim cộng đồng nằm giữa đầu màn hình và phần hỏi; câu được mở từ mục tiêu có viền/nhãn ×2 vàng. Điểm chặng tách tổng buổi, hai tab Tổng/Chặng và màn vinh danh top 3 sau mỗi 10 câu. Banner riêng cho lần đầu ghi điểm, chuỗi ba câu và lội ngược dòng. Màn trao giải hiện sau lời giải câu cuối, giữ khoảng nghỉ tối thiểu 22 giây để đọc top 3. Lời mời rủ bạn chỉ xuất hiện ở màn trao giải, không giả lập lượt chia sẻ và không có bình chọn chủ đề.

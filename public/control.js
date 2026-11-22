@@ -37,10 +37,13 @@ function request(cmd, data = {}) {
     return Promise.reject(Error("Mất kết nối máy chủ. Đang thử nối lại."));
   const id = ++requestId;
   return new Promise((resolve, reject) => {
-    const timer = setTimeout(() => {
-      pending.delete(id);
-      reject(Error("Máy chủ chưa phản hồi. Kiểm tra cửa sổ npm start."));
-    }, cmd === "connect" ? 75000 : 15000);
+    const timer = setTimeout(
+      () => {
+        pending.delete(id);
+        reject(Error("Máy chủ chưa phản hồi. Kiểm tra cửa sổ npm start."));
+      },
+      cmd === "connect" ? 75000 : 15000,
+    );
     pending.set(id, { resolve, reject, timer });
     ws.send(JSON.stringify({ cmd, ...data, requestId: id }));
   });
@@ -155,13 +158,17 @@ function render(m) {
   const busy =
     ["connected", "connecting", "retrying"].includes(m.live.status) ||
     m.live.auto?.enabled;
-  for (const id of ["sendDemo", "correctDemo", "giftDemo"])
+  for (const id of ["sendDemo", "correctDemo", "giftDemo", "heartDemo"])
     $(id).disabled = !!busy;
   $("demoHint").textContent = busy
     ? "Đang kết nối hoặc tự thử lại LIVE thật. Bấm Ngắt trước khi dùng dữ liệu thử."
     : "Điểm thử không lưu sau khi khởi động lại. Mở câu hỏi rồi thử đáp án.";
   $("connectBtn").disabled = ["connecting", "retrying"].includes(m.live.status);
   form.elements.mode.disabled = !!busy;
+  const community = m.engagement;
+  if (community)
+    $("communityState").textContent =
+      `${community.hearts.toLocaleString("vi-VN")} tim · ${community.queuedBoosts} câu ×2 đang chờ · Chặng ${community.segment.number}`;
   countdown();
 }
 function catalog(m) {
@@ -380,3 +387,5 @@ $("copyLiveError").onclick = async () => {
     notice("Sao chép nội dung lỗi trong khung kết nối.");
   }
 };
+
+$("heartDemo").onclick = () => action("demoLike", { count: 100 });

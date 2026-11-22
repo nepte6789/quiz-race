@@ -233,3 +233,53 @@ test("native narration uses selected male voice", async () => {
   await sp.speak({ key: "male:1", voice: "male", text: "Câu hỏi", round: 1 });
   assert.equal(selected, "Microsoft NamMinh");
 });
+import { podiumText } from "../public/speech.js";
+test("podium voice describes only real top three names and scores and has a separate route", async () => {
+  assert.match(
+    podiumText({
+      number: 2,
+      leaders: [
+        { name: "Lan 🎉", score: 6 },
+        { name: "Mai", score: 4 },
+      ],
+    }),
+    /chặng 2.*Hạng nhất, Lan, 6 điểm.*Hạng nhì, Mai, 4 điểm/,
+  );
+  assert(!podiumText({ number: 1, leaders: [] }).includes("undefined"));
+  let url;
+  const sp = new WinnerSpeaker({
+    synth: undefined,
+    fetcher: async (u) => {
+      url = u;
+      return { ok: false };
+    },
+    status() {},
+  });
+  sp.enable();
+  await sp.speak({
+    key: "podium:1",
+    kind: "podium",
+    round: 10,
+    text: "Kết quả",
+  });
+  assert.equal(url, "/api/podium-voice?round=10&voice=female");
+});
+test("new session reset allows the same round number to be spoken again", async () => {
+  let count = 0;
+  const sp = new WinnerSpeaker({
+    synth: {
+      getVoices: () => [{ lang: "vi-VN", name: "Microsoft HoaiMy" }],
+      cancel() {},
+      speak: () => count++,
+    },
+    Utterance: class {},
+  });
+  sp.enable();
+  const event = { key: "question:1", text: "Câu hỏi", round: 1 };
+  await sp.speak(event);
+  await sp.speak(event);
+  assert.equal(count, 1);
+  sp.reset();
+  await sp.speak(event);
+  assert.equal(count, 2);
+});
