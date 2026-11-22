@@ -1,8 +1,8 @@
 # Quiz Race · TikTok LIVE
 
-Game đố vui qua bình luận TikTok, dựng theo video tham chiếu: nền tím đậm, ô đáp án/xáo chữ, tên top 1 chạy ngang, bảng điểm trái và bảng quà phải. Chibi nữ mini chạy vòng, tung bông/cánh hoa và nhảy mừng khi người chơi trả lời đúng.
+Game đố vui qua bình luận TikTok, dựng theo video tham chiếu: nền tím đậm, ô đáp án/xáo chữ, tên top 1 chạy ngang, bảng điểm trái và bảng quà phải. Ba chibi nữ mini di chuyển tự do, tung bông/cánh hoa và nhảy mừng khi người chơi trả lời đúng.
 
-[Xem câu hỏi](docs/screenshots/question.png) · [Thẻ chiến thắng](docs/screenshots/winner.png) · [Mở đáp án](docs/screenshots/solution.png) · [Điều khiển](docs/screenshots/studio.png) · [Phân tích video](docs/REFERENCE.md)
+[Xem ba mẫu chibi](docs/screenshots/chibi-models.png) · [Xem câu hỏi](docs/screenshots/three-cheerleaders.png) · [Thẻ chiến thắng](docs/screenshots/three-celebrating.png) · [Mở đáp án](docs/screenshots/solution.png) · [Điều khiển](docs/screenshots/studio.png) · [Phân tích video](docs/REFERENCE.md)
 
 ## Chạy ngay
 
@@ -34,7 +34,7 @@ Khi chưa nối LIVE, bấm **Thử trả lời đúng** để xem thẻ thắng
 - Khi có người đúng: khóa câu, hiện thẻ viền vàng khoảng **2 giây** kèm avatar/tên, đáp án xanh, tổng điểm và hạng thật trên toàn bảng.
 - Sau thẻ, mở các chữ đáp án màu xanh và thông báo kết quả; hết thời gian nghỉ mới sang câu tiếp.
 - Tên người top điểm chạy trên đầu; top điểm trái/top quà phải hiển thị tối đa 10 người.
-- Chibi nữ chạy theo vòng phía dưới, hai tay cầm bông cổ vũ. Khi có đáp án đúng, dừng chạy 4,5 giây để nhảy mừng/tung cánh hoa, pháo giấy và gọi tên người thắng.
+- Ba chibi nữ có tóc/trang phục riêng: hồng, tím, xanh ngọc; mắt sáng, má hồng, váy xếp ly và bông nhiều lớp. Mỗi nhân vật tự chọn đích di chuyển trong vùng từ dưới tiêu đề Top điểm đến cuối sân khấu, đổi hướng và tránh chồng lên nhau, không chạy lên câu hỏi. Khi có đáp án đúng, cả ba dừng di chuyển 4,5 giây để nhảy mừng/tung cánh hoa và hiện lời tung hô. Khi đang đi ngang bảng, nhân vật giảm độ đậm để chữ bên dưới vẫn nhìn thấy.
 - Tôn trọng chế độ giảm chuyển động của hệ điều hành. Vùng trên chừa cho lớp LIVE; không giả lập nút Follow, bình luận hay đồng hồ điện thoại.
 
 ## Bộ câu hỏi

@@ -983,10 +983,7 @@ details .form-grid {
 }
 .mascot-track {
   position: absolute;
-  left: 0;
-  right: 0;
-  top: 1650px;
-  height: 140px;
+  inset: 0;
   pointer-events: none;
   z-index: 5;
 }
@@ -994,11 +991,25 @@ details .form-grid {
   position: absolute;
   left: 0;
   top: 0;
-  width: 135px;
-  height: 184px;
-  offset-path: path("M 120 0 C 340 -70 740 -70 960 0 C 740 50 340 50 120 0");
-  offset-rotate: 0deg;
-  animation: run-lap 19s linear infinite;
+  width: 125px;
+  height: 171px;
+  will-change: transform;
+}
+.mascot-facing {
+  transform: scaleX(var(--direction, 1));
+  transition: transform 0.25s ease;
+}
+.mascot-runner.over-board {
+  opacity: 0.88;
+}
+.mascot-runner.cheering {
+  opacity: 1;
+}
+.mascot-runner.cheering .mascot-facing {
+  transform: scaleX(1);
+}
+.mascot-runner:not(.cheering) .cheer-bubble {
+  opacity: 0;
 }
 .chibi {
   width: 100%;
@@ -1008,7 +1019,8 @@ details .form-grid {
 }
 .girl {
   transform-origin: 110px 260px;
-  animation: girl-bounce 0.38s ease-in-out infinite;
+  animation: girl-bounce 0.48s ease-in-out infinite;
+  animation-delay: var(--phase, 0s);
 }
 .leg {
   transform-origin: 110px 225px;
@@ -1031,6 +1043,7 @@ details .form-grid {
 .eyes {
   transform-origin: 110px 108px;
   animation: blink 4.5s infinite;
+  animation-delay: var(--phase, 0s);
 }
 .cheer-bubble {
   position: absolute;
@@ -1048,9 +1061,6 @@ details .form-grid {
   overflow: hidden;
   text-overflow: ellipsis;
   opacity: 0.9;
-}
-.mascot-runner.cheering {
-  animation-play-state: paused;
 }
 .cheering .girl {
   animation: girl-jump 0.45s ease-in-out infinite;
@@ -1081,11 +1091,6 @@ details .form-grid {
   85%,
   100% {
     transform: translateX(min(-30%, -20px));
-  }
-}
-@keyframes run-lap {
-  to {
-    offset-distance: 100%;
   }
 }
 @keyframes girl-bounce {
@@ -1352,8 +1357,5 @@ label,
     animation: none !important;
     transition: none !important;
     scroll-behavior: auto !important;
-  }
-  .mascot-runner {
-    offset-distance: 30%;
   }
 }

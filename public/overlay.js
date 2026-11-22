@@ -1,5 +1,6 @@
 import { WinnerSpeaker, winnerText, questionText } from "./speech.js";
 import { cheerleader } from "./chibi.js";
+import { createRoamers, stepRoamers } from "./roaming.js";
 const $ = (id) => document.getElementById(id),
   mute = new URLSearchParams(location.search).get("audio") === "0";
 let state,
@@ -11,7 +12,68 @@ let state,
   audio,
   cheerTimer,
   animation = 0;
-$("mascotArt").innerHTML = cheerleader();
+const runners = Array.from({ length: 3 }, (_, i) => {
+  const runner = document.createElement("div");
+  runner.className = "mascot-runner";
+  runner.id = i ? `mascotRunner${i}` : "mascotRunner";
+  runner.style.setProperty("--phase", `${-i * 0.27}s`);
+  const bubble = document.createElement("span");
+  bubble.className = "cheer-bubble";
+  bubble.textContent = "Cố lên nào! ♡";
+  if (!i) bubble.id = "cheerBubble";
+  const art = document.createElement("div");
+  art.className = "mascot-facing";
+  art.innerHTML = cheerleader(i);
+  runner.append(bubble, art);
+  $("mascotTrack").append(runner);
+  return runner;
+});
+const reducedMotion = matchMedia("(prefers-reduced-motion: reduce)");
+function roamBounds() {
+  return {
+    left: 25,
+    right: 925,
+    top: document.querySelector(".boards").offsetTop + 100,
+    bottom: 1700,
+  };
+}
+const roamLimits = roamBounds(),
+  faces = runners.map((runner) => runner.querySelector(".mascot-facing"));
+let actors = createRoamers(roamLimits),
+  roamFrame = 0,
+  lastFrame = 0;
+function placeActors() {
+  actors.forEach((a, i) => {
+    runners[i].style.transform = `translate3d(${a.x}px,${a.y}px,0)`;
+    faces[i].style.setProperty("--direction", a.direction);
+    runners[i].classList.toggle("over-board", a.y < roamLimits.top + 500);
+  });
+}
+function roam(now) {
+  const dt = lastFrame ? (now - lastFrame) / 1000 : 0;
+  lastFrame = now;
+  stepRoamers(
+    actors,
+    dt,
+    roamLimits,
+    Math.random,
+    runners[0].classList.contains("cheering"),
+  );
+  placeActors();
+  if (!reducedMotion.matches) roamFrame = requestAnimationFrame(roam);
+}
+function motionPreference() {
+  cancelAnimationFrame(roamFrame);
+  lastFrame = 0;
+  if (!reducedMotion.matches) roamFrame = requestAnimationFrame(roam);
+  else {
+    actors = createRoamers(roamLimits, () => 0.5);
+    placeActors();
+  }
+}
+reducedMotion.addEventListener("change", motionPreference);
+placeActors();
+motionPreference();
 function fit() {
   const scale = Math.min(innerWidth / 1080, innerHeight / 1920);
   $("stage").style.transform = `scale(${scale})`;
@@ -228,15 +290,21 @@ function ding() {
 }
 function celebrate(event) {
   clearTimeout(cheerTimer);
-  $("mascotRunner").classList.add("cheering");
-  $("cheerBubble").textContent = `Hoan hô ${event.name}! 🌸`;
-  $("mascotRunner").setAttribute(
+  runners.forEach((runner) => runner.classList.add("cheering"));
+  runners.forEach((runner, i) => {
+    runner.querySelector(".cheer-bubble").textContent = [
+      `Hoan hô ${event.name}! 🌸`,
+      "Giỏi quá! Vỗ tay nào! ♡",
+      "Tuyệt vời! Tung bông thôi! ✿",
+    ][i];
+  });
+  $("mascotTrack").setAttribute(
     "aria-label",
-    `Chibi tung bông chúc mừng ${event.name}`,
+    `Ba chibi tung bông chúc mừng ${event.name}`,
   );
   ding();
   cheerTimer = setTimeout(() => {
-    $("mascotRunner").classList.remove("cheering");
+    runners.forEach((runner) => runner.classList.remove("cheering"));
     $("cheerBubble").textContent = "Đến lượt bạn tỏa sáng! ♡";
   }, 4500);
   if (matchMedia("(prefers-reduced-motion: reduce)").matches) return;
@@ -245,15 +313,18 @@ function celebrate(event) {
   canvas.width = 1080;
   canvas.height = 1920;
   cancelAnimationFrame(animation);
-  const box = $("mascotRunner").getBoundingClientRect(),
-    stageBox = $("stage").getBoundingClientRect(),
+  const stageBox = $("stage").getBoundingClientRect(),
     scale = stageBox.width / 1080;
-  const origin = {
-    x: (box.x + box.width / 2 - stageBox.x) / scale,
-    y: (box.y + box.height / 3 - stageBox.y) / scale,
-  };
+  const origins = runners.map((runner) => {
+    const box = runner.getBoundingClientRect();
+    return {
+      x: (box.x + box.width / 2 - stageBox.x) / scale,
+      y: (box.y + box.height / 3 - stageBox.y) / scale,
+    };
+  });
   const pieces = Array.from({ length: 95 }, (_, i) => {
-    const petal = i < 35;
+    const petal = i < 54;
+    const origin = origins[i % 3];
     return {
       x: petal ? origin.x + (Math.random() - 0.5) * 60 : Math.random() * 1080,
       y: petal ? origin.y : 280 - Math.random() * 400,
