@@ -289,9 +289,8 @@ export class LiveLink {
         const options = connectionOptions();
         if (this.createClient) c = await this.createClient(username, options);
         else {
-          const { TikTokLiveConnection } = await import(
-            "tiktok-live-connector"
-          );
+          const { TikTokLiveConnection } =
+            await import("tiktok-live-connector");
           c = new TikTokLiveConnection(username, options);
         }
         if (gen !== this.generation) {
@@ -304,6 +303,18 @@ export class LiveLink {
           if (!current() || this.state.status !== "connected") return;
           const data = chatData(e, this.aliases);
           if (data && this.game.comment(data)) this.changed("winner");
+        });
+        c.on("like", (e) => {
+          if (!current() || this.state.status !== "connected") return;
+          const count = Number(e.likeCount ?? e.like_count);
+          const mid = e.msgId || e.common?.msgId;
+          if (
+            this.game.like({
+              count,
+              msgId: mid && String(mid) !== "0" ? String(mid) : undefined,
+            })
+          )
+            this.changed();
         });
         c.on("gift", (e) => {
           if (!current() || this.state.status !== "connected") return;

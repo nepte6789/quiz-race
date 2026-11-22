@@ -15,6 +15,21 @@
         ><span id="pointBadge" class="point-badge">Đúng +1 điểm</span>
         <div id="timer" class="timer">60</div>
       </header>
+      <section class="community-bar" aria-label="Mục tiêu tim chung">
+        <div class="heart-goal">
+          <div>
+            <span id="communityHeartLabel">♡ CẢ PHÒNG CÙNG THẢ TIM</span
+            ><b id="heartCount">0 / 1.000</b>
+          </div>
+          <div class="heart-track"><div id="heartFill"></div></div>
+          <p id="heartReward">Đạt mục tiêu → câu kế nhân đôi điểm</p>
+        </div>
+        <div class="segment-meter">
+          <span id="segmentName">CHẶNG 1</span
+          ><strong id="segmentQuestion">1 / 10</strong
+          ><small id="specialStatus">CÙNG ĐUA TOP MỚI</small>
+        </div>
+      </section>
       <section id="questionCard" class="question-card">
         <div id="questionView">
           <p id="typeLabel" class="question-kicker">GỢI Ý</p>
@@ -49,7 +64,13 @@
       </div>
       <section class="boards">
         <article class="board scores-board">
-          <div class="board-title">🏆 TOP ĐIỂM</div>
+          <div class="board-title">
+            <span id="scoreBoardTitle">🏆 TOP ĐIỂM</span>
+            <div class="board-tabs">
+              <button id="totalTab" class="selected">Tổng</button
+              ><button id="segmentTab">Chặng</button>
+            </div>
+          </div>
           <ol id="scores"></ol>
         </article>
         <article class="board gifts-board">
@@ -69,6 +90,24 @@
         class="mascot-track"
         aria-label="Ba chibi nữ cổ vũ"
       ></div>
+      <aside id="momentCard" class="moment-card hidden" role="status">
+        <span id="momentIcon">✦</span>
+        <div>
+          <small id="momentLabel">MỞ ĐIỂM ĐẦU TIÊN</small
+          ><strong id="momentName"></strong>
+          <p id="momentCaption"></p>
+        </div>
+      </aside>
+      <div id="podiumScrim" class="podium-scrim hidden"></div>
+      <section id="podium" class="podium hidden" role="status">
+        <p class="podium-kicker">✦ MỘT CHẶNG ĐUA · BA NGÔI SAO ✦</p>
+        <h2 id="podiumTitle">VINH DANH CHẶNG 1</h2>
+        <div id="podiumRows" class="podium-rows"></div>
+        <p id="podiumNext"></p>
+        <div class="share-invite">
+          ♡ Rủ một người bạn vào so tài chặng mới nhé!
+        </div>
+      </section>
       <canvas id="confetti"></canvas
       ><button id="enableAudio" class="audio-enable">
         ♫ Bật âm thanh & giọng đọc</button

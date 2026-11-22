@@ -30,6 +30,15 @@ export function winnerText(answer, name) {
       .slice(0, n);
   return `Đáp án là ${tidy(answer, 100)}. ${tidy(name, 45) || "Người chơi"} trả lời đúng. Cả đội chibi chúc mừng bạn!`;
 }
+export function podiumText(summary) {
+  const tidy = (s) =>
+    String(s || "")
+      .replace(/[^\p{L}\p{N}\s.,-]/gu, " ")
+      .replace(/\s+/g, " ")
+      .trim()
+      .slice(0, 40);
+  return `Kết thúc chặng ${summary.number}. ${summary.leaders.length ? summary.leaders.map((p, i) => `${["Hạng nhất", "Hạng nhì", "Hạng ba"][i]}, ${tidy(p.name)}, ${p.score} điểm.`).join(" ") : "Chưa có người ghi điểm."} Chúc cả phòng chinh phục chặng mới!`;
+}
 export class WinnerSpeaker {
   constructor({
     synth = globalThis.speechSynthesis,
@@ -72,6 +81,10 @@ export class WinnerSpeaker {
     this.objectUrl = null;
     this.audio = null;
   }
+  reset() {
+    this.stop();
+    this.seen.clear();
+  }
   async speak({ key, text, round, kind = "winner", voice = "female" }) {
     if (this.muted || !this.enabled || this.seen.has(key)) return;
     this.remember(key);
@@ -100,7 +113,9 @@ export class WinnerSpeaker {
       this.status(
         kind === "question"
           ? "Đang đọc câu hỏi…"
-          : "Đang đọc đáp án và người thắng…",
+          : kind === "podium"
+            ? "Đang vinh danh top 3 chặng…"
+            : "Đang đọc đáp án và người thắng…",
       );
       try {
         this.synth.speak(line);
@@ -119,7 +134,7 @@ export class WinnerSpeaker {
     this.status("Đang chuẩn bị giọng đọc tiếng Việt…");
     try {
       const r = await this.fetcher(
-        `/api/${kind === "question" ? "question" : "winner"}-voice?round=${encodeURIComponent(round)}&voice=${encodeURIComponent(voice)}`,
+        `/api/${["question", "podium"].includes(kind) ? kind : "winner"}-voice?round=${encodeURIComponent(round)}&voice=${encodeURIComponent(voice)}`,
         { signal: controller.signal },
       );
       if (!r.ok) throw Error("Voice unavailable");
@@ -147,7 +162,9 @@ export class WinnerSpeaker {
         this.status(
           kind === "question"
             ? "Đang đọc câu hỏi…"
-            : "Đang đọc đáp án và người thắng…",
+            : kind === "podium"
+              ? "Đang vinh danh top 3 chặng…"
+              : "Đang đọc đáp án và người thắng…",
         );
     } catch (e) {
       if (seq === this.seq && e.name !== "AbortError")

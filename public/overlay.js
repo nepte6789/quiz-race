@@ -1,4 +1,9 @@
-import { WinnerSpeaker, winnerText, questionText } from "./speech.js";
+import {
+  WinnerSpeaker,
+  winnerText,
+  questionText,
+  podiumText,
+} from "./speech.js";
 import { cheerleader } from "./chibi.js";
 import { createRoamers, stepRoamers } from "./roaming.js";
 const $ = (id) => document.getElementById(id),
@@ -139,6 +144,12 @@ function board(id, rows, metric) {
     rank.textContent = i + 1;
     name.className = "player-name";
     name.textContent = p.name;
+    if (p.badges?.length) {
+      const badge = document.createElement("small");
+      badge.className = "player-badge";
+      badge.textContent = "⚡ Nhanh trí";
+      name.append(badge);
+    }
     value.className = "player-value";
     value.textContent =
       Intl.NumberFormat("vi-VN").format(p[metric]) +
@@ -156,7 +167,7 @@ inner.append(...$("questionView").childNodes);
 $("questionView").append(inner);
 function fitQuestion() {
   const h = inner.scrollHeight;
-  inner.style.transform = `scale(${Math.min(1, 365 / Math.max(1, h))})`;
+  inner.style.transform = `scale(${Math.min(1, 345 / Math.max(1, h))})`;
 }
 document.fonts.ready.then(() => {
   if (state) fitQuestion();
@@ -293,7 +304,7 @@ function celebrate(event) {
   runners.forEach((runner) => runner.classList.add("cheering"));
   runners.forEach((runner, i) => {
     runner.querySelector(".cheer-bubble").textContent = [
-      `Hoan hô ${event.name}! 🌸`,
+      event.community ? "CẢ PHÒNG MỞ CÂU ×2! ♡" : `Hoan hô ${event.name}! 🌸`,
       "Giỏi quá! Vỗ tay nào! ♡",
       "Tuyệt vời! Tung bông thôi! ✿",
     ][i];
@@ -356,6 +367,109 @@ function celebrate(event) {
   }
   draw();
 }
+let scoreMode = "segment",
+  configuredBoard = null,
+  communityEvent = 0,
+  momentKey = "",
+  podiumKey = "",
+  celebratedPodium = "",
+  momentUntil = 0;
+function scoreRows(s) {
+  return scoreMode === "segment"
+    ? s.engagement?.segment.top || []
+    : s.topScores;
+}
+for (const [id, mode] of [
+  ["totalTab", "total"],
+  ["segmentTab", "segment"],
+])
+  $(id).onclick = () => {
+    scoreMode = mode;
+    boardKey = "";
+    if (state) render(state);
+  };
+function paintCommunity(s, first) {
+  const e = s.engagement;
+  if (!e) return;
+  $("communityHeartLabel").textContent =
+    `♡ CẢ PHÒNG ĐÃ THẢ ${e.hearts.toLocaleString("vi-VN")} TIM`;
+  $("heartCount").textContent =
+    `${e.progress.toLocaleString("vi-VN")} / ${e.goal.toLocaleString("vi-VN")}`;
+  $("heartFill").style.width = `${Math.min(100, (e.progress / e.goal) * 100)}%`;
+  $("heartReward").textContent =
+    s.roundBoosted && s.phase === "question"
+      ? "✦ CÂU ĐẶC BIỆT ĐANG NHÂN ĐÔI ĐIỂM"
+      : e.queuedBoosts
+        ? `ĐÃ MỞ ${e.queuedBoosts} CÂU ×2 · CẢM ƠN CẢ PHÒNG!`
+        : "Đạt mục tiêu → câu kế nhân đôi điểm";
+  document
+    .querySelector(".community-bar")
+    .classList.toggle(
+      "unlocked",
+      !!e.queuedBoosts || (s.roundBoosted && s.phase === "question"),
+    );
+  $("segmentName").textContent = `CHẶNG ${e.segment.number}`;
+  $("segmentQuestion").textContent = `${e.segment.question} / 10`;
+  $("specialStatus").textContent =
+    s.phase === "reveal" && s.winners[0]?.streak
+      ? `⚡ CHUỖI ĐÚNG ${s.winners[0].streak}${s.winners[0].streak < 3 ? " / 3" : " · NHANH TRÍ"}`
+      : s.roundBoosted
+        ? "✦ ĐIỂM ×2"
+        : "MỖI CHẶNG MỘT CƠ HỘI";
+  $("questionCard").classList.toggle("special-round", !!s.roundBoosted);
+  if (e.goalEvent && communityEvent !== e.goalEvent.id) {
+    communityEvent = e.goalEvent.id;
+    if (!first) celebrate({ name: "cả phòng", community: true });
+  }
+  const w = s.winners[0];
+  if (s.phase === "reveal" && w?.milestone) {
+    const key = `${s.round}:${w.id}`;
+    if (key !== momentKey) {
+      momentKey = key;
+      const themes = {
+        first: ["✦", "GHI ĐIỂM ĐẦU TIÊN", "Chào ngôi sao mới của cả phòng!"],
+        streak: [
+          "⚡",
+          "DANH HIỆU NHANH TRÍ",
+          "Đúng 3 câu liên tiếp · Quá xuất sắc!",
+        ],
+        comeback: ["♛", "MÀN LỘI NGƯỢC DÒNG", `Bứt phá lên hạng #${w.rank}!`],
+      };
+      const t = themes[w.milestone];
+      $("momentIcon").textContent = t[0];
+      $("momentLabel").textContent = t[1];
+      $("momentName").textContent = w.name;
+      $("momentCaption").textContent = t[2];
+      momentUntil = Date.now() + offset + (first ? 0 : 4500);
+    }
+  }
+  const summary = e.summary;
+  if (summary && podiumKey !== summary.id) {
+    podiumKey = summary.id;
+    $("podiumTitle").textContent = `VINH DANH CHẶNG ${summary.number}`;
+    $("podiumRows").replaceChildren();
+    if (!summary.leaders.length) {
+      const empty = document.createElement("p");
+      empty.className = "empty-podium";
+      empty.textContent = "Chặng mới là cơ hội để bạn mở điểm!";
+      $("podiumRows").append(empty);
+    }
+    summary.leaders.forEach((p, i) => {
+      const card = document.createElement("article"),
+        rank = document.createElement("span"),
+        name = document.createElement("strong"),
+        points = document.createElement("b");
+      card.className = `podium-person place-${i + 1}`;
+      rank.textContent = ["♛ HẠNG NHẤT", "② HẠNG NHÌ", "③ HẠNG BA"][i];
+      card.append(rank);
+      portrait(card, p, "podium-avatar");
+      name.textContent = p.name;
+      points.textContent = `${p.score} điểm`;
+      card.append(name, points);
+      $("podiumRows").append(card);
+    });
+  }
+}
 function render(s) {
   const first = !state;
   if (
@@ -368,6 +482,18 @@ function render(s) {
     speaker.stop();
     $("voiceStatus").textContent = "";
   }
+  if (
+    state &&
+    (s.round < state.round ||
+      s.engagement?.session !== state.engagement?.session)
+  ) {
+    speaker.reset();
+    celebratedPodium = "";
+    communityEvent = 0;
+    momentKey = "";
+    podiumKey = "";
+    momentUntil = 0;
+  }
   state = s;
   offset = s.serverTime - Date.now();
   const leader = s.topScores[0];
@@ -375,7 +501,7 @@ function render(s) {
   $("liveTitle").parentElement.classList.toggle("marquee", !!leader);
   $("round").textContent = s.round;
   $("pointBadge").textContent =
-    `Đúng +${s.phase === "idle" ? s.settings.points : (s.roundPoints ?? s.settings.points)} điểm`;
+    `${s.roundBoosted && s.phase !== "idle" ? "✦ ×2 · " : ""}Đúng +${s.phase === "idle" ? s.settings.points : (s.roundPoints ?? s.settings.points)} điểm`;
   $("category").textContent = s.question?.category || "";
   $("liveSubtitle").textContent = s.settings.subtitle;
   $("playerCount").textContent = s.stats.players;
@@ -386,10 +512,20 @@ function render(s) {
         ? "◌ Đang nối TikTok"
         : "○ Chưa nối TikTok";
   paintQuestion();
-  const bk = JSON.stringify([s.topScores, s.topGifts]);
+  if (configuredBoard !== s.settings.leaderboardMode) {
+    configuredBoard = s.settings.leaderboardMode;
+    scoreMode = configuredBoard || "segment";
+    boardKey = "";
+  }
+  paintCommunity(s, first);
+  const bk = JSON.stringify([scoreMode, scoreRows(s), s.topGifts]);
   if (bk !== boardKey) {
     boardKey = bk;
-    board("scores", s.topScores, "score");
+    board("scores", scoreRows(s), "score");
+    $("scoreBoardTitle").textContent =
+      scoreMode === "segment" ? "🏆 TOP CHẶNG" : "🏆 TOP ĐIỂM";
+    $("totalTab").classList.toggle("selected", scoreMode === "total");
+    $("segmentTab").classList.toggle("selected", scoreMode === "segment");
     board("gifts", s.topGifts, "diamonds");
   }
   const w = s.winners[0];
@@ -406,7 +542,15 @@ function render(s) {
     }
   }
   readQuestion();
-  if (s.phase === "reveal" && w && s.settings.speech) {
+  if (
+    s.phase === "reveal" &&
+    w &&
+    s.settings.speech &&
+    !(
+      s.engagement?.summary?.round === s.round &&
+      Date.now() + offset >= s.engagement.summary.visibleAt
+    )
+  ) {
     const key = `winner:${s.round}:${w.id}:${s.settings.voice}`;
     if (first) speaker.remember(key);
     else
@@ -435,7 +579,37 @@ function clock() {
         : s.phase === "reveal" && s.settings.auto
           ? s.nextAt - now
           : 0;
+  const summary = s.engagement?.summary;
+  const showPodium =
+    s.phase === "reveal" &&
+    summary?.round === s.round &&
+    now >= summary.visibleAt;
+  $("podium").classList.toggle("hidden", !showPodium);
+  $("podiumScrim").classList.toggle("hidden", !showPodium);
+  if (showPodium && celebratedPodium !== summary.id) {
+    celebratedPodium = summary.id;
+    if (now - summary.visibleAt < 1500)
+      celebrate({ name: summary.leaders[0]?.name || "cả phòng", podium: true });
+  }
+  $("momentCard").classList.toggle(
+    "hidden",
+    now >= momentUntil || s.phase !== "reveal" || showPodium,
+  );
+  if (showPodium) {
+    $("podiumNext").textContent = s.settings.auto
+      ? `Chặng mới bắt đầu sau ${Math.max(0, Math.ceil(left / 1000))} giây`
+      : "Sẵn sàng chặng mới · Chờ người dẫn mở câu";
+    if (s.settings.speech)
+      speaker.speak({
+        key: `podium:${summary.id}:${s.settings.voice}`,
+        kind: "podium",
+        round: s.round,
+        voice: s.settings.voice,
+        text: podiumText(summary),
+      });
+  }
   const popup =
+    !showPodium &&
     s.phase === "reveal" &&
     !!s.winners.length &&
     now < (s.revealedAt ?? s.nextAt - s.settings.breakTime * 1000) + 2000;
@@ -449,10 +623,10 @@ function clock() {
         : Math.max(0, Math.ceil(left / 1000));
   $("timer").style.setProperty(
     "--progress",
-    `${Math.max(0, Math.min(100, (left / ((s.phase === "reveal" ? s.settings.breakTime : (s.roundDuration ?? s.settings.duration)) * 1000)) * 100))}%`,
+    `${Math.max(0, Math.min(100, (left / ((s.phase === "reveal" ? Math.max(1, (s.nextAt - s.revealedAt) / 1000) : (s.roundDuration ?? s.settings.duration)) * 1000)) * 100))}%`,
   );
   $("timeFill").style.width =
-    `${Math.max(0, Math.min(100, (left / ((s.phase === "reveal" ? s.settings.breakTime : (s.roundDuration ?? s.settings.duration)) * 1000)) * 100))}%`;
+    `${Math.max(0, Math.min(100, (left / ((s.phase === "reveal" ? Math.max(1, (s.nextAt - s.revealedAt) / 1000) : (s.roundDuration ?? s.settings.duration)) * 1000)) * 100))}%`;
   $("nextQuestion").textContent = s.settings.auto
     ? `Câu mới sau ${Math.max(0, Math.ceil(left / 1000))} giây`
     : "Chờ mở câu mới";

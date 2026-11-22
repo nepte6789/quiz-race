@@ -140,6 +140,28 @@
                   đọc</label
                 >
               </div>
+              <div class="community-settings">
+                <label
+                  >Mục tiêu tim chung<input
+                    name="heartGoal"
+                    type="number"
+                    min="100"
+                    max="100000"
+                    step="1"
+                    value="1000"
+                    required /></label
+                ><label
+                  >Bảng điểm trên LIVE<select name="leaderboardMode">
+                    <option value="segment">Chặng hiện tại</option>
+                    <option value="total">Tổng buổi LIVE</option>
+                  </select></label
+                >
+                <p>
+                  Đạt mục tiêu mở câu ×2. Mỗi 10 câu có trao giải chặng; điểm
+                  tổng vẫn giữ.
+                </p>
+                <span id="communityState" class="muted"></span>
+              </div>
               <details class="advanced-settings">
                 <summary>Tiêu đề & nhịp chuyển câu</summary>
                 <div class="form-grid">
@@ -224,7 +246,10 @@
               <button id="correctDemo" class="primary">
                 ✦ Thử trả lời đúng</button
               ><button id="sendDemo" class="secondary">Gửi bình luận</button
-              ><button id="giftDemo" class="secondary">Thử tặng quà</button>
+              ><button id="giftDemo" class="secondary">Thử tặng quà</button
+              ><button id="heartDemo" class="secondary">
+                ♡ Thử thêm 100 tim
+              </button>
             </div>
           </section>
           <section class="panel" id="bank">

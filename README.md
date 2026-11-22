@@ -2,7 +2,7 @@
 
 Game đố vui qua bình luận TikTok, dựng theo video tham chiếu: nền tím đậm, ô đáp án/xáo chữ, tên top 1 chạy ngang, bảng điểm trái và bảng quà phải. Ba chibi nữ mini di chuyển tự do, tung bông/cánh hoa và nhảy mừng khi người chơi trả lời đúng.
 
-[Xem ba mẫu chibi](docs/screenshots/chibi-models.png) · [Xem câu hỏi](docs/screenshots/three-cheerleaders.png) · [Thẻ chiến thắng](docs/screenshots/three-celebrating.png) · [Mở đáp án](docs/screenshots/solution.png) · [Điều khiển](docs/screenshots/studio.png) · [Phân tích video](docs/REFERENCE.md)
+[Xem ba mẫu chibi](docs/screenshots/chibi-models.png) · [Xem câu ×2](docs/screenshots/community-double.png) · [Mở điểm đầu tiên](docs/screenshots/first-point.png) · [Mở đáp án](docs/screenshots/solution.png) · [Điều khiển](docs/screenshots/studio.png) · [Phân tích video](docs/REFERENCE.md)
 
 ## Chạy ngay
 
@@ -36,6 +36,19 @@ Khi chưa nối LIVE, bấm **Thử trả lời đúng** để xem thẻ thắng
 - Tên người top điểm chạy trên đầu; top điểm trái/top quà phải hiển thị tối đa 10 người.
 - Ba chibi nữ có tóc/trang phục riêng: hồng, tím, xanh ngọc; mắt sáng, má hồng, váy xếp ly và bông nhiều lớp. Mỗi nhân vật tự chọn đích di chuyển trong vùng từ dưới tiêu đề Top điểm đến cuối sân khấu, đổi hướng và tránh chồng lên nhau, không chạy lên câu hỏi. Khi có đáp án đúng, cả ba dừng di chuyển 4,5 giây để nhảy mừng/tung cánh hoa và hiện lời tung hô. Khi đang đi ngang bảng, nhân vật giảm độ đậm để chữ bên dưới vẫn nhìn thấy.
 - Tôn trọng chế độ giảm chuyển động của hệ điều hành. Vùng trên chừa cho lớp LIVE; không giả lập nút Follow, bình luận hay đồng hồ điện thoại.
+
+## Mục tiêu cộng đồng và chặng đua
+
+- **Thanh tim chung:** mặc định 1.000 tim/mốc, chỉnh được 100–100.000 trong bảng điều khiển. Chỉ cộng số tim mới từ sự kiện `likeCount`, không lấy tổng lịch sử `totalLikeCount`. Chống trùng mã sự kiện. Mỗi mốc mở một câu ×2 cho **câu kế tiếp**; nhiều mốc xếp hàng, không cộng chồng thành ×4. Tim không chọn người thắng, không trực tiếp cho người thả điểm.
+- **Câu đặc biệt:** đổi nền/nhãn vàng và điểm hiển thị đúng giá trị ×2. Điểm cơ bản và thời gian khóa theo câu đang chơi; sửa thiết lập áp dụng câu sau.
+- **Chuỗi và danh hiệu:** người ghi điểm lần đầu được chào mừng. Đúng ba câu liên tiếp nhận “Nhanh trí”, danh hiệu giữ trong buổi; câu bỏ lỡ/không trả lời làm chuỗi về lại từ đầu ở lần đúng kế tiếp. Danh hiệu không cộng điểm ngầm.
+- **Lội ngược dòng:** người đã từng ghi điểm, từ ngoài top 3 lên top 3 hoặc từ hạng sau lên hạng nhất được hiệu ứng bứt phá riêng. Người mới mở điểm dùng hiệu ứng chào mừng.
+- **Chặng 10 câu:** điểm chặng tính riêng, tổng điểm buổi giữ nguyên. Bảng điểm mặc định hiển thị chặng; có hai tab Tổng/Chặng, và lựa chọn bảng mặc định trong điều khiển (áp dụng cả nguồn LIVE). Khi xong câu thứ 10, đọc kết quả câu cuối rồi vinh danh top 3 chặng bằng giọng đã chọn. Lời giải hiện trước; màn vinh danh bắt đầu sau 6,5 giây, tổng khoảng nghỉ cuối chặng tối thiểu 22 giây. Tự chuyển bật thì đếm ngược sang chặng mới, tắt thì chờ nút Câu tiếp. Có thể bấm Câu tiếp để bỏ qua phần chờ.
+- **Khoảnh khắc chia sẻ:** màn trao giải có lời mời nhẹ rủ bạn bè vào so tài, một lần mỗi chặng; không đọc nhắc chia sẻ liên tục, không giả lập lượt chia sẻ hoặc hứa thưởng cho sự kiện chưa xác minh.
+
+Đổi mục tiêu tim bắt đầu lại thanh tiến độ của mốc đang tích, giữ tổng tim và các câu ×2 đã mở. Tim và điểm thử chỉ dùng khi ngắt LIVE thật; dữ liệu thử được xóa khi chuyển sang LIVE. Khởi động lại hoặc Xóa bảng điểm bắt đầu lại cả tiến độ tim, chuỗi, danh hiệu và chặng. Bộ câu hỏi/thiết lập được giữ. Không có tính năng bình chọn chủ đề.
+
+[Xem câu ×2](docs/screenshots/community-double.png) · [Danh hiệu](docs/screenshots/streak-title.png) · [Vinh danh top 3](docs/screenshots/segment-podium.png)
 
 ## Bộ câu hỏi
 
