@@ -367,27 +367,11 @@ function celebrate(event) {
   }
   draw();
 }
-let scoreMode = "segment",
-  configuredBoard = null,
-  communityEvent = 0,
+let communityEvent = 0,
   momentKey = "",
   podiumKey = "",
   celebratedPodium = "",
   momentUntil = 0;
-function scoreRows(s) {
-  return scoreMode === "segment"
-    ? s.engagement?.segment.top || []
-    : s.topScores;
-}
-for (const [id, mode] of [
-  ["totalTab", "total"],
-  ["segmentTab", "segment"],
-])
-  $(id).onclick = () => {
-    scoreMode = mode;
-    boardKey = "";
-    if (state) render(state);
-  };
 function paintCommunity(s, first) {
   const e = s.engagement;
   if (!e) return;
@@ -514,21 +498,16 @@ function render(s) {
         ? "◌ Đang nối TikTok"
         : "○ Chưa nối TikTok";
   paintQuestion();
-  if (configuredBoard !== s.settings.leaderboardMode) {
-    configuredBoard = s.settings.leaderboardMode;
-    scoreMode = configuredBoard || "segment";
-    boardKey = "";
-  }
   paintCommunity(s, first);
-  const bk = JSON.stringify([scoreMode, scoreRows(s), s.topGifts]);
+  const segmentRows = s.engagement?.segment.top || [];
+  $("segmentBoardNumber").textContent =
+    `CHẶNG ${s.engagement?.segment.number || 1}`;
+  const bk = JSON.stringify([s.topScores, s.topGifts, segmentRows]);
   if (bk !== boardKey) {
     boardKey = bk;
-    board("scores", scoreRows(s), "score");
-    $("scoreBoardTitle").textContent =
-      scoreMode === "segment" ? "🏆 TOP CHẶNG" : "🏆 TOP ĐIỂM";
-    $("totalTab").classList.toggle("selected", scoreMode === "total");
-    $("segmentTab").classList.toggle("selected", scoreMode === "segment");
-    board("gifts", s.topGifts, "diamonds");
+    board("scores", s.topScores, "score");
+    board("gifts", s.topGifts.slice(0, 5), "diamonds");
+    board("segmentScores", segmentRows.slice(0, 5), "score");
   }
   const w = s.winners[0];
   $("ticker").classList.toggle("result", s.phase === "reveal" && !!w);
