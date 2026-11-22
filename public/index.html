@@ -1,0 +1,295 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Quiz Race · Phòng điều khiển</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body class="studio">
+    <aside class="sidebar">
+      <a class="brand" href="/"
+        >qr<span>quiz race<small>YOUR LITTLE LIVE SHOW</small></span></a
+      >
+      <nav>
+        <a href="#connect">01 <span>Kết nối kênh</span></a
+        ><a href="#play">02 <span>Thiết lập sân khấu</span></a
+        ><a href="#bank">03 <span>Thư viện câu hỏi</span></a
+        ><a href="/overlay.html" target="_blank" rel="noopener"
+          >↗ <span>Mở sân khấu LIVE</span></a
+        >
+      </nav>
+      <div class="sidebar-bottom">
+        <b>Nhỏ xinh. Rộn ràng.</b>
+        <p>Một sân khấu để cùng chơi,<br />cùng reo vui mỗi ngày.</p>
+        <span>✦ MADE FOR YOUR COMMUNITY</span>
+      </div>
+    </aside>
+    <main class="studio-main">
+      <header class="studio-header">
+        <div>
+          <p class="eyebrow">QUIZ RACE / LIVE STUDIO</p>
+          <h1>Đua kiến thức. <em>Chốt đáp án!</em></h1>
+          <p>Bố cục tím như mẫu · Chibi nữ chạy và tung bông cổ vũ.</p>
+        </div>
+        <a
+          class="button primary"
+          href="/overlay.html"
+          target="_blank"
+          rel="noopener"
+          >Mở sân khấu ↗</a
+        >
+      </header>
+      <div class="status-strip">
+        <span id="serverStatus" class="status-pill">Đang nối máy chủ…</span
+        ><span id="tiktokStatus" class="status-pill">TikTok chưa kết nối</span
+        ><span id="liveChannel" class="muted">Sẵn sàng chạy thử</span>
+      </div>
+      <p id="notice" class="notice" role="status">
+        Đang chuẩn bị phòng điều khiển…
+      </p>
+      <div class="workspace">
+        <div class="panels">
+          <section class="panel" id="connect">
+            <div class="panel-heading">
+              <div>
+                <p class="eyebrow">01 / KẾT NỐI</p>
+                <h2>Đón khán giả vào chơi</h2>
+              </div>
+              <span class="badge">TikTok LIVE</span>
+            </div>
+            <label for="username">Link kênh hoặc @username</label>
+            <div class="inline channel-controls">
+              <input
+                id="username"
+                placeholder="@tenkenh hoặc link TikTok LIVE"
+                autocomplete="off"
+              /><button id="connectBtn" class="primary">Kết nối</button
+              ><button id="disconnectBtn" class="secondary">Ngắt</button>
+            </div>
+            <div class="connection-options">
+              <label class="check"
+                ><input id="autoReconnect" type="checkbox" checked />Tự nối lại
+                khi mất LIVE</label
+              ><span id="keyStatus" class="muted"></span>
+            </div>
+            <p id="autoCountdown" class="auto-status"></p>
+            <details>
+              <summary>Cấu hình EulerStream</summary>
+              <p class="muted">
+                Chép .env.example thành .env, điền EULERSTREAM_API_KEY rồi khởi
+                động lại. Chỉ nhập khóa trên máy của bạn.
+              </p>
+            </details>
+            <div id="connectionDetails" class="hidden connection-details">
+              <b id="liveErrorTitle"></b>
+              <p id="liveErrorHelp"></p>
+              <pre id="liveErrorDetail"></pre>
+              <button id="copyLiveError" class="secondary">Sao chép lỗi</button>
+            </div>
+          </section>
+          <section class="panel" id="play">
+            <div class="panel-heading">
+              <div>
+                <p class="eyebrow">02 / SÂN KHẤU CỦA BẠN</p>
+                <h2>Chơi theo nhịp riêng</h2>
+              </div>
+              <span id="phaseText" class="badge">Chưa bắt đầu</span>
+            </div>
+            <form id="settingsForm">
+              <div class="form-grid">
+                <label
+                  >Bộ câu hỏi<select id="categorySelect" name="category">
+                    <option value="all">Tất cả bộ</option>
+                  </select></label
+                ><label
+                  >Loại câu hỏi<select id="typeSelect" name="type">
+                    <option value="all">Tất cả loại</option>
+                  </select></label
+                ><label
+                  >Thời gian trả lời / giây<input
+                    name="duration"
+                    type="number"
+                    min="5"
+                    max="300"
+                    value="60"
+                    required /></label
+                ><label
+                  >Điểm mỗi câu<input
+                    name="points"
+                    type="number"
+                    min="1"
+                    max="100"
+                    value="1"
+                    required
+                /></label>
+              </div>
+              <div class="voice-picker">
+                <div>
+                  <span class="eyebrow">NGƯỜI DẪN CHƯƠNG TRÌNH</span>
+                  <h3>Chọn giọng đọc tiếng Việt</h3>
+                  <p>Đọc câu hỏi, đáp án và tên người thắng.</p>
+                </div>
+                <label
+                  >Giọng đọc<select name="voice">
+                    <option value="female">Nữ · Hoài My</option>
+                    <option value="male">Nam · Nam Minh</option>
+                  </select></label
+                ><label class="check"
+                  ><input name="speech" type="checkbox" checked />Bật giọng
+                  đọc</label
+                >
+              </div>
+              <details class="advanced-settings">
+                <summary>Tiêu đề & nhịp chuyển câu</summary>
+                <div class="form-grid">
+                  <label
+                    >Tên chương trình<input
+                      name="title"
+                      maxlength="70"
+                      value="QUIZ RACE" /></label
+                  ><label
+                    >Lời nhắn sân khấu<input
+                      name="subtitle"
+                      maxlength="70"
+                      value="Cùng chơi, cùng reo vui!" /></label
+                  ><label
+                    >Nghỉ giữa câu / giây<input
+                      name="breakTime"
+                      type="number"
+                      min="1"
+                      max="20"
+                      value="6" /></label
+                  ><label
+                    >Cách tính điểm<select name="mode">
+                      <option value="first">Người đúng đầu tiên</option>
+                      <option value="all">Mọi người đúng · chạy thử</option>
+                    </select></label
+                  >
+                </div>
+                <div class="form-bottom">
+                  <label class="check"
+                    ><input name="auto" type="checkbox" checked />Tự chuyển
+                    câu</label
+                  ><label class="check"
+                    ><input name="sound" type="checkbox" checked />Âm báo chiến
+                    thắng</label
+                  >
+                </div>
+              </details>
+              <div class="save-row">
+                <button class="secondary" type="submit">Lưu thiết lập</button
+                ><span class="muted">Bắt đầu cũng tự lưu lựa chọn.</span>
+              </div>
+            </form>
+            <div class="current-question">
+              <span id="currentCategory" class="eyebrow">CÂU HỎI HIỆN TẠI</span>
+              <h3 id="currentPrompt">Sân khấu đang chờ bạn!</h3>
+              <p id="currentAnswer"></p>
+            </div>
+            <div class="actions main-actions">
+              <button id="start" class="primary">▶ Bắt đầu</button
+              ><button id="pause" class="secondary">Tạm dừng</button
+              ><button id="next" class="secondary">Câu tiếp →</button
+              ><button id="reveal" class="quiet">Hiện đáp án</button
+              ><button id="stop" class="quiet">Dừng</button>
+            </div>
+          </section>
+          <div class="stats-grid">
+            <div class="stat">
+              <small>CÂU ĐANG CHƠI</small><strong id="roundNumber">0</strong>
+            </div>
+            <div class="stat">
+              <small>BÌNH LUẬN</small><strong id="comments">0</strong>
+            </div>
+            <div class="stat">
+              <small>LƯỢT ĐÚNG</small><strong id="accepted">0</strong
+              ><span id="players">0 người có điểm</span>
+            </div>
+          </div>
+          <section class="panel">
+            <p class="eyebrow">THỬ CHỐT ĐÁP ÁN VÀ TUNG BÔNG</p>
+            <h2>Cho nàng cổ vũ khởi động</h2>
+            <p id="demoHint" class="muted"></p>
+            <div class="form-grid">
+              <label
+                >Tên người chơi thử<input
+                  id="demoName"
+                  value="Minh Anh" /></label
+              ><label
+                >Đáp án thử<input id="demoAnswer" placeholder="Nhập bình luận"
+              /></label>
+            </div>
+            <div class="actions">
+              <button id="correctDemo" class="primary">
+                ✦ Thử trả lời đúng</button
+              ><button id="sendDemo" class="secondary">Gửi bình luận</button
+              ><button id="giftDemo" class="secondary">Thử tặng quà</button>
+            </div>
+          </section>
+          <section class="panel" id="bank">
+            <div class="panel-heading">
+              <div>
+                <p class="eyebrow">03 / THƯ VIỆN</p>
+                <h2><span id="bankCount">—</span> câu hỏi sẵn sàng</h2>
+              </div>
+              <span id="categoryCount" class="badge"></span>
+            </div>
+            <details>
+              <summary>Chọn bộ riêng / nhập xuất thư viện</summary>
+              <div id="bankChips" class="bank-chips"></div>
+              <div class="actions">
+                <button id="exportBank" class="secondary">Tải bộ JSON</button
+                ><label class="button secondary"
+                  >Nhập bộ JSON<input
+                    id="importBank"
+                    type="file"
+                    accept=".json,application/json"
+                    hidden
+                /></label>
+              </div>
+              <p class="muted">
+                Nhập bộ mới thay thư viện và dừng câu đang chơi; giữ nguyên
+                điểm.
+              </p>
+            </details>
+          </section>
+          <section class="panel">
+            <details>
+              <summary>Dữ liệu buổi chơi</summary>
+              <p class="muted">
+                Mỗi lần khởi động lại sẽ xóa điểm, Top quà và lượt chơi cũ. Bộ
+                câu hỏi và thiết lập được giữ lại. Muốn xóa ngay cần gõ XÓA.
+              </p>
+              <button id="resetBtn" class="danger">Xóa bảng điểm</button>
+            </details>
+          </section>
+        </div>
+        <aside class="preview-column">
+          <div class="preview-heading">
+            <b>SÂN KHẤU TRỰC TIẾP</b><span>9:16</span>
+          </div>
+          <div class="preview-frame">
+            <iframe
+              title="Xem trước sân khấu"
+              src="/overlay.html?audio=0"
+            ></iframe>
+          </div>
+          <div class="source-box">
+            <p class="eyebrow">NGUỒN OBS / LIVE STUDIO</p>
+            <code id="sourceUrl"></code
+            ><button id="copyUrl" class="secondary">Sao chép liên kết ↗</button>
+          </div>
+          <p class="muted">
+            Xem trước tắt tiếng. Mở sân khấu riêng, bấm Bật âm thanh một lần để
+            nghe giọng đọc.
+          </p>
+        </aside>
+      </div>
+      <footer class="studio-footer">
+        QUIZ RACE <span>LET’S MAKE SOME HAPPY NOISE.</span>
+      </footer>
+    </main>
+    <script type="module" src="/control.js"></script>
+  </body>
+</html>

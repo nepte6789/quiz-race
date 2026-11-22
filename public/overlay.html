@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Quiz Race · LIVE</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body class="overlay-page">
+    <main id="stage" class="stage">
+      <div class="safe-top" aria-hidden="true"></div>
+      <header class="race-header">
+        <div class="leader-window"><h1 id="liveTitle">QUIZ RACE</h1></div>
+        <span class="question-number">Câu <b id="round">0</b></span
+        ><span id="pointBadge" class="point-badge">Đúng +1 điểm</span>
+        <div id="timer" class="timer">60</div>
+      </header>
+      <section id="questionCard" class="question-card">
+        <div id="questionView">
+          <p id="typeLabel" class="question-kicker">GỢI Ý</p>
+          <h2 id="prompt">Sẵn sàng thử tài?</h2>
+          <div
+            id="answerSlots"
+            class="answer-slots"
+            aria-label="Ô đáp án"
+          ></div>
+          <p id="scrambleLabel" class="scramble-label">CHỮ CÁI BỊ XÁO TRỘN</p>
+          <div id="letters" class="letters"></div>
+          <div id="options" class="options"></div>
+          <p id="answerHelp" class="answer-help">
+            👉 Gõ đáp án vào bình luận – nhanh nhất được điểm!
+          </p>
+        </div>
+        <div id="solvedLine" class="solved-line hidden"></div>
+        <div class="time-track"><div id="timeFill"></div></div>
+        <div id="winnerView" class="winner-card hidden" role="status">
+          <p>🎉 TRẢ LỜI ĐÚNG! 🎉</p>
+          <div id="winnerAvatar" class="winner-avatar"></div>
+          <h2 id="winnerName"></h2>
+          <div class="winner-answer">
+            Đáp án: <strong id="solution"></strong>
+          </div>
+          <div id="scoreChip" class="score-chip"></div>
+          <span id="nextQuestion" class="next-question"></span>
+        </div>
+      </section>
+      <div id="ticker" class="ticker">
+        💬 Gõ đáp án vào bình luận để ghi điểm · Tặng quà để lên bảng vàng 🎁
+      </div>
+      <section class="boards">
+        <article class="board scores-board">
+          <div class="board-title">🏆 TOP ĐIỂM</div>
+          <ol id="scores"></ol>
+        </article>
+        <article class="board gifts-board">
+          <div class="board-title">🎁 TOP QUÀ</div>
+          <ol id="gifts"></ol>
+        </article>
+      </section>
+      <footer class="live-footer">
+        <span id="liveSubtitle"
+          >Trả lời bằng tiếng Việt có dấu hoặc không dấu</span
+        ><span id="connection">○ Chưa nối TikTok</span
+        ><span><b id="playerCount">0</b> người có điểm</span>
+      </footer>
+      <div id="voiceStatus" class="voice-status" aria-live="polite"></div>
+      <div class="mascot-track">
+        <div id="mascotRunner" class="mascot-runner">
+          <span id="cheerBubble" class="cheer-bubble">Cố lên nào! ♡</span>
+          <div id="mascotArt"></div>
+        </div>
+      </div>
+      <canvas id="confetti"></canvas
+      ><button id="enableAudio" class="audio-enable">
+        ♫ Bật âm thanh & giọng đọc</button
+      ><span id="category" class="sr-only"></span>
+    </main>
+    <script type="module" src="/overlay.js"></script>
+  </body>
+</html>

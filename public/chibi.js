@@ -1,0 +1,13 @@
+// Original female cheerleader artwork; no third-party character or animation assets.
+function pom(x, y, color) {
+  let rays = "";
+  for (let i = 0; i < 20; i++) {
+    const a = (i * Math.PI) / 10,
+      r = 20 + (i % 3) * 4;
+    rays += `<path d="M${x} ${y} Q${x + Math.cos(a + 0.25) * r * 0.65} ${y + Math.sin(a + 0.25) * r * 0.65} ${x + Math.cos(a) * r} ${y + Math.sin(a) * r}" stroke="${i % 2 ? color : "#fff7c7"}" stroke-width="5" stroke-linecap="round"/>`;
+  }
+  return `<g class="pom">${rays}<circle cx="${x}" cy="${y}" r="7" fill="${color}"/></g>`;
+}
+export function cheerleader() {
+  return `<svg class="chibi" viewBox="0 0 220 300" aria-label="Chibi nữ cầm bông cổ vũ"><ellipse cx="110" cy="285" rx="53" ry="9" fill="#000" opacity=".25"/><g class="girl"><g class="leg leg-left"><path d="m92 227-8 40" stroke="#ffd2ba" stroke-width="16" stroke-linecap="round"/><path d="m80 263-7 13h26l-1-13" fill="#eee7ff" stroke="#2f174d" stroke-width="4"/></g><g class="leg leg-right"><path d="m128 227 8 40" stroke="#ffd2ba" stroke-width="16" stroke-linecap="round"/><path d="m128 263-2 13h27l-11-13" fill="#eee7ff" stroke="#2f174d" stroke-width="4"/></g><path d="M66 66Q15 57 27 119L45 151 58 91M153 66Q207 57 194 121L177 151 161 91" fill="#3f204f" stroke="#21102e" stroke-width="4"/><path d="M88 157 132 157 146 203 74 203Z" fill="#e754b7" stroke="#2d1640" stroke-width="4"/><path d="m75 201-14 35q49 21 98 0l-13-35" fill="#b08dff" stroke="#2d1640" stroke-width="4"/><path d="m83 210-5 26m26-24v29m24-29 5 26" stroke="#f5ddff" stroke-width="5"/><path d="m97 162 13 16 13-16M86 192h48" fill="none" stroke="#fff7de" stroke-width="7"/><g class="arm arm-left"><path d="M84 170 56 159 39 126" fill="none" stroke="#ffd2ba" stroke-width="16" stroke-linecap="round"/>${pom(34, 115, "#ffe46e")}</g><g class="arm arm-right"><path d="M137 170 164 154 181 121" fill="none" stroke="#ffd2ba" stroke-width="16" stroke-linecap="round"/>${pom(187, 109, "#ff71ca")}</g><g class="girl-head"><ellipse cx="110" cy="100" rx="61" ry="63" fill="#ffd2ba" stroke="#2d1640" stroke-width="4"/><path d="M50 105Q31 20 108 22 187 20 172 107l-20-24-9-32q-28 40-79 37l-8 22" fill="#3f204f" stroke="#21102e" stroke-width="4"/><path d="m49 57-20-9 4 24 22-7m116-8 19-10-2 25-22-7" fill="#f875c6" stroke="#672970" stroke-width="3"/><g class="eyes" fill="#35203d"><ellipse cx="87" cy="108" rx="6" ry="10"/><ellipse cx="135" cy="108" rx="6" ry="10"/></g><path d="m80 98-7-3m67 3 7-3" stroke="#35203d" stroke-width="3" stroke-linecap="round"/><ellipse cx="75" cy="128" rx="13" ry="7" fill="#f696a6"/><ellipse cx="146" cy="128" rx="13" ry="7" fill="#f696a6"/><path d="M99 132q11 13 24 0" fill="#b84a68" stroke="#8f365b" stroke-width="3" stroke-linecap="round"/></g></g></svg>`;
+}

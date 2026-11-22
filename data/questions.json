@@ -1,0 +1,5836 @@
+[
+  {
+    "id": "q0001",
+    "category": "Đời sống",
+    "type": "scramble",
+    "prompt": "Đồ vật dùng để ngồi",
+    "answer": "Cái ghế"
+  },
+  {
+    "id": "q0002",
+    "category": "Đời sống",
+    "type": "text",
+    "prompt": "Đồ vật che mưa, thường có cán cầm",
+    "answer": "Cái ô"
+  },
+  {
+    "id": "q0003",
+    "category": "Đời sống",
+    "type": "text",
+    "prompt": "Dụng cụ để cắt giấy",
+    "answer": "Cái kéo"
+  },
+  {
+    "id": "q0004",
+    "category": "Đời sống",
+    "type": "text",
+    "prompt": "Đồ vật dùng để soi khuôn mặt",
+    "answer": "Cái gương"
+  },
+  {
+    "id": "q0005",
+    "category": "Đời sống",
+    "type": "scramble",
+    "prompt": "Thiết bị giữ thức ăn lạnh",
+    "answer": "Tủ lạnh"
+  },
+  {
+    "id": "q0006",
+    "category": "Đời sống",
+    "type": "text",
+    "prompt": "Dụng cụ quét nhà",
+    "answer": "Cái chổi"
+  },
+  {
+    "id": "q0007",
+    "category": "Đời sống",
+    "type": "text",
+    "prompt": "Vật dùng để mở ổ khóa",
+    "answer": "Chìa khóa"
+  },
+  {
+    "id": "q0008",
+    "category": "Đời sống",
+    "type": "text",
+    "prompt": "Đồ vật đội trên đầu, làm bằng lá, dạng hình nón",
+    "answer": "Nón lá"
+  },
+  {
+    "id": "q0009",
+    "category": "Đời sống",
+    "type": "scramble",
+    "prompt": "Đồ dùng để đựng sách khi đi học",
+    "answer": "Cặp sách"
+  },
+  {
+    "id": "q0010",
+    "category": "Đời sống",
+    "type": "text",
+    "prompt": "Đồ vật báo giờ bằng kim hoặc chữ số",
+    "answer": "Đồng hồ"
+  },
+  {
+    "id": "q0011",
+    "category": "Đời sống",
+    "type": "text",
+    "prompt": "Thiết bị làm sạch quần áo tự động",
+    "answer": "Máy giặt"
+  },
+  {
+    "id": "q0012",
+    "category": "Đời sống",
+    "type": "text",
+    "prompt": "Đồ dùng đựng nước uống có quai",
+    "answer": "Cái cốc"
+  },
+  {
+    "id": "q0013",
+    "category": "Đời sống",
+    "type": "scramble",
+    "prompt": "Thiết bị biến điện thành gió để làm mát",
+    "answer": "Quạt điện"
+  },
+  {
+    "id": "q0014",
+    "category": "Đời sống",
+    "type": "text",
+    "prompt": "Vật dùng để viết lên bảng đen",
+    "answer": "Phấn"
+  },
+  {
+    "id": "q0015",
+    "category": "Đời sống",
+    "type": "text",
+    "prompt": "Đồ dùng có răng để chải tóc",
+    "answer": "Cái lược"
+  },
+  {
+    "id": "q0016",
+    "category": "Đời sống",
+    "type": "text",
+    "prompt": "Vật dụng dùng để lau khô người sau khi tắm",
+    "answer": "Khăn tắm"
+  },
+  {
+    "id": "q0017",
+    "category": "Đời sống",
+    "type": "text",
+    "prompt": "Vật dụng mang ở chân trước khi đi giày",
+    "answer": "Tất"
+  },
+  {
+    "id": "q0018",
+    "category": "Đời sống",
+    "type": "text",
+    "prompt": "Đồ vật dùng để gối đầu khi ngủ",
+    "answer": "Cái gối"
+  },
+  {
+    "id": "q0019",
+    "category": "Đời sống",
+    "type": "text",
+    "prompt": "Đồ vật dùng để đựng cơm khi ăn",
+    "answer": "Cái bát"
+  },
+  {
+    "id": "q0020",
+    "category": "Đời sống",
+    "type": "text",
+    "prompt": "Dụng cụ dùng để xúc thức ăn, còn gọi là muỗng",
+    "answer": "Thìa"
+  },
+  {
+    "id": "q0021",
+    "category": "Ẩm thực",
+    "type": "text",
+    "prompt": "Món nước nổi tiếng Việt Nam, thường ăn với bánh phở",
+    "answer": "Phở"
+  },
+  {
+    "id": "q0022",
+    "category": "Ẩm thực",
+    "type": "text",
+    "prompt": "Bánh truyền thống hình vuông vào Tết",
+    "answer": "Bánh chưng"
+  },
+  {
+    "id": "q0023",
+    "category": "Ẩm thực",
+    "type": "text",
+    "prompt": "Đồ uống pha từ hạt rang xay, thường có caffeine",
+    "answer": "Cà phê"
+  },
+  {
+    "id": "q0024",
+    "category": "Ẩm thực",
+    "type": "text",
+    "prompt": "Món cơm cuộn lá rong biển của Nhật Bản",
+    "answer": "Sushi"
+  },
+  {
+    "id": "q0025",
+    "category": "Ẩm thực",
+    "type": "scramble",
+    "prompt": "Gia vị có vị mặn, công thức NaCl",
+    "answer": "Muối"
+  },
+  {
+    "id": "q0026",
+    "category": "Ẩm thực",
+    "type": "text",
+    "prompt": "Trái cây nhiều múi, vỏ thường màu cam",
+    "answer": "Quả cam"
+  },
+  {
+    "id": "q0027",
+    "category": "Ẩm thực",
+    "type": "text",
+    "prompt": "Trái cây có vỏ gai, mùi đặc trưng rất mạnh",
+    "answer": "Sầu riêng"
+  },
+  {
+    "id": "q0028",
+    "category": "Ẩm thực",
+    "type": "text",
+    "prompt": "Quả vỏ đỏ sần, cùi trắng, hạt nâu, nổi tiếng ở Lục Ngạn",
+    "answer": "Quả vải"
+  },
+  {
+    "id": "q0029",
+    "category": "Ẩm thực",
+    "type": "scramble",
+    "prompt": "Món bánh có sợi hình tròn, nước dùng bò, gắn với Huế",
+    "answer": "Bún bò Huế"
+  },
+  {
+    "id": "q0030",
+    "category": "Ẩm thực",
+    "type": "text",
+    "prompt": "Món ăn từ gạo nếp hấp chín",
+    "answer": "Xôi"
+  },
+  {
+    "id": "q0031",
+    "category": "Ẩm thực",
+    "type": "text",
+    "prompt": "Đồ uống từ lá chè",
+    "answer": "Trà"
+  },
+  {
+    "id": "q0032",
+    "category": "Ẩm thực",
+    "type": "text",
+    "prompt": "Quả có nước uống bên trong, vỏ xơ dày",
+    "answer": "Quả dừa"
+  },
+  {
+    "id": "q0033",
+    "category": "Ẩm thực",
+    "type": "scramble",
+    "prompt": "Món bánh mì tròn dẹt của Ý, phủ phô mai",
+    "answer": "Pizza"
+  },
+  {
+    "id": "q0034",
+    "category": "Ẩm thực",
+    "type": "text",
+    "prompt": "Món rau củ lên men nổi tiếng Hàn Quốc",
+    "answer": "Kim chi"
+  },
+  {
+    "id": "q0035",
+    "category": "Ẩm thực",
+    "type": "text",
+    "prompt": "Loại bánh Tết thường có dạng hình trụ dài",
+    "answer": "Bánh tét"
+  },
+  {
+    "id": "q0036",
+    "category": "Ẩm thực",
+    "type": "text",
+    "prompt": "Gia vị ngọt thường làm từ mía",
+    "answer": "Đường"
+  },
+  {
+    "id": "q0037",
+    "category": "Ẩm thực",
+    "type": "scramble",
+    "prompt": "Món đậu nành xay, lọc và đông thành khối",
+    "answer": "Đậu phụ"
+  },
+  {
+    "id": "q0038",
+    "category": "Ẩm thực",
+    "type": "text",
+    "prompt": "Món bánh có nhân, hấp trong lá chuối, thường ăn với chả lụa",
+    "answer": "Bánh giò"
+  },
+  {
+    "id": "q0039",
+    "category": "Ẩm thực",
+    "type": "text",
+    "prompt": "Thức uống làm từ đậu nành",
+    "answer": "Sữa đậu nành"
+  },
+  {
+    "id": "q0040",
+    "category": "Ẩm thực",
+    "type": "text",
+    "prompt": "Món ăn gồm bánh tráng cuốn tôm, thịt và rau sống",
+    "answer": "Gỏi cuốn"
+  },
+  {
+    "id": "q0041",
+    "category": "Động vật",
+    "type": "scramble",
+    "prompt": "Con vật có mai cứng, di chuyển chậm",
+    "answer": "Con rùa"
+  },
+  {
+    "id": "q0042",
+    "category": "Động vật",
+    "type": "text",
+    "prompt": "Con vật có vòi dài",
+    "answer": "Con voi"
+  },
+  {
+    "id": "q0043",
+    "category": "Động vật",
+    "type": "text",
+    "prompt": "Loài chim thường được ví là biểu tượng hòa bình",
+    "answer": "Bồ câu"
+  },
+  {
+    "id": "q0044",
+    "category": "Động vật",
+    "type": "text",
+    "prompt": "Loài côn trùng tạo ra mật",
+    "answer": "Con ong"
+  },
+  {
+    "id": "q0045",
+    "category": "Động vật",
+    "type": "scramble",
+    "prompt": "Loài vật thường gáy báo sáng ở nông thôn",
+    "answer": "Gà trống"
+  },
+  {
+    "id": "q0046",
+    "category": "Động vật",
+    "type": "text",
+    "prompt": "Loài thú có túi, nổi tiếng ở Úc",
+    "answer": "Kangaroo"
+  },
+  {
+    "id": "q0047",
+    "category": "Động vật",
+    "type": "text",
+    "prompt": "Động vật có vú lớn nhất còn sống",
+    "answer": "Cá voi xanh"
+  },
+  {
+    "id": "q0048",
+    "category": "Động vật",
+    "type": "text",
+    "prompt": "Loài thú có cổ rất dài",
+    "answer": "Hươu cao cổ"
+  },
+  {
+    "id": "q0049",
+    "category": "Động vật",
+    "type": "scramble",
+    "prompt": "Loài chim không biết bay, sống ở Nam Cực",
+    "answer": "Chim cánh cụt"
+  },
+  {
+    "id": "q0050",
+    "category": "Động vật",
+    "type": "text",
+    "prompt": "Loài vật nuôi thường kêu meo meo",
+    "answer": "Con mèo"
+  },
+  {
+    "id": "q0051",
+    "category": "Động vật",
+    "type": "text",
+    "prompt": "Loài vật nuôi thường kêu gâu gâu",
+    "answer": "Con chó"
+  },
+  {
+    "id": "q0052",
+    "category": "Động vật",
+    "type": "text",
+    "prompt": "Loài vật có tám chân, giăng tơ",
+    "answer": "Con nhện"
+  },
+  {
+    "id": "q0053",
+    "category": "Động vật",
+    "type": "scramble",
+    "prompt": "Loài bò sát có thể đổi màu, tên bắt đầu bằng tắc",
+    "answer": "Tắc kè hoa"
+  },
+  {
+    "id": "q0054",
+    "category": "Động vật",
+    "type": "text",
+    "prompt": "Loài động vật có vú biết bay chủ động",
+    "answer": "Con dơi"
+  },
+  {
+    "id": "q0055",
+    "category": "Động vật",
+    "type": "text",
+    "prompt": "Loài vật thường nhả tơ làm kén để dệt lụa",
+    "answer": "Con tằm"
+  },
+  {
+    "id": "q0056",
+    "category": "Động vật",
+    "type": "text",
+    "prompt": "Loài cá có bộ xương sụn, nhiều loài săn mồi ở biển",
+    "answer": "Cá mập"
+  },
+  {
+    "id": "q0057",
+    "category": "Động vật",
+    "type": "scramble",
+    "prompt": "Loài vật có bộ lông sọc đen trắng, giống ngựa",
+    "answer": "Ngựa vằn"
+  },
+  {
+    "id": "q0058",
+    "category": "Động vật",
+    "type": "text",
+    "prompt": "Loài chim có đuôi xòe nhiều mắt tròn sặc sỡ",
+    "answer": "Con công"
+  },
+  {
+    "id": "q0059",
+    "category": "Động vật",
+    "type": "text",
+    "prompt": "Loài vật ăn tre, lông đen trắng, biểu tượng bảo tồn",
+    "answer": "Gấu trúc"
+  },
+  {
+    "id": "q0060",
+    "category": "Động vật",
+    "type": "text",
+    "prompt": "Loài côn trùng trưởng thành có cánh, biến thái từ sâu",
+    "answer": "Bướm"
+  },
+  {
+    "id": "q0061",
+    "category": "Việt Nam",
+    "type": "scramble",
+    "prompt": "Thủ đô của Việt Nam",
+    "answer": "Hà Nội"
+  },
+  {
+    "id": "q0062",
+    "category": "Việt Nam",
+    "type": "text",
+    "prompt": "Hồ ở Hà Nội gắn với truyền thuyết trả gươm",
+    "answer": "Hồ Gươm"
+  },
+  {
+    "id": "q0063",
+    "category": "Việt Nam",
+    "type": "text",
+    "prompt": "Di sản vịnh biển nổi tiếng ở Quảng Ninh",
+    "answer": "Vịnh Hạ Long"
+  },
+  {
+    "id": "q0064",
+    "category": "Việt Nam",
+    "type": "text",
+    "prompt": "Phố cổ di sản ở miền Trung, nổi tiếng với đèn lồng",
+    "answer": "Hội An"
+  },
+  {
+    "id": "q0065",
+    "category": "Việt Nam",
+    "type": "scramble",
+    "prompt": "Thành phố cao nguyên nổi tiếng với hồ Xuân Hương",
+    "answer": "Đà Lạt"
+  },
+  {
+    "id": "q0066",
+    "category": "Việt Nam",
+    "type": "text",
+    "prompt": "Đỉnh núi cao nhất Việt Nam",
+    "answer": "Fansipan"
+  },
+  {
+    "id": "q0067",
+    "category": "Việt Nam",
+    "type": "text",
+    "prompt": "Ngày Quốc khánh Việt Nam là ngày mấy tháng mấy?",
+    "answer": "2/9"
+  },
+  {
+    "id": "q0068",
+    "category": "Việt Nam",
+    "type": "text",
+    "prompt": "Trang phục truyền thống Việt Nam có hai tà dài",
+    "answer": "Áo dài"
+  },
+  {
+    "id": "q0069",
+    "category": "Việt Nam",
+    "type": "scramble",
+    "prompt": "Cây cầu ở Đà Nẵng mang hình linh vật phun lửa",
+    "answer": "Cầu Rồng"
+  },
+  {
+    "id": "q0070",
+    "category": "Việt Nam",
+    "type": "text",
+    "prompt": "Cố đô gắn với triều Nguyễn",
+    "answer": "Huế"
+  },
+  {
+    "id": "q0071",
+    "category": "Việt Nam",
+    "type": "text",
+    "prompt": "Hang Sơn Đoòng nằm ở tỉnh nào trước sắp xếp năm 2025?",
+    "answer": "Quảng Bình"
+  },
+  {
+    "id": "q0072",
+    "category": "Việt Nam",
+    "type": "text",
+    "prompt": "Đảo lớn nhất Việt Nam",
+    "answer": "Phú Quốc"
+  },
+  {
+    "id": "q0073",
+    "category": "Việt Nam",
+    "type": "scramble",
+    "prompt": "Nhạc cụ truyền thống chỉ có một dây",
+    "answer": "Đàn bầu"
+  },
+  {
+    "id": "q0074",
+    "category": "Việt Nam",
+    "type": "text",
+    "prompt": "Sông chảy qua trung tâm thành phố Huế",
+    "answer": "Sông Hương"
+  },
+  {
+    "id": "q0075",
+    "category": "Việt Nam",
+    "type": "text",
+    "prompt": "Loài hoa có trong tên hình tượng Tháp Mười đẹp nhất",
+    "answer": "Hoa sen"
+  },
+  {
+    "id": "q0076",
+    "category": "Việt Nam",
+    "type": "text",
+    "prompt": "Múa dân gian dùng những thanh tre gõ vào nhau",
+    "answer": "Múa sạp"
+  },
+  {
+    "id": "q0077",
+    "category": "Việt Nam",
+    "type": "scramble",
+    "prompt": "Lễ hội đầu năm ở Đồ Sơn nổi tiếng với hoạt động nào?",
+    "answer": "Chọi trâu"
+  },
+  {
+    "id": "q0078",
+    "category": "Việt Nam",
+    "type": "text",
+    "prompt": "Bến cảng gắn với việc Bác Hồ ra đi tìm đường cứu nước năm 1911",
+    "answer": "Bến Nhà Rồng"
+  },
+  {
+    "id": "q0079",
+    "category": "Việt Nam",
+    "type": "text",
+    "prompt": "Quê hương của làn điệu quan họ nổi tiếng, tên gồm Bắc và một chữ nữa",
+    "answer": "Bắc Ninh"
+  },
+  {
+    "id": "q0080",
+    "category": "Việt Nam",
+    "type": "text",
+    "prompt": "Nhà tù lịch sử trên đảo ngoài khơi Bà Rịa - Vũng Tàu trước năm 2025",
+    "answer": "Côn Đảo"
+  },
+  {
+    "id": "q0081",
+    "category": "Khoa học",
+    "type": "scramble",
+    "prompt": "Hành tinh chúng ta đang sống",
+    "answer": "Trái Đất"
+  },
+  {
+    "id": "q0082",
+    "category": "Khoa học",
+    "type": "text",
+    "prompt": "Ngôi sao ở trung tâm Hệ Mặt Trời",
+    "answer": "Mặt Trời"
+  },
+  {
+    "id": "q0083",
+    "category": "Khoa học",
+    "type": "text",
+    "prompt": "Vệ tinh tự nhiên của Trái Đất",
+    "answer": "Mặt Trăng"
+  },
+  {
+    "id": "q0084",
+    "category": "Khoa học",
+    "type": "text",
+    "prompt": "Nước có công thức hóa học là gì?",
+    "answer": "H2O"
+  },
+  {
+    "id": "q0085",
+    "category": "Khoa học",
+    "type": "text",
+    "prompt": "Khí cần cho hô hấp của con người",
+    "answer": "Oxy"
+  },
+  {
+    "id": "q0086",
+    "category": "Khoa học",
+    "type": "text",
+    "prompt": "Đơn vị đo cường độ dòng điện trong SI",
+    "answer": "Ampe"
+  },
+  {
+    "id": "q0087",
+    "category": "Khoa học",
+    "type": "text",
+    "prompt": "Bộ phận cơ thể bơm máu",
+    "answer": "Tim"
+  },
+  {
+    "id": "q0088",
+    "category": "Khoa học",
+    "type": "text",
+    "prompt": "Quá trình cây xanh dùng ánh sáng tạo chất hữu cơ",
+    "answer": "Quang hợp"
+  },
+  {
+    "id": "q0089",
+    "category": "Khoa học",
+    "type": "text",
+    "prompt": "Nước tinh khiết đóng băng ở bao nhiêu độ C tại áp suất thường?",
+    "answer": "0"
+  },
+  {
+    "id": "q0090",
+    "category": "Khoa học",
+    "type": "text",
+    "prompt": "Nước tinh khiết sôi ở bao nhiêu độ C tại áp suất 1 atm?",
+    "answer": "100"
+  },
+  {
+    "id": "q0091",
+    "category": "Khoa học",
+    "type": "text",
+    "prompt": "Hành tinh lớn nhất Hệ Mặt Trời",
+    "answer": "Sao Mộc"
+  },
+  {
+    "id": "q0092",
+    "category": "Khoa học",
+    "type": "text",
+    "prompt": "Hành tinh thường được gọi là hành tinh đỏ",
+    "answer": "Sao Hỏa"
+  },
+  {
+    "id": "q0093",
+    "category": "Khoa học",
+    "type": "text",
+    "prompt": "Kim loại có ký hiệu hóa học Fe",
+    "answer": "Sắt"
+  },
+  {
+    "id": "q0094",
+    "category": "Khoa học",
+    "type": "text",
+    "prompt": "Kim loại có ký hiệu hóa học Au",
+    "answer": "Vàng"
+  },
+  {
+    "id": "q0095",
+    "category": "Khoa học",
+    "type": "text",
+    "prompt": "Đơn vị đo tần số trong SI",
+    "answer": "Hertz"
+  },
+  {
+    "id": "q0096",
+    "category": "Khoa học",
+    "type": "text",
+    "prompt": "Lực hút giữa các vật có khối lượng gọi là lực gì?",
+    "answer": "Hấp dẫn"
+  },
+  {
+    "id": "q0097",
+    "category": "Khoa học",
+    "type": "scramble",
+    "prompt": "Cơ quan chính trao đổi khí ở người",
+    "answer": "Phổi"
+  },
+  {
+    "id": "q0098",
+    "category": "Khoa học",
+    "type": "text",
+    "prompt": "Chất mang thông tin di truyền, viết tắt ba chữ cái",
+    "answer": "DNA"
+  },
+  {
+    "id": "q0099",
+    "category": "Khoa học",
+    "type": "text",
+    "prompt": "Một năm nhuận dương lịch có bao nhiêu ngày?",
+    "answer": "366"
+  },
+  {
+    "id": "q0100",
+    "category": "Khoa học",
+    "type": "text",
+    "prompt": "Một giờ có bao nhiêu giây?",
+    "answer": "3600"
+  },
+  {
+    "id": "q0101",
+    "category": "Thể thao",
+    "type": "text",
+    "prompt": "Mỗi đội bóng đá có bao nhiêu cầu thủ trên sân khi bắt đầu trận?",
+    "answer": "11"
+  },
+  {
+    "id": "q0102",
+    "category": "Thể thao",
+    "type": "text",
+    "prompt": "Môn thể thao dùng vợt và quả cầu có lông",
+    "answer": "Cầu lông"
+  },
+  {
+    "id": "q0103",
+    "category": "Thể thao",
+    "type": "text",
+    "prompt": "Môn thể thao dùng tay đưa bóng vào rổ",
+    "answer": "Bóng rổ"
+  },
+  {
+    "id": "q0104",
+    "category": "Thể thao",
+    "type": "text",
+    "prompt": "Giải bóng đá thế giới FIFA dành cho đội tuyển nam thường tổ chức mấy năm một lần?",
+    "answer": "4"
+  },
+  {
+    "id": "q0105",
+    "category": "Thể thao",
+    "type": "text",
+    "prompt": "Mỗi đội bóng chuyền trong nhà có bao nhiêu người trên sân?",
+    "answer": "6"
+  },
+  {
+    "id": "q0106",
+    "category": "Thể thao",
+    "type": "text",
+    "prompt": "Môn thể thao thi đấu trên bàn với quả bóng nhỏ và vợt",
+    "answer": "Bóng bàn"
+  },
+  {
+    "id": "q0107",
+    "category": "Thể thao",
+    "type": "text",
+    "prompt": "Một trận bóng đá tiêu chuẩn có hai hiệp chính, tổng bao nhiêu phút?",
+    "answer": "90"
+  },
+  {
+    "id": "q0108",
+    "category": "Thể thao",
+    "type": "text",
+    "prompt": "Môn võ có nguồn gốc Hàn Quốc, nổi bật với đòn chân",
+    "answer": "Taekwondo"
+  },
+  {
+    "id": "q0109",
+    "category": "Thể thao",
+    "type": "scramble",
+    "prompt": "Trong cờ vua, quân nào di chuyển hình chữ L?",
+    "answer": "Quân mã"
+  },
+  {
+    "id": "q0110",
+    "category": "Thể thao",
+    "type": "text",
+    "prompt": "Một bàn cờ vua có bao nhiêu ô?",
+    "answer": "64"
+  },
+  {
+    "id": "q0111",
+    "category": "Thể thao",
+    "type": "text",
+    "prompt": "Biểu tượng Olympic có bao nhiêu vòng tròn?",
+    "answer": "5"
+  },
+  {
+    "id": "q0112",
+    "category": "Thể thao",
+    "type": "text",
+    "prompt": "Môn thể thao bơi, đạp xe và chạy bộ kết hợp",
+    "answer": "Ba môn phối hợp"
+  },
+  {
+    "id": "q0113",
+    "category": "Thể thao",
+    "type": "scramble",
+    "prompt": "Môn thể thao có động tác giao bóng và đập bóng qua lưới cao",
+    "answer": "Bóng chuyền"
+  },
+  {
+    "id": "q0114",
+    "category": "Thể thao",
+    "type": "text",
+    "prompt": "Trong cờ vua, mục tiêu là chiếu hết quân nào?",
+    "answer": "Vua"
+  },
+  {
+    "id": "q0115",
+    "category": "Thể thao",
+    "type": "text",
+    "prompt": "Đường chạy marathon tiêu chuẩn dài bao nhiêu km?",
+    "answer": "42.195"
+  },
+  {
+    "id": "q0116",
+    "category": "Đố vui",
+    "type": "riddle",
+    "prompt": "Cái gì có răng mà không có miệng, dùng để chải tóc?",
+    "answer": "Cái lược"
+  },
+  {
+    "id": "q0117",
+    "category": "Đố vui",
+    "type": "riddle",
+    "prompt": "Cái gì càng lấy đi thì càng lớn?",
+    "answer": "Cái hố"
+  },
+  {
+    "id": "q0118",
+    "category": "Đố vui",
+    "type": "riddle",
+    "prompt": "Cái gì có cổ nhưng không có đầu, thường đựng nước?",
+    "answer": "Cái chai"
+  },
+  {
+    "id": "q0119",
+    "category": "Đố vui",
+    "type": "riddle",
+    "prompt": "Cái gì có mặt và kim nhưng không biết may?",
+    "answer": "Đồng hồ"
+  },
+  {
+    "id": "q0120",
+    "category": "Đố vui",
+    "type": "riddle",
+    "prompt": "Cái gì đi khắp thế giới mà vẫn ở góc phong bì?",
+    "answer": "Con tem"
+  },
+  {
+    "id": "q0121",
+    "category": "Đố vui",
+    "type": "riddle",
+    "prompt": "Cái gì có nhiều phím nhưng không mở được ổ khóa, dùng chơi nhạc?",
+    "answer": "Đàn piano"
+  },
+  {
+    "id": "q0122",
+    "category": "Đố vui",
+    "type": "riddle",
+    "prompt": "Cái gì càng lau thì chính nó càng ướt?",
+    "answer": "Cái khăn"
+  },
+  {
+    "id": "q0123",
+    "category": "Đố vui",
+    "type": "riddle",
+    "prompt": "Cái gì có chân nhưng không đi, dùng đặt đồ?",
+    "answer": "Cái bàn"
+  },
+  {
+    "id": "q0124",
+    "category": "Đố vui",
+    "type": "riddle",
+    "prompt": "Cái gì không có cánh mà bay trên trời, tạo mưa?",
+    "answer": "Đám mây"
+  },
+  {
+    "id": "q0125",
+    "category": "Đố vui",
+    "type": "riddle",
+    "prompt": "Cái gì bạn phải đập vỏ trước khi chiên?",
+    "answer": "Quả trứng"
+  },
+  {
+    "id": "q0126",
+    "category": "Nhìn emoji",
+    "type": "emoji",
+    "prompt": "🐘",
+    "answer": "Con voi"
+  },
+  {
+    "id": "q0127",
+    "category": "Nhìn emoji",
+    "type": "emoji",
+    "prompt": "🐢",
+    "answer": "Con rùa"
+  },
+  {
+    "id": "q0128",
+    "category": "Nhìn emoji",
+    "type": "emoji",
+    "prompt": "🍉",
+    "answer": "Dưa hấu"
+  },
+  {
+    "id": "q0129",
+    "category": "Nhìn emoji",
+    "type": "emoji",
+    "prompt": "🌻",
+    "answer": "Hoa hướng dương"
+  },
+  {
+    "id": "q0130",
+    "category": "Nhìn emoji",
+    "type": "emoji",
+    "prompt": "🚲",
+    "answer": "Xe đạp"
+  },
+  {
+    "id": "q0131",
+    "category": "Nhìn emoji",
+    "type": "emoji",
+    "prompt": "✈️",
+    "answer": "Máy bay"
+  },
+  {
+    "id": "q0132",
+    "category": "Nhìn emoji",
+    "type": "emoji",
+    "prompt": "🐝",
+    "answer": "Con ong"
+  },
+  {
+    "id": "q0133",
+    "category": "Nhìn emoji",
+    "type": "emoji",
+    "prompt": "🍍",
+    "answer": "Quả dứa"
+  },
+  {
+    "id": "q0134",
+    "category": "Nhìn emoji",
+    "type": "emoji",
+    "prompt": "🦋",
+    "answer": "Bướm"
+  },
+  {
+    "id": "q0135",
+    "category": "Nhìn emoji",
+    "type": "emoji",
+    "prompt": "🌈",
+    "answer": "Cầu vồng"
+  },
+  {
+    "id": "q0136",
+    "category": "Nhìn emoji",
+    "type": "emoji",
+    "prompt": "🍓",
+    "answer": "Dâu tây"
+  },
+  {
+    "id": "q0137",
+    "category": "Nhìn emoji",
+    "type": "emoji",
+    "prompt": "🦒",
+    "answer": "Hươu cao cổ"
+  },
+  {
+    "id": "q0138",
+    "category": "Nhìn emoji",
+    "type": "emoji",
+    "prompt": "🐧",
+    "answer": "Chim cánh cụt"
+  },
+  {
+    "id": "q0139",
+    "category": "Nhìn emoji",
+    "type": "emoji",
+    "prompt": "🍌",
+    "answer": "Quả chuối"
+  },
+  {
+    "id": "q0140",
+    "category": "Nhìn emoji",
+    "type": "emoji",
+    "prompt": "🎸",
+    "answer": "Đàn guitar"
+  },
+  {
+    "id": "q0141",
+    "category": "Trắc nghiệm",
+    "type": "choice",
+    "prompt": "Một tuần có bao nhiêu ngày?",
+    "answer": "7",
+    "options": [
+      "5",
+      "6",
+      "7",
+      "8"
+    ]
+  },
+  {
+    "id": "q0142",
+    "category": "Trắc nghiệm",
+    "type": "choice",
+    "prompt": "Hình tam giác có mấy cạnh?",
+    "answer": "3",
+    "options": [
+      "2",
+      "3",
+      "4",
+      "5"
+    ]
+  },
+  {
+    "id": "q0143",
+    "category": "Trắc nghiệm",
+    "type": "choice",
+    "prompt": "Đâu là thủ đô Nhật Bản?",
+    "answer": "Tokyo",
+    "options": [
+      "Seoul",
+      "Tokyo",
+      "Bangkok",
+      "Hà Nội"
+    ]
+  },
+  {
+    "id": "q0144",
+    "category": "Trắc nghiệm",
+    "type": "choice",
+    "prompt": "Đâu là số nguyên tố?",
+    "answer": "7",
+    "options": [
+      "4",
+      "6",
+      "7",
+      "9"
+    ]
+  },
+  {
+    "id": "q0145",
+    "category": "Trắc nghiệm",
+    "type": "choice",
+    "prompt": "Màu nào có trong quốc kỳ Việt Nam?",
+    "answer": "Đỏ",
+    "options": [
+      "Tím",
+      "Xanh dương",
+      "Đỏ",
+      "Cam"
+    ]
+  },
+  {
+    "id": "q0146",
+    "category": "Trắc nghiệm",
+    "type": "choice",
+    "prompt": "Đâu là động vật có vú?",
+    "answer": "Cá heo",
+    "options": [
+      "Cá mập",
+      "Cá chép",
+      "Cá heo",
+      "Cá ngừ"
+    ]
+  },
+  {
+    "id": "q0147",
+    "category": "Trắc nghiệm",
+    "type": "choice",
+    "prompt": "Một mét bằng bao nhiêu centimet?",
+    "answer": "100",
+    "options": [
+      "10",
+      "100",
+      "1000",
+      "10000"
+    ]
+  },
+  {
+    "id": "q0148",
+    "category": "Trắc nghiệm",
+    "type": "choice",
+    "prompt": "Đâu là hành tinh gần Mặt Trời nhất?",
+    "answer": "Sao Thủy",
+    "options": [
+      "Sao Hỏa",
+      "Trái Đất",
+      "Sao Thủy",
+      "Sao Mộc"
+    ]
+  },
+  {
+    "id": "q0149",
+    "category": "Trắc nghiệm",
+    "type": "choice",
+    "prompt": "Đâu là kim loại lỏng ở khoảng 20°C?",
+    "answer": "Thủy ngân",
+    "options": [
+      "Nhôm",
+      "Đồng",
+      "Sắt",
+      "Thủy ngân"
+    ]
+  },
+  {
+    "id": "q0150",
+    "category": "Trắc nghiệm",
+    "type": "choice",
+    "prompt": "Đâu là nhạc cụ có dây?",
+    "answer": "Guitar",
+    "options": [
+      "Sáo",
+      "Trống",
+      "Guitar",
+      "Kèn"
+    ]
+  },
+  {
+    "id": "xc-0001",
+    "category": "Đồ dùng gia đình",
+    "type": "scramble",
+    "prompt": "Thiết bị làm phẳng quần áo bằng mặt đế nóng",
+    "answer": "Bàn là"
+  },
+  {
+    "id": "xc-0041",
+    "category": "Nhà bếp",
+    "type": "scramble",
+    "prompt": "Thiết bị nấu cơm, thường chuyển sang giữ ấm khi cơm chín",
+    "answer": "Nồi cơm điện"
+  },
+  {
+    "id": "xc-0075",
+    "category": "Rau củ và trái cây",
+    "type": "scramble",
+    "prompt": "Trái cây giòn, thường có vỏ đỏ hoặc xanh và lõi nhiều hạt nhỏ",
+    "answer": "Quả táo"
+  },
+  {
+    "id": "xc-0115",
+    "category": "Cây và hoa",
+    "type": "scramble",
+    "prompt": "Loài hoa có nhiều lớp cánh, thân thường có gai, biểu tượng tình yêu",
+    "answer": "Hoa hồng"
+  },
+  {
+    "id": "xc-0154",
+    "category": "Động vật mở rộng",
+    "type": "scramble",
+    "prompt": "Thú họ mèo lớn có lông vằn, còn được gọi là chúa sơn lâm",
+    "answer": "Con hổ"
+  },
+  {
+    "id": "xc-0198",
+    "category": "Chim và côn trùng",
+    "type": "scramble",
+    "prompt": "Chim săn mồi lớn có mỏ quặp và móng vuốt khỏe",
+    "answer": "Đại bàng"
+  },
+  {
+    "id": "xc-0232",
+    "category": "Món ăn Việt",
+    "type": "scramble",
+    "prompt": "Món bánh tráng mỏng từ bột gạo, thường cuộn thịt và mộc nhĩ",
+    "answer": "Bánh cuốn"
+  },
+  {
+    "id": "xc-0272",
+    "category": "Nghề nghiệp",
+    "type": "scramble",
+    "prompt": "Người khám, chẩn đoán và điều trị bệnh cho người",
+    "answer": "Bác sĩ"
+  },
+  {
+    "id": "xc-0307",
+    "category": "Học tập",
+    "type": "scramble",
+    "prompt": "Dụng cụ viết có lõi than chì, có thể tẩy nét bằng gôm",
+    "answer": "Bút chì"
+  },
+  {
+    "id": "xc-0337",
+    "category": "Thiên nhiên",
+    "type": "scramble",
+    "prompt": "Âm thanh phát ra do không khí giãn nở nhanh quanh tia sét",
+    "answer": "Sấm"
+  },
+  {
+    "id": "xc-0371",
+    "category": "Giao thông",
+    "type": "scramble",
+    "prompt": "Phương tiện hai bánh có động cơ, phổ biến ở Việt Nam",
+    "answer": "Xe máy"
+  },
+  {
+    "id": "xc-0400",
+    "category": "Nhạc cụ",
+    "type": "scramble",
+    "prompt": "Nhạc cụ dây gảy truyền thống Việt Nam, thường đặt nằm ngang",
+    "answer": "Đàn tranh"
+  },
+  {
+    "id": "xc-0423",
+    "category": "Thể thao mở rộng",
+    "type": "scramble",
+    "prompt": "Môn thể thao hai đội chủ yếu dùng chân đưa bóng vào khung thành",
+    "answer": "Bóng đá"
+  },
+  {
+    "id": "xc-0453",
+    "category": "Thế giới",
+    "type": "scramble",
+    "prompt": "Thủ đô nước Pháp, nơi có tháp Eiffel",
+    "answer": "Paris"
+  },
+  {
+    "id": "xc-0482",
+    "category": "Văn hóa và lễ hội",
+    "type": "scramble",
+    "prompt": "Lễ đầu năm theo âm lịch, dịp đoàn tụ lớn ở Việt Nam",
+    "answer": "Tết Nguyên đán"
+  },
+  {
+    "id": "xc-0002",
+    "category": "Đồ dùng gia đình",
+    "type": "scramble",
+    "prompt": "Thiết bị hút bụi bẩn khỏi sàn và thảm",
+    "answer": "Máy hút bụi"
+  },
+  {
+    "id": "xc-0042",
+    "category": "Nhà bếp",
+    "type": "scramble",
+    "prompt": "Thiết bị hâm thức ăn bằng sóng điện từ ở dải vi ba",
+    "answer": "Lò vi sóng"
+  },
+  {
+    "id": "xc-0076",
+    "category": "Rau củ và trái cây",
+    "type": "scramble",
+    "prompt": "Trái cây giòn mọng nước, nhiều giống có dáng thon ở cuống",
+    "answer": "Quả lê"
+  },
+  {
+    "id": "xc-0116",
+    "category": "Cây và hoa",
+    "type": "scramble",
+    "prompt": "Loài hoa thường nở nhiều cánh nhỏ, hay được dùng trang trí dịp Tết",
+    "answer": "Hoa cúc"
+  },
+  {
+    "id": "xc-0155",
+    "category": "Động vật mở rộng",
+    "type": "scramble",
+    "prompt": "Thú họ mèo sống theo đàn, con đực thường có bờm",
+    "answer": "Sư tử"
+  },
+  {
+    "id": "xc-0199",
+    "category": "Chim và côn trùng",
+    "type": "scramble",
+    "prompt": "Chim nhỏ thường gặp ở khu dân cư, hay nhảy trên mặt đất",
+    "answer": "Chim sẻ"
+  },
+  {
+    "id": "xc-0233",
+    "category": "Món ăn Việt",
+    "type": "scramble",
+    "prompt": "Bánh đổ chảo màu vàng, thường có nhân tôm, thịt và giá",
+    "answer": "Bánh xèo"
+  },
+  {
+    "id": "xc-0273",
+    "category": "Nghề nghiệp",
+    "type": "scramble",
+    "prompt": "Người làm công việc chăm sóc người bệnh, hỗ trợ điều trị",
+    "answer": "Y tá"
+  },
+  {
+    "id": "xc-0308",
+    "category": "Học tập",
+    "type": "scramble",
+    "prompt": "Dụng cụ viết có viên bi nhỏ lăn ở đầu để đưa mực ra giấy",
+    "answer": "Bút bi"
+  },
+  {
+    "id": "xc-0338",
+    "category": "Thiên nhiên",
+    "type": "scramble",
+    "prompt": "Hiện tượng phóng điện mạnh trong khí quyển",
+    "answer": "Sét"
+  },
+  {
+    "id": "xc-0372",
+    "category": "Giao thông",
+    "type": "scramble",
+    "prompt": "Phương tiện công cộng đường bộ chở nhiều người theo tuyến",
+    "answer": "Xe buýt"
+  },
+  {
+    "id": "xc-0401",
+    "category": "Nhạc cụ",
+    "type": "scramble",
+    "prompt": "Nhạc cụ kéo bằng vĩ có hai dây, còn gọi đàn cò",
+    "answer": "Đàn nhị"
+  },
+  {
+    "id": "xc-0424",
+    "category": "Thể thao mở rộng",
+    "type": "scramble",
+    "prompt": "Môn đồng đội dùng tay chuyền và ném bóng vào cầu môn",
+    "answer": "Bóng ném"
+  },
+  {
+    "id": "xc-0454",
+    "category": "Thế giới",
+    "type": "scramble",
+    "prompt": "Thủ đô Vương quốc Anh, gắn với sông Thames",
+    "answer": "London"
+  },
+  {
+    "id": "xc-0483",
+    "category": "Văn hóa và lễ hội",
+    "type": "scramble",
+    "prompt": "Lễ vào rằm tháng tám âm lịch, gắn với đèn lồng và bánh nướng",
+    "answer": "Tết Trung thu"
+  },
+  {
+    "id": "xc-0003",
+    "category": "Đồ dùng gia đình",
+    "type": "scramble",
+    "prompt": "Thiết bị thổi khí giúp tóc khô nhanh",
+    "answer": "Máy sấy tóc"
+  },
+  {
+    "id": "xc-0043",
+    "category": "Nhà bếp",
+    "type": "scramble",
+    "prompt": "Thiết bị làm chín thực phẩm bằng nhiệt trong khoang kín",
+    "answer": "Lò nướng"
+  },
+  {
+    "id": "xc-0077",
+    "category": "Rau củ và trái cây",
+    "type": "scramble",
+    "prompt": "Trái cây có hạt cứng, nhiều giống có lớp lông mịn trên vỏ",
+    "answer": "Quả đào"
+  },
+  {
+    "id": "xc-0117",
+    "category": "Cây và hoa",
+    "type": "scramble",
+    "prompt": "Nhóm hoa nổi tiếng với cánh đa dạng, thường trồng trong chậu treo",
+    "answer": "Hoa lan"
+  },
+  {
+    "id": "xc-0156",
+    "category": "Động vật mở rộng",
+    "type": "scramble",
+    "prompt": "Thú họ mèo châu Mỹ có hoa văn dạng hoa thị, nhiều đốm có chấm ở giữa",
+    "answer": "Báo đốm"
+  },
+  {
+    "id": "xc-0200",
+    "category": "Chim và côn trùng",
+    "type": "scramble",
+    "prompt": "Chim có cánh nhọn, nhiều loài có đuôi chẻ, thường gắn với mùa xuân",
+    "answer": "Chim én"
+  },
+  {
+    "id": "xc-0234",
+    "category": "Món ăn Việt",
+    "type": "scramble",
+    "prompt": "Bánh nhỏ đúc trong khuôn tròn, thường có tôm ở trên",
+    "answer": "Bánh khọt"
+  },
+  {
+    "id": "xc-0274",
+    "category": "Nghề nghiệp",
+    "type": "scramble",
+    "prompt": "Người được đào tạo chuyên môn về thuốc và sử dụng thuốc",
+    "answer": "Dược sĩ"
+  },
+  {
+    "id": "xc-0309",
+    "category": "Học tập",
+    "type": "scramble",
+    "prompt": "Dụng cụ viết dùng ngòi kim loại và mực nạp",
+    "answer": "Bút máy"
+  },
+  {
+    "id": "xc-0339",
+    "category": "Thiên nhiên",
+    "type": "scramble",
+    "prompt": "Mưa gồm những hạt rất nhỏ, thường gặp lúc trời nồm ở miền Bắc",
+    "answer": "Mưa phùn"
+  },
+  {
+    "id": "xc-0373",
+    "category": "Giao thông",
+    "type": "scramble",
+    "prompt": "Ô tô chở nhiều hành khách, thường chạy liên tỉnh",
+    "answer": "Xe khách"
+  },
+  {
+    "id": "xc-0402",
+    "category": "Nhạc cụ",
+    "type": "scramble",
+    "prompt": "Nhạc cụ dây gảy có hộp đàn tròn như mặt trăng",
+    "answer": "Đàn nguyệt"
+  },
+  {
+    "id": "xc-0425",
+    "category": "Thể thao mở rộng",
+    "type": "scramble",
+    "prompt": "Môn thể thao dùng gậy đánh bóng rồi chạy qua các chốt",
+    "answer": "Bóng chày"
+  },
+  {
+    "id": "xc-0455",
+    "category": "Thế giới",
+    "type": "scramble",
+    "prompt": "Thủ đô nước Ý, nơi có đấu trường Colosseum",
+    "answer": "Rome"
+  },
+  {
+    "id": "xc-0484",
+    "category": "Văn hóa và lễ hội",
+    "type": "scramble",
+    "prompt": "Lễ ngày mùng năm tháng năm âm lịch, thường gọi Tết diệt sâu bọ",
+    "answer": "Tết Đoan ngọ"
+  },
+  {
+    "id": "xc-0004",
+    "category": "Đồ dùng gia đình",
+    "type": "scramble",
+    "prompt": "Thiết bị làm mát hoặc sưởi ấm không khí trong phòng",
+    "answer": "Điều hòa"
+  },
+  {
+    "id": "xc-0044",
+    "category": "Nhà bếp",
+    "type": "scramble",
+    "prompt": "Dụng cụ nấu món chiên; loại không dầu dùng luồng khí nóng",
+    "answer": "Nồi chiên"
+  },
+  {
+    "id": "xc-0078",
+    "category": "Rau củ và trái cây",
+    "type": "scramble",
+    "prompt": "Trái cây hạt cứng, thường được gọi cùng địa danh Mộc Châu",
+    "answer": "Quả mận"
+  },
+  {
+    "id": "xc-0118",
+    "category": "Cây và hoa",
+    "type": "scramble",
+    "prompt": "Hoa vàng năm cánh thường trưng dịp Tết ở miền Nam",
+    "answer": "Hoa mai"
+  },
+  {
+    "id": "xc-0157",
+    "category": "Động vật mở rộng",
+    "type": "scramble",
+    "prompt": "Thú chạy rất nhanh, có hai vệt đen từ mắt xuống miệng",
+    "answer": "Báo săn"
+  },
+  {
+    "id": "xc-0201",
+    "category": "Chim và côn trùng",
+    "type": "scramble",
+    "prompt": "Chim làm tổ bằng nước bọt, tổ được dùng làm thực phẩm",
+    "answer": "Chim yến"
+  },
+  {
+    "id": "xc-0235",
+    "category": "Món ăn Việt",
+    "type": "scramble",
+    "prompt": "Bánh bột gạo hấp trong chén nhỏ, thường phủ tôm chấy",
+    "answer": "Bánh bèo"
+  },
+  {
+    "id": "xc-0275",
+    "category": "Nghề nghiệp",
+    "type": "scramble",
+    "prompt": "Bác sĩ chuyên chăm sóc và điều trị răng miệng",
+    "answer": "Nha sĩ"
+  },
+  {
+    "id": "xc-0310",
+    "category": "Học tập",
+    "type": "scramble",
+    "prompt": "Bút có đầu sợi thấm mực, thường dùng viết bảng hoặc tô màu",
+    "answer": "Bút dạ"
+  },
+  {
+    "id": "xc-0340",
+    "category": "Thiên nhiên",
+    "type": "scramble",
+    "prompt": "Mưa thường đến nhanh với hạt khá lớn rồi có thể tạnh nhanh",
+    "answer": "Mưa rào"
+  },
+  {
+    "id": "xc-0374",
+    "category": "Giao thông",
+    "type": "scramble",
+    "prompt": "Ô tô chủ yếu dùng chở hàng hóa",
+    "answer": "Xe tải"
+  },
+  {
+    "id": "xc-0403",
+    "category": "Nhạc cụ",
+    "type": "scramble",
+    "prompt": "Nhạc cụ dây gảy thân dáng quả lê, phổ biến trong âm nhạc truyền thống",
+    "answer": "Đàn tỳ bà"
+  },
+  {
+    "id": "xc-0426",
+    "category": "Thể thao mở rộng",
+    "type": "scramble",
+    "prompt": "Nhóm môn thể thao dùng quả bóng hình bầu dục, tên tiếng Việt nhắc hình dạng bóng",
+    "answer": "Bóng bầu dục"
+  },
+  {
+    "id": "xc-0456",
+    "category": "Thế giới",
+    "type": "scramble",
+    "prompt": "Thủ đô nước Đức, gắn với cổng Brandenburg",
+    "answer": "Berlin"
+  },
+  {
+    "id": "xc-0485",
+    "category": "Văn hóa và lễ hội",
+    "type": "scramble",
+    "prompt": "Ngày tưởng nhớ các vua Hùng, thường tổ chức vào mùng mười tháng ba âm lịch",
+    "answer": "Giỗ Tổ"
+  },
+  {
+    "id": "xc-0005",
+    "category": "Đồ dùng gia đình",
+    "type": "scramble",
+    "prompt": "Thiết bị đun và giữ nước nóng để tắm",
+    "answer": "Bình nóng lạnh"
+  },
+  {
+    "id": "xc-0045",
+    "category": "Nhà bếp",
+    "type": "scramble",
+    "prompt": "Bếp tạo lửa nhờ đốt khí nhiên liệu",
+    "answer": "Bếp ga"
+  },
+  {
+    "id": "xc-0079",
+    "category": "Rau củ và trái cây",
+    "type": "scramble",
+    "prompt": "Trái cây nhiệt đới thường vàng khi chín, có hạt lớn dẹt",
+    "answer": "Quả xoài"
+  },
+  {
+    "id": "xc-0119",
+    "category": "Cây và hoa",
+    "type": "scramble",
+    "prompt": "Hoa hồng phớt thường trưng dịp Tết ở miền Bắc",
+    "answer": "Hoa đào"
+  },
+  {
+    "id": "xc-0158",
+    "category": "Động vật mở rộng",
+    "type": "scramble",
+    "prompt": "Thú họ mèo sống ở núi cao châu Á, lông dày xám trắng",
+    "answer": "Báo tuyết"
+  },
+  {
+    "id": "xc-0202",
+    "category": "Chim và côn trùng",
+    "type": "scramble",
+    "prompt": "Chim có thể bắt chước âm thanh, thường được nhắc cùng cây đa trong dân ca",
+    "answer": "Chim sáo"
+  },
+  {
+    "id": "xc-0236",
+    "category": "Món ăn Việt",
+    "type": "scramble",
+    "prompt": "Bánh trong dai làm từ tinh bột sắn, thường có nhân tôm thịt",
+    "answer": "Bánh bột lọc"
+  },
+  {
+    "id": "xc-0276",
+    "category": "Nghề nghiệp",
+    "type": "scramble",
+    "prompt": "Lĩnh vực chăm sóc và điều trị bệnh cho động vật",
+    "answer": "Thú y"
+  },
+  {
+    "id": "xc-0311",
+    "category": "Học tập",
+    "type": "scramble",
+    "prompt": "Dụng cụ viết vẽ có nhiều màu để tô tranh",
+    "answer": "Bút màu"
+  },
+  {
+    "id": "xc-0341",
+    "category": "Thiên nhiên",
+    "type": "scramble",
+    "prompt": "Giáng thủy gồm những viên băng rơi từ mây dông",
+    "answer": "Mưa đá"
+  },
+  {
+    "id": "xc-0375",
+    "category": "Giao thông",
+    "type": "scramble",
+    "prompt": "Xe chuyên chở người bệnh hoặc người bị thương cần chăm sóc y tế",
+    "answer": "Xe cứu thương"
+  },
+  {
+    "id": "xc-0404",
+    "category": "Nhạc cụ",
+    "type": "scramble",
+    "prompt": "Nhạc cụ dây gảy có ba dây",
+    "answer": "Đàn tam"
+  },
+  {
+    "id": "xc-0427",
+    "category": "Thể thao mở rộng",
+    "type": "scramble",
+    "prompt": "Môn dùng vợt đánh bóng qua lưới, thường gọi tennis",
+    "answer": "Quần vợt"
+  },
+  {
+    "id": "xc-0457",
+    "category": "Thế giới",
+    "type": "scramble",
+    "prompt": "Thủ đô Tây Ban Nha",
+    "answer": "Madrid"
+  },
+  {
+    "id": "xc-0486",
+    "category": "Văn hóa và lễ hội",
+    "type": "scramble",
+    "prompt": "Lễ hội có các đội chèo thuyền tranh tài trên mặt nước",
+    "answer": "Lễ hội đua thuyền"
+  },
+  {
+    "id": "xc-0006",
+    "category": "Đồ dùng gia đình",
+    "type": "scramble",
+    "prompt": "Đồ điện đun nước sôi nhanh, thường tự ngắt",
+    "answer": "Ấm siêu tốc"
+  },
+  {
+    "id": "xc-0046",
+    "category": "Nhà bếp",
+    "type": "scramble",
+    "prompt": "Bếp làm nóng đáy nồi thích hợp bằng cảm ứng điện từ",
+    "answer": "Bếp từ"
+  },
+  {
+    "id": "xc-0080",
+    "category": "Rau củ và trái cây",
+    "type": "scramble",
+    "prompt": "Trái cây nhiều hạt nhỏ cứng, thường có ruột trắng hoặc hồng",
+    "answer": "Quả ổi"
+  },
+  {
+    "id": "xc-0120",
+    "category": "Cây và hoa",
+    "type": "scramble",
+    "prompt": "Hoa đỏ rực gắn với sân trường và mùa hè",
+    "answer": "Hoa phượng"
+  },
+  {
+    "id": "xc-0159",
+    "category": "Động vật mở rộng",
+    "type": "scramble",
+    "prompt": "Thú ăn tạp có bộ lông nâu, có thể ngủ đông ở nhiều vùng lạnh",
+    "answer": "Gấu nâu"
+  },
+  {
+    "id": "xc-0203",
+    "category": "Chim và côn trùng",
+    "type": "scramble",
+    "prompt": "Chim cảnh nổi tiếng có giọng hót vang, nhiều loài có lông má tương phản",
+    "answer": "Chim khướu"
+  },
+  {
+    "id": "xc-0237",
+    "category": "Món ăn Việt",
+    "type": "scramble",
+    "prompt": "Bánh nếp có nhân, thường gói lá thành hình chóp",
+    "answer": "Bánh ít"
+  },
+  {
+    "id": "xc-0277",
+    "category": "Nghề nghiệp",
+    "type": "scramble",
+    "prompt": "Người giảng dạy học sinh trong trường học",
+    "answer": "Giáo viên"
+  },
+  {
+    "id": "xc-0312",
+    "category": "Học tập",
+    "type": "scramble",
+    "prompt": "Vật dụng dùng xóa nét bút chì, còn gọi cục gôm",
+    "answer": "Tẩy"
+  },
+  {
+    "id": "xc-0342",
+    "category": "Thiên nhiên",
+    "type": "scramble",
+    "prompt": "Giáng thủy gồm các tinh thể băng, thường gặp ở vùng lạnh",
+    "answer": "Tuyết"
+  },
+  {
+    "id": "xc-0376",
+    "category": "Giao thông",
+    "type": "scramble",
+    "prompt": "Xe chuyên dụng của lực lượng chữa cháy",
+    "answer": "Xe cứu hỏa"
+  },
+  {
+    "id": "xc-0405",
+    "category": "Nhạc cụ",
+    "type": "scramble",
+    "prompt": "Nhạc cụ nhiều dây căng, dùng hai que gõ để phát âm",
+    "answer": "Đàn tam thập lục"
+  },
+  {
+    "id": "xc-0428",
+    "category": "Thể thao mở rộng",
+    "type": "scramble",
+    "prompt": "Hoạt động thể thao di chuyển cơ thể trong nước",
+    "answer": "Bơi lội"
+  },
+  {
+    "id": "xc-0458",
+    "category": "Thế giới",
+    "type": "scramble",
+    "prompt": "Thủ đô Bồ Đào Nha",
+    "answer": "Lisbon"
+  },
+  {
+    "id": "xc-0487",
+    "category": "Văn hóa và lễ hội",
+    "type": "scramble",
+    "prompt": "Màn biểu diễn linh vật đầu lớn, thường đi cùng tiếng trống dịp lễ",
+    "answer": "Múa lân"
+  },
+  {
+    "id": "xc-0007",
+    "category": "Đồ dùng gia đình",
+    "type": "scramble",
+    "prompt": "Bộ phận để cắm phích điện cấp nguồn cho thiết bị",
+    "answer": "Ổ cắm"
+  },
+  {
+    "id": "xc-0047",
+    "category": "Nhà bếp",
+    "type": "scramble",
+    "prompt": "Dụng cụ nấu có lòng nông, thường dùng rán hoặc xào",
+    "answer": "Chảo"
+  },
+  {
+    "id": "xc-0081",
+    "category": "Rau củ và trái cây",
+    "type": "scramble",
+    "prompt": "Trái lớn vỏ có gai, bên trong có nhiều múi vàng và xơ",
+    "answer": "Quả mít"
+  },
+  {
+    "id": "xc-0121",
+    "category": "Cây và hoa",
+    "type": "scramble",
+    "prompt": "Hoa tím thường nở thành chùm vào đầu mùa hè",
+    "answer": "Hoa bằng lăng"
+  },
+  {
+    "id": "xc-0160",
+    "category": "Động vật mở rộng",
+    "type": "scramble",
+    "prompt": "Thú họ gấu sống ở Bắc Cực, thích nghi săn trên băng biển",
+    "answer": "Gấu trắng"
+  },
+  {
+    "id": "xc-0204",
+    "category": "Chim và côn trùng",
+    "type": "scramble",
+    "prompt": "Chim cảnh có mào dựng trên đầu và mảng đỏ ở má",
+    "answer": "Chim chào mào"
+  },
+  {
+    "id": "xc-0238",
+    "category": "Món ăn Việt",
+    "type": "scramble",
+    "prompt": "Bánh có vỏ sẫm màu nhờ lá gai, thường có nhân đậu xanh",
+    "answer": "Bánh gai"
+  },
+  {
+    "id": "xc-0278",
+    "category": "Nghề nghiệp",
+    "type": "scramble",
+    "prompt": "Người giảng dạy ở cơ sở giáo dục đại học hoặc tương đương",
+    "answer": "Giảng viên"
+  },
+  {
+    "id": "xc-0313",
+    "category": "Học tập",
+    "type": "scramble",
+    "prompt": "Dụng cụ có cạnh thẳng và vạch chia để đo hoặc kẻ đường",
+    "answer": "Thước kẻ"
+  },
+  {
+    "id": "xc-0343",
+    "category": "Thiên nhiên",
+    "type": "scramble",
+    "prompt": "Những giọt nước nhỏ lơ lửng gần mặt đất làm giảm tầm nhìn",
+    "answer": "Sương mù"
+  },
+  {
+    "id": "xc-0377",
+    "category": "Giao thông",
+    "type": "scramble",
+    "prompt": "Xe công trình có bánh trụ nặng dùng nén nền đường",
+    "answer": "Xe lu"
+  },
+  {
+    "id": "xc-0406",
+    "category": "Nhạc cụ",
+    "type": "scramble",
+    "prompt": "Nhạc cụ gồm những thanh đá tạo cao độ khi gõ",
+    "answer": "Đàn đá"
+  },
+  {
+    "id": "xc-0429",
+    "category": "Thể thao mở rộng",
+    "type": "scramble",
+    "prompt": "Hoạt động xuống dưới mặt nước, có thể dùng bình khí hỗ trợ",
+    "answer": "Lặn"
+  },
+  {
+    "id": "xc-0459",
+    "category": "Thế giới",
+    "type": "scramble",
+    "prompt": "Thủ đô Hy Lạp, nơi có đồi Acropolis",
+    "answer": "Athens"
+  },
+  {
+    "id": "xc-0488",
+    "category": "Văn hóa và lễ hội",
+    "type": "scramble",
+    "prompt": "Nghệ thuật biểu diễn con rối trên mặt nước của Việt Nam",
+    "answer": "Múa rối nước"
+  },
+  {
+    "id": "xc-0008",
+    "category": "Đồ dùng gia đình",
+    "type": "scramble",
+    "prompt": "Bộ phận bật hoặc tắt đèn bằng thao tác gạt hay bấm",
+    "answer": "Công tắc"
+  },
+  {
+    "id": "xc-0048",
+    "category": "Nhà bếp",
+    "type": "scramble",
+    "prompt": "Nồi kín nấu thức ăn dưới áp suất cao",
+    "answer": "Nồi áp suất"
+  },
+  {
+    "id": "xc-0082",
+    "category": "Rau củ và trái cây",
+    "type": "scramble",
+    "prompt": "Trái có múi lớn hơn cam, vỏ dày, thường được bày mâm ngũ quả",
+    "answer": "Quả bưởi"
+  },
+  {
+    "id": "xc-0122",
+    "category": "Cây và hoa",
+    "type": "scramble",
+    "prompt": "Hoa nhỏ màu trắng ngà, mùi thơm đậm, thường gắn với mùa thu Hà Nội",
+    "answer": "Hoa sữa"
+  },
+  {
+    "id": "xc-0161",
+    "category": "Động vật mở rộng",
+    "type": "scramble",
+    "prompt": "Thú Bắc Mỹ có vùng lông đen quanh mắt trông như mặt nạ",
+    "answer": "Gấu mèo"
+  },
+  {
+    "id": "xc-0205",
+    "category": "Chim và côn trùng",
+    "type": "scramble",
+    "prompt": "Chim có tiếng gù quen thuộc, thường có vòng lông đốm ở cổ",
+    "answer": "Chim cu gáy"
+  },
+  {
+    "id": "xc-0239",
+    "category": "Món ăn Việt",
+    "type": "scramble",
+    "prompt": "Bánh vỏ cốm xanh, thường có nhân đậu xanh, gắn với Hà Nội",
+    "answer": "Bánh cốm"
+  },
+  {
+    "id": "xc-0279",
+    "category": "Nghề nghiệp",
+    "type": "scramble",
+    "prompt": "Người có chuyên môn thiết kế, xây dựng hoặc vận hành hệ thống kỹ thuật",
+    "answer": "Kỹ sư"
+  },
+  {
+    "id": "xc-0314",
+    "category": "Học tập",
+    "type": "scramble",
+    "prompt": "Dụng cụ chia độ thường có dạng nửa hình tròn",
+    "answer": "Thước đo góc"
+  },
+  {
+    "id": "xc-0344",
+    "category": "Thiên nhiên",
+    "type": "scramble",
+    "prompt": "Lớp tinh thể băng đọng trên bề mặt khi điều kiện đủ lạnh",
+    "answer": "Sương muối"
+  },
+  {
+    "id": "xc-0378",
+    "category": "Giao thông",
+    "type": "scramble",
+    "prompt": "Máy công trình có lưỡi lớn phía trước để đẩy đất",
+    "answer": "Xe ủi"
+  },
+  {
+    "id": "xc-0407",
+    "category": "Nhạc cụ",
+    "type": "scramble",
+    "prompt": "Nhạc cụ nhỏ đặt sát môi, dùng khoang miệng biến đổi âm",
+    "answer": "Đàn môi"
+  },
+  {
+    "id": "xc-0430",
+    "category": "Thể thao mở rộng",
+    "type": "scramble",
+    "prompt": "Môn dùng mái chèo để đẩy thuyền đi trên nước",
+    "answer": "Chèo thuyền"
+  },
+  {
+    "id": "xc-0460",
+    "category": "Thế giới",
+    "type": "scramble",
+    "prompt": "Thủ đô Áo, nổi tiếng với truyền thống âm nhạc cổ điển",
+    "answer": "Vienna"
+  },
+  {
+    "id": "xc-0489",
+    "category": "Văn hóa và lễ hội",
+    "type": "scramble",
+    "prompt": "Loại hình sân khấu dân gian phổ biến ở đồng bằng Bắc Bộ",
+    "answer": "Hát chèo"
+  },
+  {
+    "id": "xc-0009",
+    "category": "Đồ dùng gia đình",
+    "type": "scramble",
+    "prompt": "Vật phát sáng khi được cấp điện, thường lắp trên trần",
+    "answer": "Bóng đèn"
+  },
+  {
+    "id": "xc-0049",
+    "category": "Nhà bếp",
+    "type": "scramble",
+    "prompt": "Dụng cụ có đáy đục lỗ, làm chín thức ăn bằng hơi nước",
+    "answer": "Xửng hấp"
+  },
+  {
+    "id": "xc-0083",
+    "category": "Rau củ và trái cây",
+    "type": "scramble",
+    "prompt": "Trái có múi nhỏ, vỏ dễ bóc bằng tay",
+    "answer": "Quả quýt"
+  },
+  {
+    "id": "xc-0123",
+    "category": "Cây và hoa",
+    "type": "scramble",
+    "prompt": "Hoa trắng nhỏ, có mùi thơm, thường dùng ướp trà",
+    "answer": "Hoa nhài"
+  },
+  {
+    "id": "xc-0162",
+    "category": "Động vật mở rộng",
+    "type": "scramble",
+    "prompt": "Thú họ chó hoang dã, thường sống và săn theo bầy",
+    "answer": "Chó sói"
+  },
+  {
+    "id": "xc-0206",
+    "category": "Chim và côn trùng",
+    "type": "scramble",
+    "prompt": "Chim có mỏ dài nhọn, thường lao xuống nước bắt cá",
+    "answer": "Chim bói cá"
+  },
+  {
+    "id": "xc-0240",
+    "category": "Món ăn Việt",
+    "type": "scramble",
+    "prompt": "Bánh ngọt bở làm từ đậu xanh, nổi tiếng ở Hải Dương",
+    "answer": "Bánh đậu xanh"
+  },
+  {
+    "id": "xc-0280",
+    "category": "Nghề nghiệp",
+    "type": "scramble",
+    "prompt": "Người thiết kế không gian và hình thức công trình",
+    "answer": "Kiến trúc sư"
+  },
+  {
+    "id": "xc-0315",
+    "category": "Học tập",
+    "type": "scramble",
+    "prompt": "Dụng cụ hai chân dùng vẽ đường tròn",
+    "answer": "Compa"
+  },
+  {
+    "id": "xc-0345",
+    "category": "Thiên nhiên",
+    "type": "scramble",
+    "prompt": "Hệ thống gió đổi hướng theo mùa, ảnh hưởng mạnh đến khí hậu Việt Nam",
+    "answer": "Gió mùa"
+  },
+  {
+    "id": "xc-0379",
+    "category": "Giao thông",
+    "type": "scramble",
+    "prompt": "Xe có càng để nâng và di chuyển hàng hóa",
+    "answer": "Xe nâng"
+  },
+  {
+    "id": "xc-0408",
+    "category": "Nhạc cụ",
+    "type": "scramble",
+    "prompt": "Nhạc cụ bốn dây kéo bằng vĩ, thường đặt trên vai",
+    "answer": "Đàn violin"
+  },
+  {
+    "id": "xc-0431",
+    "category": "Thể thao mở rộng",
+    "type": "scramble",
+    "prompt": "Môn đứng hoặc nằm trên ván di chuyển theo sóng biển",
+    "answer": "Lướt sóng"
+  },
+  {
+    "id": "xc-0461",
+    "category": "Thế giới",
+    "type": "scramble",
+    "prompt": "Thủ đô Cộng hòa Séc, tên tiếng Việt thường viết Praha",
+    "answer": "Prague"
+  },
+  {
+    "id": "xc-0490",
+    "category": "Văn hóa và lễ hội",
+    "type": "scramble",
+    "prompt": "Loại hình sân khấu truyền thống có hóa trang và động tác ước lệ rõ nét",
+    "answer": "Hát tuồng"
+  },
+  {
+    "id": "xc-0010",
+    "category": "Đồ dùng gia đình",
+    "type": "scramble",
+    "prompt": "Đèn cầm tay dùng pin, hữu ích khi mất điện",
+    "answer": "Đèn pin"
+  },
+  {
+    "id": "xc-0050",
+    "category": "Nhà bếp",
+    "type": "scramble",
+    "prompt": "Đồ đựng có nhiều lỗ để rửa rau và ráo nước",
+    "answer": "Rổ"
+  },
+  {
+    "id": "xc-0084",
+    "category": "Rau củ và trái cây",
+    "type": "scramble",
+    "prompt": "Trái có vị chua, thường vắt lấy nước làm đồ uống hoặc gia vị",
+    "answer": "Quả chanh"
+  },
+  {
+    "id": "xc-0124",
+    "category": "Cây và hoa",
+    "type": "scramble",
+    "prompt": "Cây leo có lá bắc mỏng nhiều màu, trông như những tờ giấy",
+    "answer": "Hoa giấy"
+  },
+  {
+    "id": "xc-0163",
+    "category": "Động vật mở rộng",
+    "type": "scramble",
+    "prompt": "Thú họ chó mõm nhọn, đuôi rậm, thường xuất hiện trong truyện ngụ ngôn",
+    "answer": "Cáo"
+  },
+  {
+    "id": "xc-0207",
+    "category": "Chim và côn trùng",
+    "type": "scramble",
+    "prompt": "Chim dùng mỏ gõ vào thân cây để tìm thức ăn",
+    "answer": "Chim gõ kiến"
+  },
+  {
+    "id": "xc-0241",
+    "category": "Món ăn Việt",
+    "type": "scramble",
+    "prompt": "Bánh nhiều lớp vỏ, thường có nhân sầu riêng và trứng muối",
+    "answer": "Bánh pía"
+  },
+  {
+    "id": "xc-0281",
+    "category": "Nghề nghiệp",
+    "type": "scramble",
+    "prompt": "Người tư vấn pháp luật, bào chữa hoặc bảo vệ quyền lợi theo quy định",
+    "answer": "Luật sư"
+  },
+  {
+    "id": "xc-0316",
+    "category": "Học tập",
+    "type": "scramble",
+    "prompt": "Thước hình tam giác dùng kiểm tra và vẽ góc vuông",
+    "answer": "Ê ke"
+  },
+  {
+    "id": "xc-0346",
+    "category": "Thiên nhiên",
+    "type": "scramble",
+    "prompt": "Cột không khí xoay mạnh, thường có dạng phễu",
+    "answer": "Lốc xoáy"
+  },
+  {
+    "id": "xc-0380",
+    "category": "Giao thông",
+    "type": "scramble",
+    "prompt": "Phương tiện có phần chở hàng hoặc chở người được kéo bằng sức người hay máy",
+    "answer": "Xe kéo"
+  },
+  {
+    "id": "xc-0409",
+    "category": "Nhạc cụ",
+    "type": "scramble",
+    "prompt": "Nhạc cụ dây kéo cỡ lớn, thường đặt giữa hai chân người chơi",
+    "answer": "Đàn cello"
+  },
+  {
+    "id": "xc-0432",
+    "category": "Thể thao mở rộng",
+    "type": "scramble",
+    "prompt": "Môn di chuyển và biểu diễn trên tấm ván có bánh",
+    "answer": "Trượt ván"
+  },
+  {
+    "id": "xc-0462",
+    "category": "Thế giới",
+    "type": "scramble",
+    "prompt": "Thủ đô Ba Lan",
+    "answer": "Warsaw"
+  },
+  {
+    "id": "xc-0491",
+    "category": "Văn hóa và lễ hội",
+    "type": "scramble",
+    "prompt": "Loại hình sân khấu phát triển ở Nam Bộ, thường có vọng cổ",
+    "answer": "Cải lương"
+  },
+  {
+    "id": "xc-0011",
+    "category": "Đồ dùng gia đình",
+    "type": "scramble",
+    "prompt": "Đèn ánh sáng dịu thường đặt cạnh giường",
+    "answer": "Đèn ngủ"
+  },
+  {
+    "id": "xc-0051",
+    "category": "Nhà bếp",
+    "type": "scramble",
+    "prompt": "Đồ đan hoặc nhựa mắt nhỏ, thường dùng vo gạo",
+    "answer": "Rá"
+  },
+  {
+    "id": "xc-0085",
+    "category": "Rau củ và trái cây",
+    "type": "scramble",
+    "prompt": "Trái vỏ nâu, cùi trong, hạt đen bóng, nổi tiếng ở Hưng Yên",
+    "answer": "Quả nhãn"
+  },
+  {
+    "id": "xc-0125",
+    "category": "Cây và hoa",
+    "type": "scramble",
+    "prompt": "Loài hoa nhỏ thường nở vào gần giữa buổi sáng, tên có một mốc giờ",
+    "answer": "Hoa mười giờ"
+  },
+  {
+    "id": "xc-0164",
+    "category": "Động vật mở rộng",
+    "type": "scramble",
+    "prompt": "Thú ăn thịt có tiếng kêu gợi liên tưởng tiếng cười",
+    "answer": "Linh cẩu"
+  },
+  {
+    "id": "xc-0208",
+    "category": "Chim và côn trùng",
+    "type": "scramble",
+    "prompt": "Chim rất nhỏ có thể bay đứng để hút mật hoa",
+    "answer": "Chim ruồi"
+  },
+  {
+    "id": "xc-0242",
+    "category": "Món ăn Việt",
+    "type": "scramble",
+    "prompt": "Tấm bánh mỏng từ bột gạo, dùng cuốn hoặc nướng",
+    "answer": "Bánh tráng"
+  },
+  {
+    "id": "xc-0282",
+    "category": "Nghề nghiệp",
+    "type": "scramble",
+    "prompt": "Người ghi nhận, tổng hợp và kiểm tra thông tin tài chính",
+    "answer": "Kế toán"
+  },
+  {
+    "id": "xc-0317",
+    "category": "Học tập",
+    "type": "scramble",
+    "prompt": "Dụng cụ làm nhọn đầu bút chì bằng lưỡi cắt nhỏ",
+    "answer": "Gọt bút chì"
+  },
+  {
+    "id": "xc-0347",
+    "category": "Thiên nhiên",
+    "type": "scramble",
+    "prompt": "Xoáy thuận nhiệt đới có sức gió mạnh, gây mưa lớn",
+    "answer": "Bão"
+  },
+  {
+    "id": "xc-0381",
+    "category": "Giao thông",
+    "type": "scramble",
+    "prompt": "Phương tiện ba bánh dùng sức đạp, thường có ghế khách ở phía trước",
+    "answer": "Xích lô"
+  },
+  {
+    "id": "xc-0410",
+    "category": "Nhạc cụ",
+    "type": "scramble",
+    "prompt": "Tên thường dùng ở Việt Nam cho nhạc cụ phím điện tử có nhiều âm sắc",
+    "answer": "Đàn organ"
+  },
+  {
+    "id": "xc-0433",
+    "category": "Thể thao mở rộng",
+    "type": "scramble",
+    "prompt": "Môn dùng giày có lưỡi kim loại để di chuyển trên băng",
+    "answer": "Trượt băng"
+  },
+  {
+    "id": "xc-0463",
+    "category": "Thế giới",
+    "type": "scramble",
+    "prompt": "Thủ đô Na Uy",
+    "answer": "Oslo"
+  },
+  {
+    "id": "xc-0492",
+    "category": "Văn hóa và lễ hội",
+    "type": "scramble",
+    "prompt": "Dân ca đối đáp nổi tiếng của vùng Bắc Ninh và Bắc Giang",
+    "answer": "Quan họ"
+  },
+  {
+    "id": "xc-0012",
+    "category": "Đồ dùng gia đình",
+    "type": "scramble",
+    "prompt": "Tấm vải treo để che nắng hoặc tạo sự riêng tư ở cửa sổ",
+    "answer": "Rèm cửa"
+  },
+  {
+    "id": "xc-0052",
+    "category": "Nhà bếp",
+    "type": "scramble",
+    "prompt": "Mặt phẳng kê thực phẩm khi thái, chặt",
+    "answer": "Thớt"
+  },
+  {
+    "id": "xc-0086",
+    "category": "Rau củ và trái cây",
+    "type": "scramble",
+    "prompt": "Trái có vỏ phủ những gai mềm dài như lông",
+    "answer": "Quả chôm chôm"
+  },
+  {
+    "id": "xc-0126",
+    "category": "Cây và hoa",
+    "type": "scramble",
+    "prompt": "Hoa có đầu tròn nhiều cánh, tên gắn với vật dùng để thanh toán",
+    "answer": "Hoa đồng tiền"
+  },
+  {
+    "id": "xc-0165",
+    "category": "Động vật mở rộng",
+    "type": "scramble",
+    "prompt": "Thú lớn da dày, có một hoặc hai sừng trên mũi tùy loài",
+    "answer": "Tê giác"
+  },
+  {
+    "id": "xc-0209",
+    "category": "Chim và côn trùng",
+    "type": "scramble",
+    "prompt": "Chim săn mồi thường hoạt động về đêm, mắt hướng về phía trước",
+    "answer": "Chim cú"
+  },
+  {
+    "id": "xc-0243",
+    "category": "Món ăn Việt",
+    "type": "scramble",
+    "prompt": "Tên gọi loại bánh gạo mỏng thường được phơi khô rồi nướng",
+    "answer": "Bánh đa"
+  },
+  {
+    "id": "xc-0283",
+    "category": "Nghề nghiệp",
+    "type": "scramble",
+    "prompt": "Hoạt động kiểm tra, đưa ý kiến về tính phù hợp của thông tin tài chính",
+    "answer": "Kiểm toán"
+  },
+  {
+    "id": "xc-0318",
+    "category": "Học tập",
+    "type": "scramble",
+    "prompt": "Đồ dùng đựng bút, tẩy và dụng cụ học tập nhỏ",
+    "answer": "Hộp bút"
+  },
+  {
+    "id": "xc-0348",
+    "category": "Thiên nhiên",
+    "type": "scramble",
+    "prompt": "Sự lên xuống mực nước biển có tính chu kỳ do lực hấp dẫn thiên thể",
+    "answer": "Thủy triều"
+  },
+  {
+    "id": "xc-0382",
+    "category": "Giao thông",
+    "type": "scramble",
+    "prompt": "Phương tiện gồm đầu máy và toa chạy trên đường ray",
+    "answer": "Tàu hỏa"
+  },
+  {
+    "id": "xc-0411",
+    "category": "Nhạc cụ",
+    "type": "scramble",
+    "prompt": "Nhạc cụ dây gảy nhỏ thường có bốn dây, gắn với Hawaii",
+    "answer": "Đàn ukulele"
+  },
+  {
+    "id": "xc-0434",
+    "category": "Thể thao mở rộng",
+    "type": "scramble",
+    "prompt": "Môn dùng ván gắn dưới chân để di chuyển trên tuyết",
+    "answer": "Trượt tuyết"
+  },
+  {
+    "id": "xc-0464",
+    "category": "Thế giới",
+    "type": "scramble",
+    "prompt": "Thủ đô Thụy Điển",
+    "answer": "Stockholm"
+  },
+  {
+    "id": "xc-0493",
+    "category": "Văn hóa và lễ hội",
+    "type": "scramble",
+    "prompt": "Loại hình ca nhạc truyền thống thường có đào nương, đàn đáy và phách",
+    "answer": "Ca trù"
+  },
+  {
+    "id": "xc-0013",
+    "category": "Đồ dùng gia đình",
+    "type": "scramble",
+    "prompt": "Tấm vật liệu mềm phủ trên sàn để trang trí hoặc giữ ấm",
+    "answer": "Thảm trải sàn"
+  },
+  {
+    "id": "xc-0053",
+    "category": "Nhà bếp",
+    "type": "scramble",
+    "prompt": "Dao nhỏ dùng gọt vỏ rau củ và trái cây",
+    "answer": "Dao gọt"
+  },
+  {
+    "id": "xc-0087",
+    "category": "Rau củ và trái cây",
+    "type": "scramble",
+    "prompt": "Trái vỏ tím dày, múi bên trong trắng và mềm",
+    "answer": "Quả măng cụt"
+  },
+  {
+    "id": "xc-0127",
+    "category": "Cây và hoa",
+    "type": "scramble",
+    "prompt": "Hoa thường có phần tràng phụ dạng chén hoặc loa ở giữa",
+    "answer": "Hoa thủy tiên"
+  },
+  {
+    "id": "xc-0166",
+    "category": "Động vật mở rộng",
+    "type": "scramble",
+    "prompt": "Thú lớn thường ngâm mình trong sông hồ, có miệng rất rộng",
+    "answer": "Hà mã"
+  },
+  {
+    "id": "xc-0210",
+    "category": "Chim và côn trùng",
+    "type": "scramble",
+    "prompt": "Chim không bay có kích thước lớn nhất còn sống",
+    "answer": "Đà điểu"
+  },
+  {
+    "id": "xc-0244",
+    "category": "Món ăn Việt",
+    "type": "scramble",
+    "prompt": "Bánh nhỏ nướng trong khuôn đất, phổ biến ở miền Trung",
+    "answer": "Bánh căn"
+  },
+  {
+    "id": "xc-0284",
+    "category": "Nghề nghiệp",
+    "type": "scramble",
+    "prompt": "Người quản lý tiền mặt và thực hiện thu chi trong đơn vị",
+    "answer": "Thủ quỹ"
+  },
+  {
+    "id": "xc-0319",
+    "category": "Học tập",
+    "type": "scramble",
+    "prompt": "Tập giấy đóng lại dùng ghi chép khi học",
+    "answer": "Quyển vở"
+  },
+  {
+    "id": "xc-0349",
+    "category": "Thiên nhiên",
+    "type": "scramble",
+    "prompt": "Sự dao động của mặt biển, thường do gió tạo ra",
+    "answer": "Sóng biển"
+  },
+  {
+    "id": "xc-0383",
+    "category": "Giao thông",
+    "type": "scramble",
+    "prompt": "Phương tiện chạy trên ray và dùng điện làm nguồn động lực",
+    "answer": "Tàu điện"
+  },
+  {
+    "id": "xc-0412",
+    "category": "Nhạc cụ",
+    "type": "scramble",
+    "prompt": "Nhạc cụ có nhiều dây mắc trên khung gần hình tam giác",
+    "answer": "Đàn hạc"
+  },
+  {
+    "id": "xc-0435",
+    "category": "Thể thao mở rộng",
+    "type": "scramble",
+    "prompt": "Hoạt động chinh phục địa hình núi hoặc vách cao",
+    "answer": "Leo núi"
+  },
+  {
+    "id": "xc-0465",
+    "category": "Thế giới",
+    "type": "scramble",
+    "prompt": "Thủ đô Phần Lan",
+    "answer": "Helsinki"
+  },
+  {
+    "id": "xc-0494",
+    "category": "Văn hóa và lễ hội",
+    "type": "scramble",
+    "prompt": "Loại hình dân ca nghi lễ gắn với vùng đất Phú Thọ",
+    "answer": "Hát xoan"
+  },
+  {
+    "id": "xc-0014",
+    "category": "Đồ dùng gia đình",
+    "type": "scramble",
+    "prompt": "Đồ nội thất nhiều ngăn dùng để xếp sách",
+    "answer": "Giá sách"
+  },
+  {
+    "id": "xc-0054",
+    "category": "Nhà bếp",
+    "type": "scramble",
+    "prompt": "Hai que dài dùng để gắp thức ăn",
+    "answer": "Đũa"
+  },
+  {
+    "id": "xc-0088",
+    "category": "Rau củ và trái cây",
+    "type": "scramble",
+    "prompt": "Trái nhiều mắt, khi chín thịt ngọt, ở miền Nam gọi là mãng cầu ta",
+    "answer": "Quả na"
+  },
+  {
+    "id": "xc-0128",
+    "category": "Cây và hoa",
+    "type": "scramble",
+    "prompt": "Hoa lớn thơm, thường có sáu phiến bao hoa xòe rộng",
+    "answer": "Hoa ly"
+  },
+  {
+    "id": "xc-0167",
+    "category": "Động vật mở rộng",
+    "type": "scramble",
+    "prompt": "Thú sống ở vùng khô hạn, trên lưng có bướu",
+    "answer": "Lạc đà"
+  },
+  {
+    "id": "xc-0211",
+    "category": "Chim và côn trùng",
+    "type": "scramble",
+    "prompt": "Chim chân dài, nhiều loài có bộ lông hồng và mỏ cong xuống",
+    "answer": "Chim hồng hạc"
+  },
+  {
+    "id": "xc-0245",
+    "category": "Món ăn Việt",
+    "type": "scramble",
+    "prompt": "Món chiên có tôm gắn với Hồ Tây ở Hà Nội",
+    "answer": "Bánh tôm"
+  },
+  {
+    "id": "xc-0285",
+    "category": "Nghề nghiệp",
+    "type": "scramble",
+    "prompt": "Người nhận tiền thanh toán tại cửa hàng",
+    "answer": "Thu ngân"
+  },
+  {
+    "id": "xc-0320",
+    "category": "Học tập",
+    "type": "scramble",
+    "prompt": "Cuốn sổ nhỏ để ghi những điều cần nhớ",
+    "answer": "Sổ tay"
+  },
+  {
+    "id": "xc-0350",
+    "category": "Thiên nhiên",
+    "type": "scramble",
+    "prompt": "Dòng nước chuyển động có hướng trong biển hoặc đại dương",
+    "answer": "Dòng hải lưu"
+  },
+  {
+    "id": "xc-0384",
+    "category": "Giao thông",
+    "type": "scramble",
+    "prompt": "Phương tiện có thể hoạt động dưới mặt nước",
+    "answer": "Tàu ngầm"
+  },
+  {
+    "id": "xc-0413",
+    "category": "Nhạc cụ",
+    "type": "scramble",
+    "prompt": "Nhạc cụ hơi làm từ ống trúc có các lỗ bấm",
+    "answer": "Sáo trúc"
+  },
+  {
+    "id": "xc-0436",
+    "category": "Thể thao mở rộng",
+    "type": "scramble",
+    "prompt": "Môn đối kháng dùng kiếm thể thao và trang bị bảo hộ",
+    "answer": "Đấu kiếm"
+  },
+  {
+    "id": "xc-0466",
+    "category": "Thế giới",
+    "type": "scramble",
+    "prompt": "Thủ đô Đan Mạch, có tượng nàng tiên cá nổi tiếng",
+    "answer": "Copenhagen"
+  },
+  {
+    "id": "xc-0495",
+    "category": "Văn hóa và lễ hội",
+    "type": "scramble",
+    "prompt": "Lối hát dân gian của Nghệ Tĩnh, thường nhắc cùng hát giặm",
+    "answer": "Hát ví"
+  },
+  {
+    "id": "xc-0015",
+    "category": "Đồ dùng gia đình",
+    "type": "scramble",
+    "prompt": "Đồ nội thất có cánh hoặc ngăn để cất trang phục",
+    "answer": "Tủ quần áo"
+  },
+  {
+    "id": "xc-0055",
+    "category": "Nhà bếp",
+    "type": "scramble",
+    "prompt": "Đồ đựng thức ăn có lòng nông và vành rộng",
+    "answer": "Đĩa"
+  },
+  {
+    "id": "xc-0089",
+    "category": "Rau củ và trái cây",
+    "type": "scramble",
+    "prompt": "Trái dài hoặc bầu, khi chín ruột vàng cam, nhiều hạt đen ở giữa",
+    "answer": "Quả đu đủ"
+  },
+  {
+    "id": "xc-0129",
+    "category": "Cây và hoa",
+    "type": "scramble",
+    "prompt": "Hoa nhỏ tụ thành cụm tròn lớn, thường gặp ở Đà Lạt",
+    "answer": "Hoa cẩm tú cầu"
+  },
+  {
+    "id": "xc-0168",
+    "category": "Động vật mở rộng",
+    "type": "scramble",
+    "prompt": "Tên gọi nhiều loài thú móng guốc nhanh nhẹn, thường có sừng",
+    "answer": "Linh dương"
+  },
+  {
+    "id": "xc-0212",
+    "category": "Chim và côn trùng",
+    "type": "scramble",
+    "prompt": "Chim nước cổ dài, thường được coi là biểu tượng vẻ đẹp thanh lịch",
+    "answer": "Thiên nga"
+  },
+  {
+    "id": "xc-0246",
+    "category": "Món ăn Việt",
+    "type": "scramble",
+    "prompt": "Bánh nếp chiên, thường có nhân đậu xanh, tên miền Bắc",
+    "answer": "Bánh rán"
+  },
+  {
+    "id": "xc-0286",
+    "category": "Nghề nghiệp",
+    "type": "scramble",
+    "prompt": "Người chế biến món ăn chuyên nghiệp",
+    "answer": "Đầu bếp"
+  },
+  {
+    "id": "xc-0321",
+    "category": "Học tập",
+    "type": "scramble",
+    "prompt": "Sách dùng làm tài liệu chính thức cho một môn học ở trường",
+    "answer": "Sách giáo khoa"
+  },
+  {
+    "id": "xc-0351",
+    "category": "Thiên nhiên",
+    "type": "scramble",
+    "prompt": "Động vật biển sống thành tập đoàn, nhiều loài tạo bộ xương đá vôi",
+    "answer": "San hô"
+  },
+  {
+    "id": "xc-0385",
+    "category": "Giao thông",
+    "type": "scramble",
+    "prompt": "Thuyền dùng sức gió tác động lên buồm để di chuyển",
+    "answer": "Thuyền buồm"
+  },
+  {
+    "id": "xc-0414",
+    "category": "Nhạc cụ",
+    "type": "scramble",
+    "prompt": "Nhạc cụ hơi dạng ống thường thổi dọc",
+    "answer": "Tiêu"
+  },
+  {
+    "id": "xc-0437",
+    "category": "Thể thao mở rộng",
+    "type": "scramble",
+    "prompt": "Môn đối kháng dùng kỹ thuật vật, giữ hoặc quật đối thủ theo luật",
+    "answer": "Đấu vật"
+  },
+  {
+    "id": "xc-0467",
+    "category": "Thế giới",
+    "type": "scramble",
+    "prompt": "Thủ đô Hà Lan, nổi tiếng với hệ thống kênh đào",
+    "answer": "Amsterdam"
+  },
+  {
+    "id": "xc-0496",
+    "category": "Văn hóa và lễ hội",
+    "type": "scramble",
+    "prompt": "Loại hình âm nhạc truyền thống gắn với Nam Bộ",
+    "answer": "Đờn ca tài tử"
+  },
+  {
+    "id": "xc-0016",
+    "category": "Đồ dùng gia đình",
+    "type": "scramble",
+    "prompt": "Vật dụng để treo quần áo lên thanh ngang",
+    "answer": "Móc áo"
+  },
+  {
+    "id": "xc-0056",
+    "category": "Nhà bếp",
+    "type": "scramble",
+    "prompt": "Đồ có vòi dùng để pha và rót trà",
+    "answer": "Ấm trà"
+  },
+  {
+    "id": "xc-0090",
+    "category": "Rau củ và trái cây",
+    "type": "scramble",
+    "prompt": "Trái có vỏ hồng hoặc vàng, ruột nhiều hạt đen li ti",
+    "answer": "Thanh long"
+  },
+  {
+    "id": "xc-0130",
+    "category": "Cây và hoa",
+    "type": "scramble",
+    "prompt": "Hoa tím có mùi thơm, tên tiếng Anh là lavender",
+    "answer": "Hoa oải hương"
+  },
+  {
+    "id": "xc-0169",
+    "category": "Động vật mở rộng",
+    "type": "scramble",
+    "prompt": "Thú họ hươu sống vùng lạnh, gắn với xe kéo của ông già Noel",
+    "answer": "Tuần lộc"
+  },
+  {
+    "id": "xc-0213",
+    "category": "Chim và côn trùng",
+    "type": "scramble",
+    "prompt": "Chim chân dài thường kiếm ăn trên ruộng nước, xuất hiện nhiều trong ca dao",
+    "answer": "Con cò"
+  },
+  {
+    "id": "xc-0247",
+    "category": "Món ăn Việt",
+    "type": "scramble",
+    "prompt": "Tên miền Nam của loại bánh nếp chiên hình tròn, thường phủ mè",
+    "answer": "Bánh cam"
+  },
+  {
+    "id": "xc-0287",
+    "category": "Nghề nghiệp",
+    "type": "scramble",
+    "prompt": "Người hỗ trợ sơ chế và chuẩn bị cho đầu bếp",
+    "answer": "Phụ bếp"
+  },
+  {
+    "id": "xc-0322",
+    "category": "Học tập",
+    "type": "scramble",
+    "prompt": "Sách hoặc dữ liệu tra nghĩa, cách viết và cách dùng từ",
+    "answer": "Từ điển"
+  },
+  {
+    "id": "xc-0352",
+    "category": "Thiên nhiên",
+    "type": "scramble",
+    "prompt": "Hệ cấu trúc dưới biển hình thành chủ yếu từ bộ xương san hô",
+    "answer": "Rạn san hô"
+  },
+  {
+    "id": "xc-0386",
+    "category": "Giao thông",
+    "type": "scramble",
+    "prompt": "Thuyền máy cỡ nhỏ thường chạy nhanh trên nước",
+    "answer": "Ca nô"
+  },
+  {
+    "id": "xc-0415",
+    "category": "Nhạc cụ",
+    "type": "scramble",
+    "prompt": "Nhạc cụ hơi truyền thống có loa kèn loe và âm thanh vang",
+    "answer": "Kèn bầu"
+  },
+  {
+    "id": "xc-0438",
+    "category": "Thể thao mở rộng",
+    "type": "scramble",
+    "prompt": "Môn đối kháng dùng đòn đấm với găng tay",
+    "answer": "Quyền anh"
+  },
+  {
+    "id": "xc-0468",
+    "category": "Thế giới",
+    "type": "scramble",
+    "prompt": "Thủ đô Bỉ",
+    "answer": "Brussels"
+  },
+  {
+    "id": "xc-0497",
+    "category": "Văn hóa và lễ hội",
+    "type": "scramble",
+    "prompt": "Âm nhạc cung đình, di sản nổi tiếng gắn với Huế",
+    "answer": "Nhã nhạc"
+  },
+  {
+    "id": "xc-0017",
+    "category": "Đồ dùng gia đình",
+    "type": "scramble",
+    "prompt": "Vật dụng đan hoặc đúc có thành, dùng gom đồ lặt vặt",
+    "answer": "Giỏ đựng đồ"
+  },
+  {
+    "id": "xc-0057",
+    "category": "Nhà bếp",
+    "type": "scramble",
+    "prompt": "Chén nhỏ, thường có quai, dùng uống trà",
+    "answer": "Tách trà"
+  },
+  {
+    "id": "xc-0091",
+    "category": "Rau củ và trái cây",
+    "type": "scramble",
+    "prompt": "Trái có vỏ và thịt nâu, còn gọi là sapôchê",
+    "answer": "Hồng xiêm"
+  },
+  {
+    "id": "xc-0131",
+    "category": "Cây và hoa",
+    "type": "scramble",
+    "prompt": "Hoa nhỏ hồng trắng của cây lương thực, nổi tiếng ở Hà Giang",
+    "answer": "Hoa tam giác mạch"
+  },
+  {
+    "id": "xc-0170",
+    "category": "Động vật mở rộng",
+    "type": "scramble",
+    "prompt": "Thú họ hươu, con đực thường có gạc phân nhánh",
+    "answer": "Nai"
+  },
+  {
+    "id": "xc-0214",
+    "category": "Chim và côn trùng",
+    "type": "scramble",
+    "prompt": "Chim họ diệc thường kiếm ăn lúc chiều tối hoặc ban đêm",
+    "answer": "Con vạc"
+  },
+  {
+    "id": "xc-0248",
+    "category": "Món ăn Việt",
+    "type": "scramble",
+    "prompt": "Món bánh từ chuối, có thể hấp, nướng hoặc chiên",
+    "answer": "Bánh chuối"
+  },
+  {
+    "id": "xc-0288",
+    "category": "Nghề nghiệp",
+    "type": "scramble",
+    "prompt": "Người chuyên làm các loại bánh",
+    "answer": "Thợ bánh"
+  },
+  {
+    "id": "xc-0323",
+    "category": "Học tập",
+    "type": "scramble",
+    "prompt": "Hình biểu diễn thu nhỏ bề mặt Trái Đất hoặc một khu vực",
+    "answer": "Bản đồ"
+  },
+  {
+    "id": "xc-0353",
+    "category": "Thiên nhiên",
+    "type": "scramble",
+    "prompt": "Khối cát nổi cao do gió hoặc nước tích tụ",
+    "answer": "Cồn cát"
+  },
+  {
+    "id": "xc-0387",
+    "category": "Giao thông",
+    "type": "scramble",
+    "prompt": "Phương tiện chở người và xe qua sông hoặc eo nước",
+    "answer": "Phà"
+  },
+  {
+    "id": "xc-0416",
+    "category": "Nhạc cụ",
+    "type": "scramble",
+    "prompt": "Kèn đồng thường có ba van bấm, xuất hiện nhiều trong jazz",
+    "answer": "Kèn trumpet"
+  },
+  {
+    "id": "xc-0439",
+    "category": "Thể thao mở rộng",
+    "type": "scramble",
+    "prompt": "Môn võ có nguồn gốc Okinawa, Nhật Bản, nổi bật với đấm và đá",
+    "answer": "Karate"
+  },
+  {
+    "id": "xc-0469",
+    "category": "Thế giới",
+    "type": "scramble",
+    "prompt": "Thủ đô Hungary, nằm bên sông Danube",
+    "answer": "Budapest"
+  },
+  {
+    "id": "xc-0498",
+    "category": "Văn hóa và lễ hội",
+    "type": "scramble",
+    "prompt": "Dòng tranh dân gian in mộc bản nổi tiếng ở Bắc Ninh",
+    "answer": "Tranh Đông Hồ"
+  },
+  {
+    "id": "xc-0018",
+    "category": "Đồ dùng gia đình",
+    "type": "scramble",
+    "prompt": "Vật chứa đồ bỏ đi, thường có nắp",
+    "answer": "Thùng rác"
+  },
+  {
+    "id": "xc-0058",
+    "category": "Nhà bếp",
+    "type": "scramble",
+    "prompt": "Đồ có mặt phẳng và mép thấp dùng bưng nhiều món",
+    "answer": "Khay"
+  },
+  {
+    "id": "xc-0092",
+    "category": "Rau củ và trái cây",
+    "type": "scramble",
+    "prompt": "Trái có ruột chua thơm, nhiều hạt bọc dịch vàng, còn gọi chanh dây",
+    "answer": "Chanh leo"
+  },
+  {
+    "id": "xc-0132",
+    "category": "Cây và hoa",
+    "type": "scramble",
+    "prompt": "Hoa trắng hoặc tím nhạt gắn với vùng Tây Bắc",
+    "answer": "Hoa ban"
+  },
+  {
+    "id": "xc-0171",
+    "category": "Động vật mở rộng",
+    "type": "scramble",
+    "prompt": "Họ hàng hoang dã của lợn nhà, thường có lông cứng và răng nanh",
+    "answer": "Lợn rừng"
+  },
+  {
+    "id": "xc-0215",
+    "category": "Chim và côn trùng",
+    "type": "scramble",
+    "prompt": "Gia cầm có chân có màng, bơi giỏi, thường kêu cạp cạp",
+    "answer": "Con vịt"
+  },
+  {
+    "id": "xc-0249",
+    "category": "Món ăn Việt",
+    "type": "scramble",
+    "prompt": "Bánh thường làm từ khoai lang bào hoặc thái lát trộn bột rồi chiên",
+    "answer": "Bánh khoai"
+  },
+  {
+    "id": "xc-0289",
+    "category": "Nghề nghiệp",
+    "type": "scramble",
+    "prompt": "Người cắt và khâu trang phục",
+    "answer": "Thợ may"
+  },
+  {
+    "id": "xc-0324",
+    "category": "Học tập",
+    "type": "scramble",
+    "prompt": "Mô hình hình cầu thể hiện bề mặt Trái Đất",
+    "answer": "Quả địa cầu"
+  },
+  {
+    "id": "xc-0354",
+    "category": "Thiên nhiên",
+    "type": "scramble",
+    "prompt": "Vùng khô hạn có lượng mưa rất thấp",
+    "answer": "Sa mạc"
+  },
+  {
+    "id": "xc-0388",
+    "category": "Giao thông",
+    "type": "scramble",
+    "prompt": "Tàu thuyền thường phục vụ du lịch hoặc nghỉ dưỡng",
+    "answer": "Du thuyền"
+  },
+  {
+    "id": "xc-0417",
+    "category": "Nhạc cụ",
+    "type": "scramble",
+    "prompt": "Nhạc cụ hơi có dăm đơn và thân thường bằng kim loại, gắn với jazz",
+    "answer": "Kèn saxophone"
+  },
+  {
+    "id": "xc-0440",
+    "category": "Thể thao mở rộng",
+    "type": "scramble",
+    "prompt": "Môn võ Nhật Bản chú trọng các kỹ thuật ném, vật và khống chế",
+    "answer": "Judo"
+  },
+  {
+    "id": "xc-0470",
+    "category": "Thế giới",
+    "type": "scramble",
+    "prompt": "Thủ đô Thái Lan",
+    "answer": "Bangkok"
+  },
+  {
+    "id": "xc-0499",
+    "category": "Văn hóa và lễ hội",
+    "type": "scramble",
+    "prompt": "Dòng tranh dân gian gắn với khu phố cổ Hà Nội",
+    "answer": "Tranh Hàng Trống"
+  },
+  {
+    "id": "xc-0019",
+    "category": "Đồ dùng gia đình",
+    "type": "scramble",
+    "prompt": "Tấm vải phủ lên mặt bàn khi trang trí hoặc ăn uống",
+    "answer": "Khăn trải bàn"
+  },
+  {
+    "id": "xc-0059",
+    "category": "Nhà bếp",
+    "type": "scramble",
+    "prompt": "Vật chứa bữa ăn để mang đi học hoặc đi làm",
+    "answer": "Hộp cơm"
+  },
+  {
+    "id": "xc-0093",
+    "category": "Rau củ và trái cây",
+    "type": "scramble",
+    "prompt": "Loại dưa có hoa văn như mạng lưới trên vỏ",
+    "answer": "Dưa lưới"
+  },
+  {
+    "id": "xc-0133",
+    "category": "Cây và hoa",
+    "type": "scramble",
+    "prompt": "Hoa thơm có cánh dày, còn gọi hoa sứ",
+    "answer": "Hoa đại"
+  },
+  {
+    "id": "xc-0172",
+    "category": "Động vật mở rộng",
+    "type": "scramble",
+    "prompt": "Thú có nhiều lông cứng biến đổi thành gai để tự vệ",
+    "answer": "Nhím"
+  },
+  {
+    "id": "xc-0216",
+    "category": "Chim và côn trùng",
+    "type": "scramble",
+    "prompt": "Gia cầm cổ dài, tiếng kêu lớn, thường được nuôi giữ nhà",
+    "answer": "Con ngỗng"
+  },
+  {
+    "id": "xc-0250",
+    "category": "Món ăn Việt",
+    "type": "scramble",
+    "prompt": "Bánh chiên phồng rỗng ruột, bên ngoài thường có mè",
+    "answer": "Bánh tiêu"
+  },
+  {
+    "id": "xc-0290",
+    "category": "Nghề nghiệp",
+    "type": "scramble",
+    "prompt": "Người làm đồ dùng và công trình từ gỗ",
+    "answer": "Thợ mộc"
+  },
+  {
+    "id": "xc-0325",
+    "category": "Học tập",
+    "type": "scramble",
+    "prompt": "Thiết bị quan sát vật hoặc cấu trúc rất nhỏ",
+    "answer": "Kính hiển vi"
+  },
+  {
+    "id": "xc-0355",
+    "category": "Thiên nhiên",
+    "type": "scramble",
+    "prompt": "Khu vực có nước và thực vật giữa vùng sa mạc",
+    "answer": "Ốc đảo"
+  },
+  {
+    "id": "xc-0389",
+    "category": "Giao thông",
+    "type": "scramble",
+    "prompt": "Phương tiện bay dùng túi khí nóng để tạo lực nâng",
+    "answer": "Khinh khí cầu"
+  },
+  {
+    "id": "xc-0418",
+    "category": "Nhạc cụ",
+    "type": "scramble",
+    "prompt": "Nhạc cụ nhỏ nhiều lỗ, phát âm khi thổi hoặc hút hơi",
+    "answer": "Kèn harmonica"
+  },
+  {
+    "id": "xc-0441",
+    "category": "Thể thao mở rộng",
+    "type": "scramble",
+    "prompt": "Trò chơi chiến thuật có vua, hậu, xe, tượng, mã và tốt",
+    "answer": "Cờ vua"
+  },
+  {
+    "id": "xc-0471",
+    "category": "Thế giới",
+    "type": "scramble",
+    "prompt": "Thủ đô Hàn Quốc",
+    "answer": "Seoul"
+  },
+  {
+    "id": "xc-0500",
+    "category": "Văn hóa và lễ hội",
+    "type": "scramble",
+    "prompt": "Sản phẩm gốm của làng nghề nổi tiếng ở Gia Lâm, Hà Nội",
+    "answer": "Gốm Bát Tràng"
+  },
+  {
+    "id": "xc-0020",
+    "category": "Đồ dùng gia đình",
+    "type": "scramble",
+    "prompt": "Đồ đắp có lớp ruột mềm giúp giữ ấm khi ngủ",
+    "answer": "Chăn bông"
+  },
+  {
+    "id": "xc-0060",
+    "category": "Nhà bếp",
+    "type": "scramble",
+    "prompt": "Đồ úp che thức ăn để tránh ruồi và bụi",
+    "answer": "Lồng bàn"
+  },
+  {
+    "id": "xc-0094",
+    "category": "Rau củ và trái cây",
+    "type": "scramble",
+    "prompt": "Quả dài giòn nhiều nước, thường ăn sống, còn gọi dưa chuột",
+    "answer": "Dưa leo"
+  },
+  {
+    "id": "xc-0134",
+    "category": "Cây và hoa",
+    "type": "scramble",
+    "prompt": "Hoa có hình chiếc kèn, loại trắng thường xuất hiện ở Hà Nội tháng tư",
+    "answer": "Hoa loa kèn"
+  },
+  {
+    "id": "xc-0173",
+    "category": "Động vật mở rộng",
+    "type": "scramble",
+    "prompt": "Thú gặm nhấm đuôi rậm, thường leo cây và ăn hạt",
+    "answer": "Sóc"
+  },
+  {
+    "id": "xc-0217",
+    "category": "Chim và côn trùng",
+    "type": "scramble",
+    "prompt": "Gia cầm lớn có phần da đỏ ở đầu, gắn với lễ Tạ ơn ở Mỹ",
+    "answer": "Gà tây"
+  },
+  {
+    "id": "xc-0251",
+    "category": "Món ăn Việt",
+    "type": "scramble",
+    "prompt": "Bánh hấp vỏ bột mì mềm, thường có nhân bên trong",
+    "answer": "Bánh bao"
+  },
+  {
+    "id": "xc-0291",
+    "category": "Nghề nghiệp",
+    "type": "scramble",
+    "prompt": "Người lắp đặt hoặc sửa chữa hệ thống điện",
+    "answer": "Thợ điện"
+  },
+  {
+    "id": "xc-0326",
+    "category": "Học tập",
+    "type": "scramble",
+    "prompt": "Thiết bị quan sát các thiên thể ở xa",
+    "answer": "Kính thiên văn"
+  },
+  {
+    "id": "xc-0356",
+    "category": "Thiên nhiên",
+    "type": "scramble",
+    "prompt": "Vùng đất tương đối thấp, bằng phẳng trên diện rộng",
+    "answer": "Đồng bằng"
+  },
+  {
+    "id": "xc-0390",
+    "category": "Giao thông",
+    "type": "scramble",
+    "prompt": "Máy bay có cánh quạt nâng lớn, có thể cất hạ cánh gần như thẳng đứng",
+    "answer": "Trực thăng"
+  },
+  {
+    "id": "xc-0419",
+    "category": "Nhạc cụ",
+    "type": "scramble",
+    "prompt": "Trống truyền thống hai mặt, tên có trong một làn điệu dân ca",
+    "answer": "Trống cơm"
+  },
+  {
+    "id": "xc-0442",
+    "category": "Thể thao mở rộng",
+    "type": "scramble",
+    "prompt": "Trò chơi chiến thuật có tướng, sĩ, tượng, xe, pháo, mã và tốt",
+    "answer": "Cờ tướng"
+  },
+  {
+    "id": "xc-0472",
+    "category": "Thế giới",
+    "type": "scramble",
+    "prompt": "Thủ đô Trung Quốc",
+    "answer": "Bắc Kinh"
+  },
+  {
+    "id": "xc-0501",
+    "category": "Văn hóa và lễ hội",
+    "type": "scramble",
+    "prompt": "Sản phẩm dệt của làng nghề nổi tiếng ở Hà Đông, Hà Nội",
+    "answer": "Lụa Vạn Phúc"
+  },
+  {
+    "id": "xc-0021",
+    "category": "Đồ dùng gia đình",
+    "type": "scramble",
+    "prompt": "Tấm vải phủ lên nệm để nằm và dễ thay giặt",
+    "answer": "Ga giường"
+  },
+  {
+    "id": "xc-0061",
+    "category": "Nhà bếp",
+    "type": "scramble",
+    "prompt": "Đồ mặc phía trước người để tránh bẩn khi nấu ăn",
+    "answer": "Tạp dề"
+  },
+  {
+    "id": "xc-0095",
+    "category": "Rau củ và trái cây",
+    "type": "scramble",
+    "prompt": "Quả ruột vàng cam, có thể nấu canh hoặc làm sữa",
+    "answer": "Bí đỏ"
+  },
+  {
+    "id": "xc-0135",
+    "category": "Cây và hoa",
+    "type": "scramble",
+    "prompt": "Hoa lớn trên cây thường trồng làm hàng rào, có cột nhị dài",
+    "answer": "Hoa dâm bụt"
+  },
+  {
+    "id": "xc-0174",
+    "category": "Động vật mở rộng",
+    "type": "scramble",
+    "prompt": "Tên tiếng Việt chỉ nhóm thú có túi nổi tiếng với cách di chuyển bằng nhảy",
+    "answer": "Chuột túi"
+  },
+  {
+    "id": "xc-0218",
+    "category": "Chim và côn trùng",
+    "type": "scramble",
+    "prompt": "Gà trưởng thành giống cái, thường được nuôi để lấy trứng",
+    "answer": "Gà mái"
+  },
+  {
+    "id": "xc-0252",
+    "category": "Món ăn Việt",
+    "type": "scramble",
+    "prompt": "Món bún ăn với thịt lợn nướng và nước chấm, nổi tiếng ở Hà Nội",
+    "answer": "Bún chả"
+  },
+  {
+    "id": "xc-0292",
+    "category": "Nghề nghiệp",
+    "type": "scramble",
+    "prompt": "Người nối kim loại bằng các phương pháp hàn",
+    "answer": "Thợ hàn"
+  },
+  {
+    "id": "xc-0327",
+    "category": "Học tập",
+    "type": "scramble",
+    "prompt": "Ống nhỏ thường bằng thủy tinh dùng chứa mẫu trong thí nghiệm",
+    "answer": "Ống nghiệm"
+  },
+  {
+    "id": "xc-0357",
+    "category": "Thiên nhiên",
+    "type": "scramble",
+    "prompt": "Vùng đất cao có bề mặt tương đối bằng phẳng",
+    "answer": "Cao nguyên"
+  },
+  {
+    "id": "xc-0391",
+    "category": "Giao thông",
+    "type": "scramble",
+    "prompt": "Phương tiện bay không dùng động cơ trong phần lớn hành trình",
+    "answer": "Tàu lượn"
+  },
+  {
+    "id": "xc-0420",
+    "category": "Nhạc cụ",
+    "type": "scramble",
+    "prompt": "Nhạc khí bằng đồng gắn với văn hóa Đông Sơn",
+    "answer": "Trống đồng"
+  },
+  {
+    "id": "xc-0443",
+    "category": "Thể thao mở rộng",
+    "type": "scramble",
+    "prompt": "Trò chơi đặt quân đen trắng lên giao điểm để tranh lãnh thổ",
+    "answer": "Cờ vây"
+  },
+  {
+    "id": "xc-0473",
+    "category": "Thế giới",
+    "type": "scramble",
+    "prompt": "Thủ đô Ấn Độ",
+    "answer": "New Delhi"
+  },
+  {
+    "id": "xc-0502",
+    "category": "Văn hóa và lễ hội",
+    "type": "scramble",
+    "prompt": "Loại nón rộng và phẳng, thường gắn với hình ảnh liền chị quan họ",
+    "answer": "Nón quai thao"
+  },
+  {
+    "id": "xc-0022",
+    "category": "Đồ dùng gia đình",
+    "type": "scramble",
+    "prompt": "Lớp dày mềm đặt trên giường giúp nằm êm",
+    "answer": "Đệm"
+  },
+  {
+    "id": "xc-0062",
+    "category": "Nhà bếp",
+    "type": "scramble",
+    "prompt": "Vật đeo bao bàn tay; loại cách nhiệt dùng lấy đồ nóng",
+    "answer": "Găng tay"
+  },
+  {
+    "id": "xc-0096",
+    "category": "Rau củ và trái cây",
+    "type": "scramble",
+    "prompt": "Quả thường dùng nấu canh, vỏ xanh, còn gọi bí đao",
+    "answer": "Bí xanh"
+  },
+  {
+    "id": "xc-0136",
+    "category": "Cây và hoa",
+    "type": "scramble",
+    "prompt": "Hoa mọc trên mặt nước, lá thường nổi và có khe ở gốc",
+    "answer": "Hoa súng"
+  },
+  {
+    "id": "xc-0175",
+    "category": "Động vật mở rộng",
+    "type": "scramble",
+    "prompt": "Thú gặm nhấm nhỏ, còn gọi bọ ú, thường được nuôi làm thú cưng",
+    "answer": "Chuột lang"
+  },
+  {
+    "id": "xc-0219",
+    "category": "Chim và côn trùng",
+    "type": "scramble",
+    "prompt": "Côn trùng sống thành đàn, có kiến chúa và kiến thợ",
+    "answer": "Con kiến"
+  },
+  {
+    "id": "xc-0253",
+    "category": "Món ăn Việt",
+    "type": "scramble",
+    "prompt": "Món bún nước thường có riêu cua và cà chua",
+    "answer": "Bún riêu"
+  },
+  {
+    "id": "xc-0293",
+    "category": "Nghề nghiệp",
+    "type": "scramble",
+    "prompt": "Người bảo dưỡng và khắc phục hỏng hóc phương tiện",
+    "answer": "Thợ sửa xe"
+  },
+  {
+    "id": "xc-0328",
+    "category": "Học tập",
+    "type": "scramble",
+    "prompt": "Đồ chứa có vạch chia dùng đo thể tích chất lỏng",
+    "answer": "Cốc đong"
+  },
+  {
+    "id": "xc-0358",
+    "category": "Thiên nhiên",
+    "type": "scramble",
+    "prompt": "Vùng đất thấp kéo dài giữa núi hoặc đồi",
+    "answer": "Thung lũng"
+  },
+  {
+    "id": "xc-0392",
+    "category": "Giao thông",
+    "type": "scramble",
+    "prompt": "Khu vực có đường băng và công trình phục vụ máy bay",
+    "answer": "Sân bay"
+  },
+  {
+    "id": "xc-0421",
+    "category": "Nhạc cụ",
+    "type": "scramble",
+    "prompt": "Nhóm nhạc cụ gõ bằng kim loại gắn với văn hóa Tây Nguyên",
+    "answer": "Cồng chiêng"
+  },
+  {
+    "id": "xc-0444",
+    "category": "Thể thao mở rộng",
+    "type": "scramble",
+    "prompt": "Môn thể thao dùng cơ đánh các bi trên bàn phủ nỉ",
+    "answer": "Bi da"
+  },
+  {
+    "id": "xc-0474",
+    "category": "Thế giới",
+    "type": "scramble",
+    "prompt": "Thủ đô Nepal",
+    "answer": "Kathmandu"
+  },
+  {
+    "id": "xc-0503",
+    "category": "Văn hóa và lễ hội",
+    "type": "scramble",
+    "prompt": "Trang phục truyền thống nữ gồm bốn thân áo, gắn với Bắc Bộ",
+    "answer": "Áo tứ thân"
+  },
+  {
+    "id": "xc-0023",
+    "category": "Đồ dùng gia đình",
+    "type": "scramble",
+    "prompt": "Loại giường có hai hoặc nhiều chỗ nằm xếp theo chiều cao",
+    "answer": "Giường tầng"
+  },
+  {
+    "id": "xc-0063",
+    "category": "Nhà bếp",
+    "type": "scramble",
+    "prompt": "Dụng cụ lòng sâu dùng cùng chày để nghiền nguyên liệu",
+    "answer": "Cối giã"
+  },
+  {
+    "id": "xc-0097",
+    "category": "Rau củ và trái cây",
+    "type": "scramble",
+    "prompt": "Quả dài thường nấu canh, khi già phần xơ có thể dùng cọ rửa",
+    "answer": "Mướp"
+  },
+  {
+    "id": "xc-0137",
+    "category": "Cây và hoa",
+    "type": "scramble",
+    "prompt": "Hoa nhiều màu, tên thường gắn với vùng núi cao và Sa Pa",
+    "answer": "Hoa đỗ quyên"
+  },
+  {
+    "id": "xc-0176",
+    "category": "Động vật mở rộng",
+    "type": "scramble",
+    "prompt": "Thú tai dài, chân sau khỏe, thường được vẽ đang ăn cà rốt",
+    "answer": "Thỏ"
+  },
+  {
+    "id": "xc-0220",
+    "category": "Chim và côn trùng",
+    "type": "scramble",
+    "prompt": "Côn trùng sống theo tập đoàn, nhiều loài ăn gỗ và làm tổ",
+    "answer": "Mối"
+  },
+  {
+    "id": "xc-0254",
+    "category": "Món ăn Việt",
+    "type": "scramble",
+    "prompt": "Món bún Hà Nội có nhiều nguyên liệu thái nhỏ như trứng, gà và giò",
+    "answer": "Bún thang"
+  },
+  {
+    "id": "xc-0294",
+    "category": "Nghề nghiệp",
+    "type": "scramble",
+    "prompt": "Người tạo kiểu và cắt ngắn mái tóc cho khách",
+    "answer": "Thợ cắt tóc"
+  },
+  {
+    "id": "xc-0329",
+    "category": "Học tập",
+    "type": "scramble",
+    "prompt": "Thiết bị đo khối lượng và hiển thị bằng chữ số",
+    "answer": "Cân điện tử"
+  },
+  {
+    "id": "xc-0359",
+    "category": "Thiên nhiên",
+    "type": "scramble",
+    "prompt": "Thung lũng hẹp, sâu, thường có vách dốc",
+    "answer": "Hẻm núi"
+  },
+  {
+    "id": "xc-0393",
+    "category": "Giao thông",
+    "type": "scramble",
+    "prompt": "Công trình phục vụ hành khách lên xuống tàu hỏa",
+    "answer": "Nhà ga"
+  },
+  {
+    "id": "xc-0422",
+    "category": "Nhạc cụ",
+    "type": "scramble",
+    "prompt": "Nhạc cụ gõ nhỏ thường dùng giữ nhịp trong đờn ca tài tử",
+    "answer": "Song loan"
+  },
+  {
+    "id": "xc-0445",
+    "category": "Thể thao mở rộng",
+    "type": "scramble",
+    "prompt": "Môn lăn bóng để làm đổ các chai gỗ ở cuối đường băng",
+    "answer": "Bowling"
+  },
+  {
+    "id": "xc-0475",
+    "category": "Thế giới",
+    "type": "scramble",
+    "prompt": "Thủ đô Australia, không phải Sydney",
+    "answer": "Canberra"
+  },
+  {
+    "id": "xc-0504",
+    "category": "Văn hóa và lễ hội",
+    "type": "scramble",
+    "prompt": "Trang phục thân áo đơn giản, thường gắn với miền Tây Nam Bộ",
+    "answer": "Áo bà ba"
+  },
+  {
+    "id": "xc-0024",
+    "category": "Đồ dùng gia đình",
+    "type": "scramble",
+    "prompt": "Thiết bị tạo gió treo trên trần nhà",
+    "answer": "Quạt trần"
+  },
+  {
+    "id": "xc-0064",
+    "category": "Nhà bếp",
+    "type": "scramble",
+    "prompt": "Thanh cầm tay dùng giã nguyên liệu trong cối",
+    "answer": "Chày"
+  },
+  {
+    "id": "xc-0098",
+    "category": "Rau củ và trái cây",
+    "type": "scramble",
+    "prompt": "Quả xanh vỏ sần, vị đắng, còn gọi mướp đắng",
+    "answer": "Khổ qua"
+  },
+  {
+    "id": "xc-0138",
+    "category": "Cây và hoa",
+    "type": "scramble",
+    "prompt": "Hoa có cánh mềm xếp lớp, tên mang nghĩa điềm lành",
+    "answer": "Hoa cát tường"
+  },
+  {
+    "id": "xc-0177",
+    "category": "Động vật mở rộng",
+    "type": "scramble",
+    "prompt": "Thú bơi giỏi, thân dài, sống gắn với môi trường nước",
+    "answer": "Rái cá"
+  },
+  {
+    "id": "xc-0221",
+    "category": "Chim và côn trùng",
+    "type": "scramble",
+    "prompt": "Côn trùng có hai đôi cánh dài, thường bay gần ao hồ",
+    "answer": "Chuồn chuồn"
+  },
+  {
+    "id": "xc-0255",
+    "category": "Món ăn Việt",
+    "type": "scramble",
+    "prompt": "Món bún nước có hương vị mắm đậm, phổ biến ở miền Tây",
+    "answer": "Bún mắm"
+  },
+  {
+    "id": "xc-0295",
+    "category": "Nghề nghiệp",
+    "type": "scramble",
+    "prompt": "Người chụp ảnh chuyên nghiệp hoặc theo hoạt động sáng tác",
+    "answer": "Nhiếp ảnh gia"
+  },
+  {
+    "id": "xc-0330",
+    "category": "Học tập",
+    "type": "scramble",
+    "prompt": "Mặt bảng sẫm màu thường dùng viết bằng phấn",
+    "answer": "Bảng đen"
+  },
+  {
+    "id": "xc-0360",
+    "category": "Thiên nhiên",
+    "type": "scramble",
+    "prompt": "Khoảng trống tự nhiên trong lòng núi hoặc dưới mặt đất",
+    "answer": "Hang động"
+  },
+  {
+    "id": "xc-0394",
+    "category": "Giao thông",
+    "type": "scramble",
+    "prompt": "Nơi xe khách đón trả khách và tổ chức chuyến đi",
+    "answer": "Bến xe"
+  },
+  {
+    "id": "xc-0446",
+    "category": "Thể thao mở rộng",
+    "type": "scramble",
+    "prompt": "Môn dùng gậy đánh bóng vào lỗ với số lần đánh ít nhất",
+    "answer": "Golf"
+  },
+  {
+    "id": "xc-0476",
+    "category": "Thế giới",
+    "type": "scramble",
+    "prompt": "Thủ đô New Zealand",
+    "answer": "Wellington"
+  },
+  {
+    "id": "xc-0505",
+    "category": "Văn hóa và lễ hội",
+    "type": "scramble",
+    "prompt": "Khăn có hoa văn ô vuông, quen thuộc trong đời sống Nam Bộ",
+    "answer": "Khăn rằn"
+  },
+  {
+    "id": "xc-0025",
+    "category": "Đồ dùng gia đình",
+    "type": "scramble",
+    "prompt": "Quạt điện nhỏ thường đặt trên mặt bàn",
+    "answer": "Quạt bàn"
+  },
+  {
+    "id": "xc-0065",
+    "category": "Nhà bếp",
+    "type": "scramble",
+    "prompt": "Thiết bị dùng lưỡi quay để nghiền nhỏ thực phẩm",
+    "answer": "Máy xay"
+  },
+  {
+    "id": "xc-0099",
+    "category": "Rau củ và trái cây",
+    "type": "scramble",
+    "prompt": "Củ thường màu cam, hay dùng làm nước ép hoặc nấu súp",
+    "answer": "Cà rốt"
+  },
+  {
+    "id": "xc-0139",
+    "category": "Cây và hoa",
+    "type": "scramble",
+    "prompt": "Cây thân đốt rỗng, mọc thành bụi, gắn với làng quê Việt Nam",
+    "answer": "Cây tre"
+  },
+  {
+    "id": "xc-0178",
+    "category": "Động vật mở rộng",
+    "type": "scramble",
+    "prompt": "Thú gặm nhấm có khả năng xây đập bằng cành cây",
+    "answer": "Hải ly"
+  },
+  {
+    "id": "xc-0222",
+    "category": "Chim và côn trùng",
+    "type": "scramble",
+    "prompt": "Côn trùng có chân sau khỏe để bật nhảy, thường ăn lá",
+    "answer": "Châu chấu"
+  },
+  {
+    "id": "xc-0256",
+    "category": "Món ăn Việt",
+    "type": "scramble",
+    "prompt": "Món mì miền Trung thường ăn với ít nước dùng và bánh tráng",
+    "answer": "Mì Quảng"
+  },
+  {
+    "id": "xc-0296",
+    "category": "Nghề nghiệp",
+    "type": "scramble",
+    "prompt": "Người sáng tác tranh bằng đường nét và màu sắc",
+    "answer": "Họa sĩ"
+  },
+  {
+    "id": "xc-0331",
+    "category": "Học tập",
+    "type": "scramble",
+    "prompt": "Bảng sáng màu thường viết bằng bút lông chuyên dụng",
+    "answer": "Bảng trắng"
+  },
+  {
+    "id": "xc-0361",
+    "category": "Thiên nhiên",
+    "type": "scramble",
+    "prompt": "Khối khoáng thường rủ xuống từ trần hang đá vôi",
+    "answer": "Thạch nhũ"
+  },
+  {
+    "id": "xc-0395",
+    "category": "Giao thông",
+    "type": "scramble",
+    "prompt": "Khu vực ven biển có công trình để tàu neo đậu và bốc dỡ hàng",
+    "answer": "Cảng biển"
+  },
+  {
+    "id": "xc-0447",
+    "category": "Thể thao mở rộng",
+    "type": "scramble",
+    "prompt": "Nội dung điền kinh vượt qua xà ngang theo chiều cao",
+    "answer": "Nhảy cao"
+  },
+  {
+    "id": "xc-0477",
+    "category": "Thế giới",
+    "type": "scramble",
+    "prompt": "Thủ đô Canada",
+    "answer": "Ottawa"
+  },
+  {
+    "id": "xc-0506",
+    "category": "Văn hóa và lễ hội",
+    "type": "scramble",
+    "prompt": "Cặp lễ vật quen thuộc trong cưới hỏi, gắn với tục ăn trầu",
+    "answer": "Trầu cau"
+  },
+  {
+    "id": "xc-0026",
+    "category": "Đồ dùng gia đình",
+    "type": "scramble",
+    "prompt": "Thiết bị dùng màng lọc để giảm bụi trong không khí",
+    "answer": "Máy lọc không khí"
+  },
+  {
+    "id": "xc-0066",
+    "category": "Nhà bếp",
+    "type": "scramble",
+    "prompt": "Thiết bị tách nước từ rau hoặc trái cây bằng lực nén",
+    "answer": "Máy ép"
+  },
+  {
+    "id": "xc-0100",
+    "category": "Rau củ và trái cây",
+    "type": "scramble",
+    "prompt": "Củ nhiều tinh bột, thường cắt que để chiên",
+    "answer": "Khoai tây"
+  },
+  {
+    "id": "xc-0140",
+    "category": "Cây và hoa",
+    "type": "scramble",
+    "prompt": "Nhóm cây thân đốt thanh mảnh, thường được trồng làm cảnh",
+    "answer": "Cây trúc"
+  },
+  {
+    "id": "xc-0179",
+    "category": "Động vật mở rộng",
+    "type": "scramble",
+    "prompt": "Thú biển có chi dạng vây, hay nghỉ trên bờ hoặc băng",
+    "answer": "Hải cẩu"
+  },
+  {
+    "id": "xc-0223",
+    "category": "Chim và côn trùng",
+    "type": "scramble",
+    "prompt": "Côn trùng nhảy khỏe gần gũi châu chấu, thường có thân thon",
+    "answer": "Cào cào"
+  },
+  {
+    "id": "xc-0257",
+    "category": "Món ăn Việt",
+    "type": "scramble",
+    "prompt": "Món mì sợi dai màu sẫm đặc trưng ở Hội An",
+    "answer": "Cao lầu"
+  },
+  {
+    "id": "xc-0297",
+    "category": "Nghề nghiệp",
+    "type": "scramble",
+    "prompt": "Người sáng tác âm nhạc",
+    "answer": "Nhạc sĩ"
+  },
+  {
+    "id": "xc-0332",
+    "category": "Học tập",
+    "type": "scramble",
+    "prompt": "Thiết bị phóng hình ảnh từ nguồn phát lên màn",
+    "answer": "Máy chiếu"
+  },
+  {
+    "id": "xc-0362",
+    "category": "Thiên nhiên",
+    "type": "scramble",
+    "prompt": "Cấu trúc địa chất nơi magma có thể phun lên bề mặt",
+    "answer": "Núi lửa"
+  },
+  {
+    "id": "xc-0396",
+    "category": "Giao thông",
+    "type": "scramble",
+    "prompt": "Thiết bị tín hiệu màu đỏ, vàng, xanh điều tiết xe và người",
+    "answer": "Đèn giao thông"
+  },
+  {
+    "id": "xc-0448",
+    "category": "Thể thao mở rộng",
+    "type": "scramble",
+    "prompt": "Nội dung điền kinh bật nhảy để đạt khoảng cách ngang lớn",
+    "answer": "Nhảy xa"
+  },
+  {
+    "id": "xc-0478",
+    "category": "Thế giới",
+    "type": "scramble",
+    "prompt": "Thủ đô Ai Cập, nằm bên sông Nile",
+    "answer": "Cairo"
+  },
+  {
+    "id": "xc-0507",
+    "category": "Văn hóa và lễ hội",
+    "type": "scramble",
+    "prompt": "Mâm bày các loại trái cây trong ngày Tết và dịp lễ",
+    "answer": "Mâm ngũ quả"
+  },
+  {
+    "id": "xc-0027",
+    "category": "Đồ dùng gia đình",
+    "type": "scramble",
+    "prompt": "Thiết bị xử lý nước qua các lõi lọc trước khi uống",
+    "answer": "Máy lọc nước"
+  },
+  {
+    "id": "xc-0067",
+    "category": "Nhà bếp",
+    "type": "scramble",
+    "prompt": "Dụng cụ nhiều vòng dây dùng đánh trứng hoặc trộn bột",
+    "answer": "Phới lồng"
+  },
+  {
+    "id": "xc-0101",
+    "category": "Rau củ và trái cây",
+    "type": "scramble",
+    "prompt": "Củ có vị ngọt, có giống ruột vàng, tím hoặc trắng",
+    "answer": "Khoai lang"
+  },
+  {
+    "id": "xc-0141",
+    "category": "Cây và hoa",
+    "type": "scramble",
+    "prompt": "Cây lớn thường có rễ phụ buông từ cành, gắn với đình làng",
+    "answer": "Cây đa"
+  },
+  {
+    "id": "xc-0180",
+    "category": "Động vật mở rộng",
+    "type": "scramble",
+    "prompt": "Thú biển có vành tai ngoài nhỏ, có thể chống thân đi trên cạn",
+    "answer": "Sư tử biển"
+  },
+  {
+    "id": "xc-0224",
+    "category": "Chim và côn trùng",
+    "type": "scramble",
+    "prompt": "Côn trùng thường gáy bằng cách cọ cánh, là nhân vật trong tác phẩm của Tô Hoài",
+    "answer": "Dế mèn"
+  },
+  {
+    "id": "xc-0258",
+    "category": "Món ăn Việt",
+    "type": "scramble",
+    "prompt": "Món sợi phổ biến ở miền Nam, có thể ăn nước hoặc khô",
+    "answer": "Hủ tiếu"
+  },
+  {
+    "id": "xc-0298",
+    "category": "Nghề nghiệp",
+    "type": "scramble",
+    "prompt": "Người biểu diễn bằng giọng hát",
+    "answer": "Ca sĩ"
+  },
+  {
+    "id": "xc-0333",
+    "category": "Học tập",
+    "type": "scramble",
+    "prompt": "Bề mặt để hứng hình ảnh từ máy chiếu",
+    "answer": "Màn chiếu"
+  },
+  {
+    "id": "xc-0363",
+    "category": "Thiên nhiên",
+    "type": "scramble",
+    "prompt": "Magma đã phun lên bề mặt Trái Đất",
+    "answer": "Dung nham"
+  },
+  {
+    "id": "xc-0397",
+    "category": "Giao thông",
+    "type": "scramble",
+    "prompt": "Các vạch kẻ trên mặt đường dành cho người đi bộ băng qua",
+    "answer": "Vạch qua đường"
+  },
+  {
+    "id": "xc-0449",
+    "category": "Thể thao mở rộng",
+    "type": "scramble",
+    "prompt": "Nội dung điền kinh ném một dụng cụ dài nhọn đi xa",
+    "answer": "Ném lao"
+  },
+  {
+    "id": "xc-0479",
+    "category": "Thế giới",
+    "type": "scramble",
+    "prompt": "Thủ đô Kenya",
+    "answer": "Nairobi"
+  },
+  {
+    "id": "xc-0508",
+    "category": "Văn hóa và lễ hội",
+    "type": "scramble",
+    "prompt": "Hai vế văn hoặc thơ có sự đối ứng, thường treo vào dịp Tết",
+    "answer": "Câu đối"
+  },
+  {
+    "id": "xc-0028",
+    "category": "Đồ dùng gia đình",
+    "type": "scramble",
+    "prompt": "Bình có lớp cách nhiệt giúp đồ uống nóng hoặc lạnh lâu hơn",
+    "answer": "Bình giữ nhiệt"
+  },
+  {
+    "id": "xc-0068",
+    "category": "Nhà bếp",
+    "type": "scramble",
+    "prompt": "Thanh trụ lăn để làm dẹt bột khi làm bánh",
+    "answer": "Cây cán bột"
+  },
+  {
+    "id": "xc-0102",
+    "category": "Rau củ và trái cây",
+    "type": "scramble",
+    "prompt": "Củ thường có ruột trắng điểm tím, hay dùng nấu chè",
+    "answer": "Khoai môn"
+  },
+  {
+    "id": "xc-0142",
+    "category": "Cây và hoa",
+    "type": "scramble",
+    "prompt": "Cây sân trường có lá to, tán thường xếp thành nhiều tầng",
+    "answer": "Cây bàng"
+  },
+  {
+    "id": "xc-0181",
+    "category": "Động vật mở rộng",
+    "type": "scramble",
+    "prompt": "Loài cá voi có răng lớn nhất, có đầu rất to",
+    "answer": "Cá nhà táng"
+  },
+  {
+    "id": "xc-0225",
+    "category": "Chim và côn trùng",
+    "type": "scramble",
+    "prompt": "Bọ cánh cứng nhỏ thường có cánh đỏ hoặc cam với các chấm đen",
+    "answer": "Bọ rùa"
+  },
+  {
+    "id": "xc-0259",
+    "category": "Món ăn Việt",
+    "type": "scramble",
+    "prompt": "Món sợi trong nấu với thịt gà",
+    "answer": "Miến gà"
+  },
+  {
+    "id": "xc-0299",
+    "category": "Nghề nghiệp",
+    "type": "scramble",
+    "prompt": "Người thể hiện vai trong phim hoặc sân khấu",
+    "answer": "Diễn viên"
+  },
+  {
+    "id": "xc-0334",
+    "category": "Học tập",
+    "type": "scramble",
+    "prompt": "Nơi tổ chức, lưu trữ tài liệu để đọc và mượn",
+    "answer": "Thư viện"
+  },
+  {
+    "id": "xc-0364",
+    "category": "Thiên nhiên",
+    "type": "scramble",
+    "prompt": "Sự rung chuyển của mặt đất do giải phóng năng lượng trong vỏ Trái Đất",
+    "answer": "Động đất"
+  },
+  {
+    "id": "xc-0398",
+    "category": "Giao thông",
+    "type": "scramble",
+    "prompt": "Bảng ký hiệu hoặc chữ dùng hướng dẫn, cảnh báo trên đường",
+    "answer": "Biển báo"
+  },
+  {
+    "id": "xc-0450",
+    "category": "Thể thao mở rộng",
+    "type": "scramble",
+    "prompt": "Nội dung điền kinh đẩy quả cầu kim loại bằng một tay",
+    "answer": "Đẩy tạ"
+  },
+  {
+    "id": "xc-0480",
+    "category": "Thế giới",
+    "type": "scramble",
+    "prompt": "Thủ đô Cuba",
+    "answer": "Havana"
+  },
+  {
+    "id": "xc-0509",
+    "category": "Văn hóa và lễ hội",
+    "type": "scramble",
+    "prompt": "Nghệ thuật viết chữ coi trọng hình thức và nét bút",
+    "answer": "Thư pháp"
+  },
+  {
+    "id": "xc-0029",
+    "category": "Đồ dùng gia đình",
+    "type": "scramble",
+    "prompt": "Đồ đựng nước nóng có ruột cách nhiệt, thường dùng trong gia đình",
+    "answer": "Phích nước"
+  },
+  {
+    "id": "xc-0069",
+    "category": "Nhà bếp",
+    "type": "scramble",
+    "prompt": "Dụng cụ tạo hình cho bột hoặc hỗn hợp trước khi làm chín",
+    "answer": "Khuôn bánh"
+  },
+  {
+    "id": "xc-0103",
+    "category": "Rau củ và trái cây",
+    "type": "scramble",
+    "prompt": "Củ thường có màu trắng, vị nhẹ, dùng nấu canh hoặc muối",
+    "answer": "Củ cải"
+  },
+  {
+    "id": "xc-0143",
+    "category": "Cây và hoa",
+    "type": "scramble",
+    "prompt": "Cây có quả dạng đậu, thịt quả chua dùng nấu canh",
+    "answer": "Cây me"
+  },
+  {
+    "id": "xc-0182",
+    "category": "Động vật mở rộng",
+    "type": "scramble",
+    "prompt": "Loài cá có đầu giống ngựa, con đực mang túi ấp trứng",
+    "answer": "Cá ngựa"
+  },
+  {
+    "id": "xc-0226",
+    "category": "Chim và côn trùng",
+    "type": "scramble",
+    "prompt": "Côn trùng có hai chân trước dạng càng gập để bắt mồi",
+    "answer": "Bọ ngựa"
+  },
+  {
+    "id": "xc-0260",
+    "category": "Món ăn Việt",
+    "type": "scramble",
+    "prompt": "Cháo thường ăn với nội tạng lợn đã làm chín",
+    "answer": "Cháo lòng"
+  },
+  {
+    "id": "xc-0300",
+    "category": "Nghề nghiệp",
+    "type": "scramble",
+    "prompt": "Người chỉ đạo nghệ thuật quá trình thực hiện phim hoặc vở diễn",
+    "answer": "Đạo diễn"
+  },
+  {
+    "id": "xc-0335",
+    "category": "Học tập",
+    "type": "scramble",
+    "prompt": "Không gian được trang bị để thực hiện các phép thử khoa học",
+    "answer": "Phòng thí nghiệm"
+  },
+  {
+    "id": "xc-0365",
+    "category": "Thiên nhiên",
+    "type": "scramble",
+    "prompt": "Chuỗi sóng biển dài mạnh có thể do động đất dưới đáy biển gây ra",
+    "answer": "Sóng thần"
+  },
+  {
+    "id": "xc-0399",
+    "category": "Giao thông",
+    "type": "scramble",
+    "prompt": "Phần ngăn giữa các làn hoặc chiều xe chạy",
+    "answer": "Dải phân cách"
+  },
+  {
+    "id": "xc-0451",
+    "category": "Thể thao mở rộng",
+    "type": "scramble",
+    "prompt": "Môn nâng thanh đòn có bánh tạ theo kỹ thuật quy định",
+    "answer": "Cử tạ"
+  },
+  {
+    "id": "xc-0481",
+    "category": "Thế giới",
+    "type": "scramble",
+    "prompt": "Thủ đô Argentina",
+    "answer": "Buenos Aires"
+  },
+  {
+    "id": "xc-0510",
+    "category": "Văn hóa và lễ hội",
+    "type": "scramble",
+    "prompt": "Tục trao tiền mừng tuổi trong phong bao dịp Tết",
+    "answer": "Lì xì"
+  },
+  {
+    "id": "xc-0030",
+    "category": "Đồ dùng gia đình",
+    "type": "scramble",
+    "prompt": "Chậu cố định trong phòng tắm để rửa tay và mặt",
+    "answer": "Chậu rửa mặt"
+  },
+  {
+    "id": "xc-0070",
+    "category": "Nhà bếp",
+    "type": "scramble",
+    "prompt": "Tấm kim loại nhôm rất mỏng dùng bọc thực phẩm",
+    "answer": "Giấy bạc"
+  },
+  {
+    "id": "xc-0104",
+    "category": "Rau củ và trái cây",
+    "type": "scramble",
+    "prompt": "Củ có màu đỏ tím đậm, thường dùng tạo màu món ăn",
+    "answer": "Củ dền"
+  },
+  {
+    "id": "xc-0144",
+    "category": "Cây và hoa",
+    "type": "scramble",
+    "prompt": "Cây lá kim thường được trang trí vào dịp Giáng sinh",
+    "answer": "Cây thông"
+  },
+  {
+    "id": "xc-0183",
+    "category": "Động vật mở rộng",
+    "type": "scramble",
+    "prompt": "Nhóm cá thân dẹt, vây ngực xòe rộng như cánh",
+    "answer": "Cá đuối"
+  },
+  {
+    "id": "xc-0227",
+    "category": "Chim và côn trùng",
+    "type": "scramble",
+    "prompt": "Nhóm bọ cánh cứng, nhiều loài vo và lăn viên phân",
+    "answer": "Bọ hung"
+  },
+  {
+    "id": "xc-0261",
+    "category": "Món ăn Việt",
+    "type": "scramble",
+    "prompt": "Món gạo nấu nhừ cùng cá, thường có rau gia vị",
+    "answer": "Cháo cá"
+  },
+  {
+    "id": "xc-0301",
+    "category": "Nghề nghiệp",
+    "type": "scramble",
+    "prompt": "Người viết kịch bản cho phim hoặc sân khấu",
+    "answer": "Biên kịch"
+  },
+  {
+    "id": "xc-0336",
+    "category": "Học tập",
+    "type": "scramble",
+    "prompt": "Phòng lớn dùng cho việc giảng dạy ở trường đại học",
+    "answer": "Giảng đường"
+  },
+  {
+    "id": "xc-0366",
+    "category": "Thiên nhiên",
+    "type": "scramble",
+    "prompt": "Khối băng lớn trên đất liền có khả năng chuyển động chậm",
+    "answer": "Băng hà"
+  },
+  {
+    "id": "xc-0452",
+    "category": "Thể thao mở rộng",
+    "type": "scramble",
+    "prompt": "Môn thi đấu trên các dụng cụ như xà, vòng treo và cầu thăng bằng",
+    "answer": "Thể dục dụng cụ"
+  },
+  {
+    "id": "xc-0511",
+    "category": "Văn hóa và lễ hội",
+    "type": "scramble",
+    "prompt": "Tục người đầu tiên đến nhà vào năm mới được coi trọng trong ngày Tết",
+    "answer": "Xông đất"
+  },
+  {
+    "id": "xc-0031",
+    "category": "Đồ dùng gia đình",
+    "type": "scramble",
+    "prompt": "Đồ chứa nước đủ lớn để người ngâm mình khi tắm",
+    "answer": "Bồn tắm"
+  },
+  {
+    "id": "xc-0071",
+    "category": "Nhà bếp",
+    "type": "scramble",
+    "prompt": "Màng mỏng bám quanh miệng hộp để che thức ăn",
+    "answer": "Màng bọc"
+  },
+  {
+    "id": "xc-0105",
+    "category": "Rau củ và trái cây",
+    "type": "scramble",
+    "prompt": "Thân rễ của sen, cắt ngang thấy nhiều lỗ tròn",
+    "answer": "Củ sen"
+  },
+  {
+    "id": "xc-0145",
+    "category": "Cây và hoa",
+    "type": "scramble",
+    "prompt": "Cây được khai thác mủ để sản xuất vật liệu đàn hồi",
+    "answer": "Cây cao su"
+  },
+  {
+    "id": "xc-0184",
+    "category": "Động vật mở rộng",
+    "type": "scramble",
+    "prompt": "Loài cá nước ngọt gắn với tục tiễn ông Công ông Táo",
+    "answer": "Cá chép"
+  },
+  {
+    "id": "xc-0228",
+    "category": "Chim và côn trùng",
+    "type": "scramble",
+    "prompt": "Côn trùng có cơ quan phát sáng ở bụng",
+    "answer": "Đom đóm"
+  },
+  {
+    "id": "xc-0262",
+    "category": "Món ăn Việt",
+    "type": "scramble",
+    "prompt": "Món cơm từ hạt gạo vỡ, thường ăn cùng sườn nướng",
+    "answer": "Cơm tấm"
+  },
+  {
+    "id": "xc-0302",
+    "category": "Nghề nghiệp",
+    "type": "scramble",
+    "prompt": "Người thu thập thông tin và thực hiện tin bài",
+    "answer": "Phóng viên"
+  },
+  {
+    "id": "xc-0367",
+    "category": "Thiên nhiên",
+    "type": "scramble",
+    "prompt": "Khối băng lớn tách ra nổi trên mặt nước",
+    "answer": "Tảng băng"
+  },
+  {
+    "id": "xc-0032",
+    "category": "Đồ dùng gia đình",
+    "type": "scramble",
+    "prompt": "Đầu phun chia nước thành nhiều tia để tắm",
+    "answer": "Vòi hoa sen"
+  },
+  {
+    "id": "xc-0072",
+    "category": "Nhà bếp",
+    "type": "scramble",
+    "prompt": "Dung dịch tẩy dầu mỡ trên bát đĩa",
+    "answer": "Nước rửa chén"
+  },
+  {
+    "id": "xc-0106",
+    "category": "Rau củ và trái cây",
+    "type": "scramble",
+    "prompt": "Rau thân rỗng, thường luộc hoặc xào tỏi",
+    "answer": "Rau muống"
+  },
+  {
+    "id": "xc-0146",
+    "category": "Cây và hoa",
+    "type": "scramble",
+    "prompt": "Cây có quả chứa hạt dùng rang xay làm đồ uống có caffeine",
+    "answer": "Cây cà phê"
+  },
+  {
+    "id": "xc-0185",
+    "category": "Động vật mở rộng",
+    "type": "scramble",
+    "prompt": "Loài cá nước ngọt thường xuất hiện trong món canh rau cải ở Việt Nam",
+    "answer": "Cá rô"
+  },
+  {
+    "id": "xc-0229",
+    "category": "Chim và côn trùng",
+    "type": "scramble",
+    "prompt": "Côn trùng thường tạo âm thanh râm ran vào mùa hè",
+    "answer": "Ve sầu"
+  },
+  {
+    "id": "xc-0263",
+    "category": "Món ăn Việt",
+    "type": "scramble",
+    "prompt": "Cơm nấu trong ống tre hoặc nứa, gắn với nhiều vùng núi",
+    "answer": "Cơm lam"
+  },
+  {
+    "id": "xc-0303",
+    "category": "Nghề nghiệp",
+    "type": "scramble",
+    "prompt": "Người chỉnh sửa, lựa chọn và tổ chức nội dung trước khi xuất bản",
+    "answer": "Biên tập viên"
+  },
+  {
+    "id": "xc-0368",
+    "category": "Thiên nhiên",
+    "type": "scramble",
+    "prompt": "Hệ rừng thích nghi vùng ven biển chịu tác động của nước mặn và thủy triều",
+    "answer": "Rừng ngập mặn"
+  },
+  {
+    "id": "xc-0033",
+    "category": "Đồ dùng gia đình",
+    "type": "scramble",
+    "prompt": "Đồ dùng có cán và nhiều sợi cứng để chà sạch",
+    "answer": "Bàn chải"
+  },
+  {
+    "id": "xc-0073",
+    "category": "Nhà bếp",
+    "type": "scramble",
+    "prompt": "Vật liệu mềm hoặc xốp dùng chà sạch bát đĩa",
+    "answer": "Miếng rửa bát"
+  },
+  {
+    "id": "xc-0107",
+    "category": "Rau củ và trái cây",
+    "type": "scramble",
+    "prompt": "Rau lá nhỏ, thường nấu canh với thịt băm",
+    "answer": "Rau ngót"
+  },
+  {
+    "id": "xc-0147",
+    "category": "Cây và hoa",
+    "type": "scramble",
+    "prompt": "Cây lương thực trồng ở ruộng, cho hạt thóc để xay thành gạo",
+    "answer": "Cây lúa"
+  },
+  {
+    "id": "xc-0186",
+    "category": "Động vật mở rộng",
+    "type": "scramble",
+    "prompt": "Loài cá thân dài đầu khá lớn, miền Bắc còn gọi cá quả",
+    "answer": "Cá lóc"
+  },
+  {
+    "id": "xc-0230",
+    "category": "Chim và côn trùng",
+    "type": "scramble",
+    "prompt": "Côn trùng có một đôi cánh, thường bị thu hút bởi thức ăn",
+    "answer": "Con ruồi"
+  },
+  {
+    "id": "xc-0264",
+    "category": "Món ăn Việt",
+    "type": "scramble",
+    "prompt": "Phần cơm giòn được làm khô hoặc chiên, đặc sản nổi tiếng Ninh Bình",
+    "answer": "Cơm cháy"
+  },
+  {
+    "id": "xc-0304",
+    "category": "Nghề nghiệp",
+    "type": "scramble",
+    "prompt": "Người điều khiển máy bay",
+    "answer": "Phi công"
+  },
+  {
+    "id": "xc-0369",
+    "category": "Thiên nhiên",
+    "type": "scramble",
+    "prompt": "Hệ rừng ở vùng nóng, nhiều nơi có lượng mưa và đa dạng sinh học cao",
+    "answer": "Rừng nhiệt đới"
+  },
+  {
+    "id": "xc-0034",
+    "category": "Đồ dùng gia đình",
+    "type": "scramble",
+    "prompt": "Chất dạng kem dùng cùng bàn chải để làm sạch răng",
+    "answer": "Kem đánh răng"
+  },
+  {
+    "id": "xc-0074",
+    "category": "Nhà bếp",
+    "type": "scramble",
+    "prompt": "Đồ chứa nhỏ để đựng muối, tiêu và các nguyên liệu nêm",
+    "answer": "Lọ gia vị"
+  },
+  {
+    "id": "xc-0108",
+    "category": "Rau củ và trái cây",
+    "type": "scramble",
+    "prompt": "Rau ăn lá, có giống màu đỏ tím",
+    "answer": "Rau dền"
+  },
+  {
+    "id": "xc-0148",
+    "category": "Cây và hoa",
+    "type": "scramble",
+    "prompt": "Cây lương thực có bắp nhiều hàng hạt, còn gọi cây bắp",
+    "answer": "Cây ngô"
+  },
+  {
+    "id": "xc-0187",
+    "category": "Động vật mở rộng",
+    "type": "scramble",
+    "prompt": "Cá nước ngọt có râu dài, da trơn, không có vảy",
+    "answer": "Cá trê"
+  },
+  {
+    "id": "xc-0231",
+    "category": "Chim và côn trùng",
+    "type": "scramble",
+    "prompt": "Côn trùng thân dẹt, thường hoạt động về đêm trong nơi ẩm tối",
+    "answer": "Con gián"
+  },
+  {
+    "id": "xc-0265",
+    "category": "Món ăn Việt",
+    "type": "scramble",
+    "prompt": "Món cuốn nhân trong bánh đa nem rồi chiên, miền Nam gọi chả giò",
+    "answer": "Nem rán"
+  },
+  {
+    "id": "xc-0305",
+    "category": "Nghề nghiệp",
+    "type": "scramble",
+    "prompt": "Nhân viên phục vụ hành khách trên máy bay hoặc phương tiện vận tải",
+    "answer": "Tiếp viên"
+  },
+  {
+    "id": "xc-0370",
+    "category": "Thiên nhiên",
+    "type": "scramble",
+    "prompt": "Vùng nước ven biển được ngăn cách một phần với biển bởi dải cát hoặc địa hình",
+    "answer": "Đầm phá"
+  },
+  {
+    "id": "xc-0035",
+    "category": "Đồ dùng gia đình",
+    "type": "scramble",
+    "prompt": "Sản phẩm làm sạch tạo bọt khi dùng với nước",
+    "answer": "Xà phòng"
+  },
+  {
+    "id": "q0151",
+    "category": "Tính nhanh",
+    "type": "math",
+    "prompt": "2 + 3 = ?",
+    "answer": "5"
+  },
+  {
+    "id": "q0158",
+    "category": "Tính nhanh",
+    "type": "math",
+    "prompt": "2 × 11 = ?",
+    "answer": "22"
+  },
+  {
+    "id": "q0165",
+    "category": "Tính nhanh",
+    "type": "math",
+    "prompt": "9 ÷ 3 = ?",
+    "answer": "3"
+  },
+  {
+    "id": "q0169",
+    "category": "Tính nhanh",
+    "type": "math",
+    "prompt": "3 + 11 = ?",
+    "answer": "14"
+  },
+  {
+    "id": "q0176",
+    "category": "Tính nhanh",
+    "type": "math",
+    "prompt": "4 × 3 = ?",
+    "answer": "12"
+  },
+  {
+    "id": "q0183",
+    "category": "Tính nhanh",
+    "type": "math",
+    "prompt": "44 ÷ 11 = ?",
+    "answer": "4"
+  },
+  {
+    "id": "q0187",
+    "category": "Tính nhanh",
+    "type": "math",
+    "prompt": "5 + 3 = ?",
+    "answer": "8"
+  },
+  {
+    "id": "q0194",
+    "category": "Tính nhanh",
+    "type": "math",
+    "prompt": "5 × 11 = ?",
+    "answer": "55"
+  },
+  {
+    "id": "knowledge-001",
+    "category": "Địa lý Việt Nam",
+    "type": "text",
+    "prompt": "Vịnh biển nổi tiếng với nhiều đảo đá vôi, di sản thế giới ở Quảng Ninh?",
+    "answer": "Vịnh Hạ Long",
+    "aliases": []
+  },
+  {
+    "id": "knowledge-003",
+    "category": "Địa lý Việt Nam",
+    "type": "text",
+    "prompt": "Dòng sông chảy qua trung tâm thành phố Huế?",
+    "answer": "Sông Hương",
+    "aliases": []
+  },
+  {
+    "id": "knowledge-004",
+    "category": "Địa lý Việt Nam",
+    "type": "text",
+    "prompt": "Thành phố được mệnh danh là thành phố ngàn hoa?",
+    "answer": "Đà Lạt",
+    "aliases": []
+  },
+  {
+    "id": "knowledge-005",
+    "category": "Địa lý Việt Nam",
+    "type": "text",
+    "prompt": "Chợ nổi nổi tiếng mang tên một quận cũ ở Cần Thơ?",
+    "answer": "Cái Răng",
+    "aliases": []
+  },
+  {
+    "id": "knowledge-006",
+    "category": "Địa lý Việt Nam",
+    "type": "text",
+    "prompt": "Hội An nổi tiếng với những chiếc đèn nhiều màu gọi là gì?",
+    "answer": "Đèn lồng",
+    "aliases": []
+  },
+  {
+    "id": "knowledge-007",
+    "category": "Địa lý Việt Nam",
+    "type": "text",
+    "prompt": "Hang động khổng lồ mang tên có nghĩa là sông và núi ở Quảng Bình?",
+    "answer": "Sơn Đoòng",
+    "aliases": []
+  },
+  {
+    "id": "knowledge-008",
+    "category": "Địa lý Việt Nam",
+    "type": "text",
+    "prompt": "Hồ nước ngọt tự nhiên nổi tiếng ở Bắc Kạn, tên có nghĩa ba hồ?",
+    "answer": "Ba Bể",
+    "aliases": []
+  },
+  {
+    "id": "knowledge-009",
+    "category": "Địa lý Việt Nam",
+    "type": "text",
+    "prompt": "Cao nguyên đá nổi tiếng nằm ở Đồng Văn?",
+    "answer": "Cao nguyên đá Đồng Văn",
+    "aliases": []
+  },
+  {
+    "id": "knowledge-010",
+    "category": "Địa lý Việt Nam",
+    "type": "text",
+    "prompt": "Con đèo nổi tiếng nối vùng Huế với Đà Nẵng?",
+    "answer": "Hải Vân",
+    "aliases": []
+  },
+  {
+    "id": "knowledge-011",
+    "category": "Thế giới quanh ta",
+    "type": "text",
+    "prompt": "Đất nước có núi Phú Sĩ?",
+    "answer": "Nhật Bản",
+    "aliases": []
+  },
+  {
+    "id": "knowledge-012",
+    "category": "Thế giới quanh ta",
+    "type": "text",
+    "prompt": "Đất nước nổi tiếng với tháp Eiffel?",
+    "answer": "Pháp",
+    "aliases": []
+  },
+  {
+    "id": "knowledge-013",
+    "category": "Thế giới quanh ta",
+    "type": "text",
+    "prompt": "Đất nước có những kim tự tháp Giza?",
+    "answer": "Ai Cập",
+    "aliases": []
+  },
+  {
+    "id": "knowledge-014",
+    "category": "Thế giới quanh ta",
+    "type": "text",
+    "prompt": "Đất nước có thành phố Sydney?",
+    "answer": "Úc",
+    "aliases": []
+  },
+  {
+    "id": "knowledge-015",
+    "category": "Thế giới quanh ta",
+    "type": "text",
+    "prompt": "Châu lục có sa mạc Sahara?",
+    "answer": "Châu Phi",
+    "aliases": []
+  },
+  {
+    "id": "knowledge-016",
+    "category": "Thế giới quanh ta",
+    "type": "text",
+    "prompt": "Đại dương lớn nhất thế giới?",
+    "answer": "Thái Bình Dương",
+    "aliases": []
+  },
+  {
+    "id": "knowledge-017",
+    "category": "Thế giới quanh ta",
+    "type": "text",
+    "prompt": "Lục địa lạnh nhất trên Trái Đất?",
+    "answer": "Nam Cực",
+    "aliases": []
+  },
+  {
+    "id": "knowledge-019",
+    "category": "Thế giới quanh ta",
+    "type": "text",
+    "prompt": "Thủ đô của Lào?",
+    "answer": "Viêng Chăn",
+    "aliases": [
+      "Vientiane"
+    ]
+  },
+  {
+    "id": "knowledge-020",
+    "category": "Thế giới quanh ta",
+    "type": "text",
+    "prompt": "Thủ đô của Campuchia?",
+    "answer": "Phnôm Pênh",
+    "aliases": [
+      "Phnom Penh"
+    ]
+  },
+  {
+    "id": "knowledge-021",
+    "category": "Khoa học vui",
+    "type": "text",
+    "prompt": "Chất khí cây xanh hấp thụ trong quá trình quang hợp?",
+    "answer": "Cacbon đioxit",
+    "aliases": [
+      "CO2",
+      "carbon dioxide"
+    ]
+  },
+  {
+    "id": "knowledge-022",
+    "category": "Khoa học vui",
+    "type": "text",
+    "prompt": "Chất khí cần thiết cho sự hô hấp của con người?",
+    "answer": "Oxy",
+    "aliases": [
+      "oxi",
+      "oxygen"
+    ]
+  },
+  {
+    "id": "knowledge-023",
+    "category": "Khoa học vui",
+    "type": "text",
+    "prompt": "Nước chuyển từ lỏng sang hơi gọi là sự gì?",
+    "answer": "Bay hơi",
+    "aliases": []
+  },
+  {
+    "id": "knowledge-024",
+    "category": "Khoa học vui",
+    "type": "text",
+    "prompt": "Nước chuyển từ lỏng thành đá gọi là sự gì?",
+    "answer": "Đông đặc",
+    "aliases": []
+  },
+  {
+    "id": "knowledge-025",
+    "category": "Khoa học vui",
+    "type": "text",
+    "prompt": "Dụng cụ dùng để đo nhiệt độ?",
+    "answer": "Nhiệt kế",
+    "aliases": []
+  },
+  {
+    "id": "knowledge-026",
+    "category": "Khoa học vui",
+    "type": "text",
+    "prompt": "Lực hút của Trái Đất tác dụng lên vật gọi là gì?",
+    "answer": "Trọng lực",
+    "aliases": []
+  },
+  {
+    "id": "knowledge-027",
+    "category": "Khoa học vui",
+    "type": "text",
+    "prompt": "Hiện tượng ánh sáng đổi hướng khi truyền qua hai môi trường?",
+    "answer": "Khúc xạ",
+    "aliases": []
+  },
+  {
+    "id": "knowledge-028",
+    "category": "Khoa học vui",
+    "type": "text",
+    "prompt": "Thiết bị giúp quan sát những vật rất nhỏ?",
+    "answer": "Kính hiển vi",
+    "aliases": []
+  },
+  {
+    "id": "knowledge-029",
+    "category": "Khoa học vui",
+    "type": "text",
+    "prompt": "Năng lượng lấy từ ánh sáng Mặt Trời gọi là năng lượng gì?",
+    "answer": "Mặt trời",
+    "aliases": []
+  },
+  {
+    "id": "knowledge-030",
+    "category": "Khoa học vui",
+    "type": "text",
+    "prompt": "Kim loại thường dùng làm lõi dây điện, màu đỏ nâu?",
+    "answer": "Đồng",
+    "aliases": []
+  },
+  {
+    "id": "knowledge-031",
+    "category": "Vũ trụ",
+    "type": "text",
+    "prompt": "Hành tinh được gọi là hành tinh đỏ?",
+    "answer": "Sao Hỏa",
+    "aliases": []
+  },
+  {
+    "id": "knowledge-033",
+    "category": "Vũ trụ",
+    "type": "text",
+    "prompt": "Hành tinh nổi tiếng với các vành đai lớn?",
+    "answer": "Sao Thổ",
+    "aliases": []
+  },
+  {
+    "id": "knowledge-035",
+    "category": "Vũ trụ",
+    "type": "text",
+    "prompt": "Thiết bị dùng để quan sát các thiên thể ở xa?",
+    "answer": "Kính thiên văn",
+    "aliases": []
+  },
+  {
+    "id": "knowledge-037",
+    "category": "Vũ trụ",
+    "type": "text",
+    "prompt": "Hành tinh gần Mặt Trời nhất?",
+    "answer": "Sao Thủy",
+    "aliases": []
+  },
+  {
+    "id": "knowledge-038",
+    "category": "Vũ trụ",
+    "type": "text",
+    "prompt": "Dải ngân hà mà Hệ Mặt Trời thuộc về gọi là gì trong tiếng Việt?",
+    "answer": "Ngân Hà",
+    "aliases": []
+  },
+  {
+    "id": "knowledge-039",
+    "category": "Vũ trụ",
+    "type": "text",
+    "prompt": "Hiện tượng Mặt Trăng che khuất Mặt Trời?",
+    "answer": "Nhật thực",
+    "aliases": [
+      "nhat thuc"
+    ]
+  },
+  {
+    "id": "knowledge-040",
+    "category": "Vũ trụ",
+    "type": "text",
+    "prompt": "Hiện tượng Trái Đất che ánh sáng Mặt Trời chiếu tới Mặt Trăng?",
+    "answer": "Nguyệt thực",
+    "aliases": []
+  },
+  {
+    "id": "knowledge-041",
+    "category": "Động vật kỳ thú",
+    "type": "text",
+    "prompt": "Loài thú có túi nổi tiếng ở Australia, thường nhảy bằng hai chân sau?",
+    "answer": "Kangaroo",
+    "aliases": [
+      "chuột túi"
+    ]
+  },
+  {
+    "id": "knowledge-042",
+    "category": "Động vật kỳ thú",
+    "type": "text",
+    "prompt": "Loài chim lớn không biết bay, chạy nhanh ở châu Phi?",
+    "answer": "Đà điểu",
+    "aliases": []
+  },
+  {
+    "id": "knowledge-043",
+    "category": "Động vật kỳ thú",
+    "type": "text",
+    "prompt": "Loài vật có vòi dài và ngà?",
+    "answer": "Voi",
+    "aliases": []
+  },
+  {
+    "id": "knowledge-044",
+    "category": "Động vật kỳ thú",
+    "type": "text",
+    "prompt": "Loài vật mang chiếc mai cứng trên lưng?",
+    "answer": "Rùa",
+    "aliases": []
+  },
+  {
+    "id": "knowledge-045",
+    "category": "Động vật kỳ thú",
+    "type": "text",
+    "prompt": "Loài côn trùng làm ra mật?",
+    "answer": "Ong",
+    "aliases": []
+  },
+  {
+    "id": "knowledge-046",
+    "category": "Động vật kỳ thú",
+    "type": "text",
+    "prompt": "Loài chim thường được dùng làm biểu tượng hòa bình?",
+    "answer": "Bồ câu",
+    "aliases": []
+  },
+  {
+    "id": "knowledge-048",
+    "category": "Động vật kỳ thú",
+    "type": "text",
+    "prompt": "Loài thú lớn sống ở biển, phun khí qua lỗ thở trên đầu?",
+    "answer": "Cá voi",
+    "aliases": []
+  },
+  {
+    "id": "knowledge-049",
+    "category": "Động vật kỳ thú",
+    "type": "text",
+    "prompt": "Loài vật đổi màu da nổi tiếng và có đuôi cuộn?",
+    "answer": "Tắc kè hoa",
+    "aliases": []
+  },
+  {
+    "id": "knowledge-050",
+    "category": "Động vật kỳ thú",
+    "type": "text",
+    "prompt": "Loài chim có chiếc đuôi xòe nhiều mắt màu sắc?",
+    "answer": "Chim công",
+    "aliases": []
+  },
+  {
+    "id": "knowledge-051",
+    "category": "Thực vật",
+    "type": "text",
+    "prompt": "Bộ phận của cây thường hút nước và muối khoáng từ đất?",
+    "answer": "Rễ",
+    "aliases": []
+  },
+  {
+    "id": "knowledge-052",
+    "category": "Thực vật",
+    "type": "text",
+    "prompt": "Bộ phận của cây thường thực hiện quang hợp chủ yếu?",
+    "answer": "Lá",
+    "aliases": []
+  },
+  {
+    "id": "knowledge-053",
+    "category": "Thực vật",
+    "type": "text",
+    "prompt": "Loại cây có thân chia đốt, thường mọc thành bụi ở làng quê?",
+    "answer": "Tre",
+    "aliases": []
+  },
+  {
+    "id": "knowledge-054",
+    "category": "Thực vật",
+    "type": "text",
+    "prompt": "Loại cây ra bông trắng được dùng kéo sợi dệt vải?",
+    "answer": "Bông",
+    "aliases": []
+  },
+  {
+    "id": "knowledge-055",
+    "category": "Thực vật",
+    "type": "text",
+    "prompt": "Loài hoa có tên mang nghĩa hướng về Mặt Trời?",
+    "answer": "Hướng dương",
+    "aliases": []
+  },
+  {
+    "id": "knowledge-056",
+    "category": "Thực vật",
+    "type": "text",
+    "prompt": "Loại quả bên ngoài có gai, bên trong múi vàng, mùi rất đặc trưng?",
+    "answer": "Sầu riêng",
+    "aliases": []
+  },
+  {
+    "id": "knowledge-057",
+    "category": "Thực vật",
+    "type": "text",
+    "prompt": "Loại quả đỏ mọc thành chùm nhỏ, thường có vị chua, làm siro mùa hè?",
+    "answer": "Dâu tằm",
+    "aliases": []
+  },
+  {
+    "id": "knowledge-058",
+    "category": "Thực vật",
+    "type": "text",
+    "prompt": "Loại củ màu cam, thường được nhắc là thức ăn của thỏ?",
+    "answer": "Cà rốt",
+    "aliases": []
+  },
+  {
+    "id": "knowledge-059",
+    "category": "Thực vật",
+    "type": "text",
+    "prompt": "Loại rau thường dùng gói thịt nướng, tên cũng là một loại lá?",
+    "answer": "Lá lốt",
+    "aliases": []
+  },
+  {
+    "id": "knowledge-060",
+    "category": "Thực vật",
+    "type": "text",
+    "prompt": "Cây có quả chứa nước và cơm trắng, thường trồng ven biển?",
+    "answer": "Dừa",
+    "aliases": []
+  },
+  {
+    "id": "knowledge-062",
+    "category": "Văn hóa Việt",
+    "type": "text",
+    "prompt": "Loại nón truyền thống có hình chóp?",
+    "answer": "Nón lá",
+    "aliases": []
+  },
+  {
+    "id": "knowledge-063",
+    "category": "Văn hóa Việt",
+    "type": "text",
+    "prompt": "Ngày Tết thiếu nhi theo âm lịch, có rước đèn và phá cỗ?",
+    "answer": "Trung thu",
+    "aliases": []
+  },
+  {
+    "id": "knowledge-064",
+    "category": "Văn hóa Việt",
+    "type": "text",
+    "prompt": "Loại tranh dân gian nổi tiếng gắn với làng ở Bắc Ninh?",
+    "answer": "Đông Hồ",
+    "aliases": []
+  },
+  {
+    "id": "knowledge-065",
+    "category": "Văn hóa Việt",
+    "type": "text",
+    "prompt": "Nghệ thuật diễn rối trên mặt nước?",
+    "answer": "Múa rối nước",
+    "aliases": []
+  },
+  {
+    "id": "knowledge-066",
+    "category": "Văn hóa Việt",
+    "type": "text",
+    "prompt": "Loại bánh vuông thường có trong Tết cổ truyền miền Bắc?",
+    "answer": "Bánh chưng",
+    "aliases": []
+  },
+  {
+    "id": "knowledge-067",
+    "category": "Văn hóa Việt",
+    "type": "text",
+    "prompt": "Loại bánh dài hình trụ thường có trong Tết miền Nam?",
+    "answer": "Bánh tét",
+    "aliases": []
+  },
+  {
+    "id": "knowledge-068",
+    "category": "Văn hóa Việt",
+    "type": "text",
+    "prompt": "Lạc Long Quân trong truyền thuyết thuộc dòng giống con gì?",
+    "answer": "Rồng",
+    "aliases": []
+  },
+  {
+    "id": "knowledge-069",
+    "category": "Văn hóa Việt",
+    "type": "text",
+    "prompt": "Người anh hùng làng Phù Đổng cưỡi ngựa sắt?",
+    "answer": "Thánh Gióng",
+    "aliases": []
+  },
+  {
+    "id": "knowledge-070",
+    "category": "Văn hóa Việt",
+    "type": "text",
+    "prompt": "Vị vua gắn với truyền thuyết trả gươm ở hồ Hoàn Kiếm?",
+    "answer": "Lê Lợi",
+    "aliases": []
+  },
+  {
+    "id": "knowledge-071",
+    "category": "Tiếng Việt",
+    "type": "text",
+    "prompt": "Từ trái nghĩa với nóng?",
+    "answer": "Lạnh",
+    "aliases": []
+  },
+  {
+    "id": "knowledge-072",
+    "category": "Tiếng Việt",
+    "type": "text",
+    "prompt": "Từ trái nghĩa với cao?",
+    "answer": "Thấp",
+    "aliases": []
+  },
+  {
+    "id": "knowledge-073",
+    "category": "Tiếng Việt",
+    "type": "text",
+    "prompt": "Từ trái nghĩa với rộng?",
+    "answer": "Hẹp",
+    "aliases": []
+  },
+  {
+    "id": "knowledge-074",
+    "category": "Tiếng Việt",
+    "type": "text",
+    "prompt": "Từ trái nghĩa với nhanh?",
+    "answer": "Chậm",
+    "aliases": []
+  },
+  {
+    "id": "knowledge-075",
+    "category": "Tiếng Việt",
+    "type": "text",
+    "prompt": "Dấu câu thường đặt cuối câu hỏi?",
+    "answer": "Dấu chấm hỏi",
+    "aliases": []
+  },
+  {
+    "id": "knowledge-076",
+    "category": "Tiếng Việt",
+    "type": "text",
+    "prompt": "Dấu câu gồm ba dấu chấm liên tiếp?",
+    "answer": "Dấu chấm lửng",
+    "aliases": []
+  },
+  {
+    "id": "knowledge-077",
+    "category": "Tiếng Việt",
+    "type": "text",
+    "prompt": "Điền từ: Có công mài sắt, có ngày nên ...?",
+    "answer": "Kim",
+    "aliases": []
+  },
+  {
+    "id": "knowledge-078",
+    "category": "Tiếng Việt",
+    "type": "text",
+    "prompt": "Điền từ: Uống nước nhớ ...?",
+    "answer": "Nguồn",
+    "aliases": []
+  },
+  {
+    "id": "knowledge-079",
+    "category": "Tiếng Việt",
+    "type": "text",
+    "prompt": "Điền từ: Ăn quả nhớ kẻ ... cây?",
+    "answer": "Trồng",
+    "aliases": []
+  },
+  {
+    "id": "knowledge-080",
+    "category": "Tiếng Việt",
+    "type": "text",
+    "prompt": "Điền từ: Lá lành đùm lá ...?",
+    "answer": "Rách",
+    "aliases": []
+  },
+  {
+    "id": "knowledge-082",
+    "category": "Thể thao vui",
+    "type": "text",
+    "prompt": "Môn thể thao dùng găng tay trên võ đài, còn gọi là boxing?",
+    "answer": "Quyền anh",
+    "aliases": []
+  },
+  {
+    "id": "knowledge-083",
+    "category": "Thể thao vui",
+    "type": "text",
+    "prompt": "Môn thể thao ném bóng vào rổ treo cao?",
+    "answer": "Bóng rổ",
+    "aliases": []
+  },
+  {
+    "id": "knowledge-084",
+    "category": "Thể thao vui",
+    "type": "text",
+    "prompt": "Môn thể thao dùng bàn, vợt nhỏ và bóng nhựa nhẹ?",
+    "answer": "Bóng bàn",
+    "aliases": []
+  },
+  {
+    "id": "knowledge-085",
+    "category": "Thể thao vui",
+    "type": "text",
+    "prompt": "Môn thể thao di chuyển trong nước bằng các động tác tay chân?",
+    "answer": "Bơi lội",
+    "aliases": []
+  },
+  {
+    "id": "knowledge-086",
+    "category": "Thể thao vui",
+    "type": "text",
+    "prompt": "Môn thể thao dùng kiếm, mặt nạ và áo bảo hộ?",
+    "answer": "Đấu kiếm",
+    "aliases": []
+  },
+  {
+    "id": "knowledge-087",
+    "category": "Thể thao vui",
+    "type": "text",
+    "prompt": "Môn thể thao có quân vua, hậu, xe, tượng, mã, tốt?",
+    "answer": "Cờ vua",
+    "aliases": []
+  },
+  {
+    "id": "knowledge-088",
+    "category": "Thể thao vui",
+    "type": "text",
+    "prompt": "Môn võ Nhật Bản nổi tiếng với các đòn vật, nghĩa là nhu đạo?",
+    "answer": "Judo",
+    "aliases": []
+  },
+  {
+    "id": "knowledge-089",
+    "category": "Thể thao vui",
+    "type": "text",
+    "prompt": "Giải đấu bóng đá lớn nhất thế giới dành cho các đội tuyển quốc gia?",
+    "answer": "World Cup",
+    "aliases": []
+  },
+  {
+    "id": "knowledge-090",
+    "category": "Thể thao vui",
+    "type": "text",
+    "prompt": "Vật được trao cho người chiến thắng, thường có dạng chiếc cốc?",
+    "answer": "Cúp",
+    "aliases": [
+      "cup"
+    ]
+  },
+  {
+    "id": "knowledge-091",
+    "category": "Âm nhạc",
+    "type": "text",
+    "prompt": "Nhạc cụ có phím đen trắng, còn gọi là dương cầm?",
+    "answer": "Piano",
+    "aliases": [
+      "đàn piano",
+      "dương cầm"
+    ]
+  },
+  {
+    "id": "knowledge-093",
+    "category": "Âm nhạc",
+    "type": "text",
+    "prompt": "Nhạc cụ bằng tre được thổi để phát âm?",
+    "answer": "Sáo",
+    "aliases": [
+      "sáo trúc"
+    ]
+  },
+  {
+    "id": "knowledge-094",
+    "category": "Âm nhạc",
+    "type": "text",
+    "prompt": "Bộ phận của bài hát thường được lặp lại nhiều lần?",
+    "answer": "Điệp khúc",
+    "aliases": []
+  },
+  {
+    "id": "knowledge-095",
+    "category": "Âm nhạc",
+    "type": "text",
+    "prompt": "Người chỉ huy dàn nhạc gọi là gì?",
+    "answer": "Nhạc trưởng",
+    "aliases": []
+  },
+  {
+    "id": "knowledge-096",
+    "category": "Âm nhạc",
+    "type": "text",
+    "prompt": "Nhạc cụ có sáu dây, thường dùng đệm hát?",
+    "answer": "Guitar",
+    "aliases": [
+      "đàn guitar",
+      "ghi ta"
+    ]
+  },
+  {
+    "id": "knowledge-097",
+    "category": "Âm nhạc",
+    "type": "text",
+    "prompt": "Người hát một bài hát trước khán giả gọi là gì?",
+    "answer": "Ca sĩ",
+    "aliases": []
+  },
+  {
+    "id": "knowledge-098",
+    "category": "Âm nhạc",
+    "type": "text",
+    "prompt": "Nhạc cụ có mặt căng bằng da, dùng dùi gõ?",
+    "answer": "Trống",
+    "aliases": []
+  },
+  {
+    "id": "knowledge-099",
+    "category": "Âm nhạc",
+    "type": "text",
+    "prompt": "Tên nốt nhạc đứng ngay sau Đô trong dãy bảy nốt?",
+    "answer": "Rê",
+    "aliases": []
+  },
+  {
+    "id": "knowledge-100",
+    "category": "Âm nhạc",
+    "type": "text",
+    "prompt": "Tên nốt nhạc đứng ngay trước Si trong dãy bảy nốt?",
+    "answer": "La",
+    "aliases": []
+  },
+  {
+    "id": "knowledge-101",
+    "category": "An toàn số",
+    "type": "text",
+    "prompt": "Chuỗi ký tự bí mật dùng để đăng nhập tài khoản?",
+    "answer": "Mật khẩu",
+    "aliases": []
+  },
+  {
+    "id": "knowledge-102",
+    "category": "An toàn số",
+    "type": "text",
+    "prompt": "Mã xác thực dùng một lần thường được gửi khi đăng nhập?",
+    "answer": "OTP",
+    "aliases": []
+  },
+  {
+    "id": "knowledge-103",
+    "category": "An toàn số",
+    "type": "text",
+    "prompt": "Khi nhận tin nhắn lạ xin mã OTP, nên giữ mã hay gửi mã?",
+    "answer": "Giữ mã",
+    "aliases": []
+  },
+  {
+    "id": "knowledge-104",
+    "category": "An toàn số",
+    "type": "text",
+    "prompt": "Bản sao dữ liệu để có thể khôi phục khi bị mất gọi là gì?",
+    "answer": "Sao lưu",
+    "aliases": []
+  },
+  {
+    "id": "knowledge-105",
+    "category": "An toàn số",
+    "type": "text",
+    "prompt": "Phần mềm dùng để truy cập các trang web?",
+    "answer": "Trình duyệt",
+    "aliases": []
+  },
+  {
+    "id": "knowledge-106",
+    "category": "An toàn số",
+    "type": "text",
+    "prompt": "Thiết bị nhập ký tự vào máy tính bằng các phím?",
+    "answer": "Bàn phím",
+    "aliases": []
+  },
+  {
+    "id": "knowledge-107",
+    "category": "An toàn số",
+    "type": "text",
+    "prompt": "Thiết bị điều khiển con trỏ máy tính bằng tay?",
+    "answer": "Chuột",
+    "aliases": []
+  },
+  {
+    "id": "knowledge-108",
+    "category": "An toàn số",
+    "type": "text",
+    "prompt": "Thư gửi qua mạng Internet, còn gọi là email?",
+    "answer": "Thư điện tử",
+    "aliases": []
+  },
+  {
+    "id": "knowledge-109",
+    "category": "An toàn số",
+    "type": "text",
+    "prompt": "Hành động thoát khỏi phiên tài khoản sau khi dùng máy công cộng?",
+    "answer": "Đăng xuất",
+    "aliases": []
+  },
+  {
+    "id": "knowledge-110",
+    "category": "An toàn số",
+    "type": "text",
+    "prompt": "Hình thức xác minh cần thêm một bước ngoài mật khẩu?",
+    "answer": "Xác thực hai bước",
+    "aliases": []
+  },
+  {
+    "id": "mix-choice-001",
+    "category": "Cơ thể người",
+    "type": "choice",
+    "prompt": "Bộ phận nào bơm máu đi khắp cơ thể?",
+    "answer": "Tim",
+    "options": [
+      "Phổi",
+      "Tim",
+      "Dạ dày",
+      "Thận"
+    ],
+    "aliases": []
+  },
+  {
+    "id": "mix-choice-002",
+    "category": "Cơ thể người",
+    "type": "choice",
+    "prompt": "Bộ phận nào chủ yếu giúp trao đổi khí?",
+    "answer": "Phổi",
+    "options": [
+      "Tim",
+      "Não",
+      "Phổi",
+      "Gan"
+    ],
+    "aliases": []
+  },
+  {
+    "id": "mix-choice-003",
+    "category": "Cơ thể người",
+    "type": "choice",
+    "prompt": "Giác quan nào dùng để nghe?",
+    "answer": "Thính giác",
+    "options": [
+      "Vị giác",
+      "Khứu giác",
+      "Xúc giác",
+      "Thính giác"
+    ],
+    "aliases": []
+  },
+  {
+    "id": "mix-choice-004",
+    "category": "Cơ thể người",
+    "type": "choice",
+    "prompt": "Bộ phận nào giúp ta nhìn?",
+    "answer": "Mắt",
+    "options": [
+      "Tai",
+      "Mắt",
+      "Mũi",
+      "Lưỡi"
+    ],
+    "aliases": []
+  },
+  {
+    "id": "mix-choice-005",
+    "category": "Cơ thể người",
+    "type": "choice",
+    "prompt": "Bộ phận nào điều khiển hoạt động của hệ thần kinh?",
+    "answer": "Não",
+    "options": [
+      "Não",
+      "Dạ dày",
+      "Phổi",
+      "Da"
+    ],
+    "aliases": []
+  },
+  {
+    "id": "mix-choice-006",
+    "category": "Môi trường",
+    "type": "choice",
+    "prompt": "Đâu là nguồn năng lượng tái tạo?",
+    "answer": "Gió",
+    "options": [
+      "Than đá",
+      "Dầu mỏ",
+      "Gió",
+      "Khí tự nhiên"
+    ],
+    "aliases": []
+  },
+  {
+    "id": "mix-choice-007",
+    "category": "Môi trường",
+    "type": "choice",
+    "prompt": "Việc nào giúp tiết kiệm điện?",
+    "answer": "Tắt đèn khi ra khỏi phòng",
+    "options": [
+      "Bật đèn cả ngày",
+      "Tắt đèn khi ra khỏi phòng",
+      "Mở tủ lạnh liên tục",
+      "Bật quạt khi không có ai"
+    ],
+    "aliases": []
+  },
+  {
+    "id": "mix-choice-008",
+    "category": "Môi trường",
+    "type": "choice",
+    "prompt": "Vật nào có thể dùng nhiều lần để giảm rác nhựa?",
+    "answer": "Bình nước cá nhân",
+    "options": [
+      "Ống hút nhựa dùng một lần",
+      "Túi nilon dùng một lần",
+      "Cốc nhựa dùng một lần",
+      "Bình nước cá nhân"
+    ],
+    "aliases": []
+  },
+  {
+    "id": "mix-choice-009",
+    "category": "Môi trường",
+    "type": "choice",
+    "prompt": "Khí nào thường được nhắc đến trong hiệu ứng nhà kính?",
+    "answer": "CO2",
+    "options": [
+      "Oxy",
+      "CO2",
+      "Heli",
+      "Neon"
+    ],
+    "aliases": []
+  },
+  {
+    "id": "mix-choice-010",
+    "category": "Ẩm thực Việt",
+    "type": "choice",
+    "prompt": "Món nào thường ăn cùng bún, rau sống và nước mắm chua ngọt?",
+    "answer": "Bún chả",
+    "options": [
+      "Bún chả",
+      "Chè đỗ đen",
+      "Bánh flan",
+      "Mứt gừng"
+    ],
+    "aliases": []
+  },
+  {
+    "id": "mix-choice-011",
+    "category": "Ẩm thực Việt",
+    "type": "choice",
+    "prompt": "Nguyên liệu chính làm đậu phụ là gì?",
+    "answer": "Đậu nành",
+    "options": [
+      "Đậu nành",
+      "Lạc",
+      "Ngô",
+      "Gạo"
+    ],
+    "aliases": []
+  },
+  {
+    "id": "mix-choice-012",
+    "category": "Ẩm thực Việt",
+    "type": "choice",
+    "prompt": "Loại gạo thường dùng làm bánh chưng là gì?",
+    "answer": "Gạo nếp",
+    "options": [
+      "Gạo lứt",
+      "Gạo tẻ",
+      "Gạo nếp",
+      "Yến mạch"
+    ],
+    "aliases": []
+  },
+  {
+    "id": "mix-choice-013",
+    "category": "Ẩm thực Việt",
+    "type": "choice",
+    "prompt": "Món nào thường có nước dùng, bánh phở và thịt bò hoặc gà?",
+    "answer": "Phở",
+    "options": [
+      "Cháo",
+      "Phở",
+      "Bánh cuốn",
+      "Xôi"
+    ],
+    "aliases": []
+  },
+  {
+    "id": "mix-choice-014",
+    "category": "Ẩm thực Việt",
+    "type": "choice",
+    "prompt": "Món bánh nào thường được tráng mỏng rồi cuốn nhân?",
+    "answer": "Bánh cuốn",
+    "options": [
+      "Bánh chưng",
+      "Bánh cuốn",
+      "Bánh tét",
+      "Bánh trung thu"
+    ],
+    "aliases": []
+  },
+  {
+    "id": "mix-choice-015",
+    "category": "Vũ trụ",
+    "type": "choice",
+    "prompt": "Trái Đất đứng thứ mấy tính từ Mặt Trời?",
+    "answer": "3",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "4"
+    ],
+    "aliases": []
+  },
+  {
+    "id": "mix-choice-016",
+    "category": "Vũ trụ",
+    "type": "choice",
+    "prompt": "Hệ Mặt Trời hiện được công nhận có bao nhiêu hành tinh?",
+    "answer": "8",
+    "options": [
+      "7",
+      "8",
+      "9",
+      "10"
+    ],
+    "aliases": []
+  },
+  {
+    "id": "mix-choice-017",
+    "category": "Thể thao vui",
+    "type": "choice",
+    "prompt": "Một đội bóng đá có bao nhiêu cầu thủ trên sân khi bắt đầu trận tiêu chuẩn?",
+    "answer": "11",
+    "options": [
+      "5",
+      "7",
+      "9",
+      "11"
+    ],
+    "aliases": []
+  },
+  {
+    "id": "mix-choice-018",
+    "category": "Thể thao vui",
+    "type": "choice",
+    "prompt": "Một đội bóng chuyền trong nhà có bao nhiêu người trên sân?",
+    "answer": "6",
+    "options": [
+      "5",
+      "6",
+      "7",
+      "8"
+    ],
+    "aliases": []
+  },
+  {
+    "id": "mix-choice-019",
+    "category": "Văn học",
+    "type": "choice",
+    "prompt": "Ai là tác giả Truyện Kiều?",
+    "answer": "Nguyễn Du",
+    "options": [
+      "Nguyễn Du",
+      "Nguyễn Trãi",
+      "Hồ Xuân Hương",
+      "Nguyễn Đình Chiểu"
+    ],
+    "aliases": []
+  },
+  {
+    "id": "mix-choice-020",
+    "category": "Văn học",
+    "type": "choice",
+    "prompt": "Ai là tác giả Dế Mèn phiêu lưu ký?",
+    "answer": "Tô Hoài",
+    "options": [
+      "Tô Hoài",
+      "Nam Cao",
+      "Kim Lân",
+      "Ngô Tất Tố"
+    ],
+    "aliases": []
+  },
+  {
+    "id": "mix-choice-021",
+    "category": "Văn học",
+    "type": "choice",
+    "prompt": "Nhân vật Chí Phèo xuất hiện trong tác phẩm của nhà văn nào?",
+    "answer": "Nam Cao",
+    "options": [
+      "Vũ Trọng Phụng",
+      "Nam Cao",
+      "Nguyễn Công Hoan",
+      "Thạch Lam"
+    ],
+    "aliases": []
+  },
+  {
+    "id": "mix-choice-022",
+    "category": "Văn học",
+    "type": "choice",
+    "prompt": "Truyện cổ tích nào có cô gái đánh rơi chiếc hài ở hội?",
+    "answer": "Tấm Cám",
+    "options": [
+      "Thạch Sanh",
+      "Tấm Cám",
+      "Sọ Dừa",
+      "Cây khế"
+    ],
+    "aliases": []
+  },
+  {
+    "id": "mix-choice-023",
+    "category": "Đời sống",
+    "type": "choice",
+    "prompt": "Dụng cụ nào dùng để xem hướng Đông Tây Nam Bắc?",
+    "answer": "La bàn",
+    "options": [
+      "Nhiệt kế",
+      "La bàn",
+      "Đồng hồ cát",
+      "Kính lúp"
+    ],
+    "aliases": []
+  },
+  {
+    "id": "mix-choice-024",
+    "category": "Đời sống",
+    "type": "choice",
+    "prompt": "Đèn tín hiệu màu nào yêu cầu dừng lại?",
+    "answer": "Đỏ",
+    "options": [
+      "Xanh",
+      "Vàng nhấp nháy",
+      "Đỏ",
+      "Trắng"
+    ],
+    "aliases": []
+  },
+  {
+    "id": "mix-choice-025",
+    "category": "Đời sống",
+    "type": "choice",
+    "prompt": "Dụng cụ nào dùng để cắt vải?",
+    "answer": "Kéo",
+    "options": [
+      "Thước",
+      "Kéo",
+      "Bút",
+      "Kim"
+    ],
+    "aliases": []
+  },
+  {
+    "id": "mix-choice-026",
+    "category": "Đời sống",
+    "type": "choice",
+    "prompt": "Đồ vật nào giúp che mưa khi đi bộ?",
+    "answer": "Ô",
+    "options": [
+      "Quạt",
+      "Ô",
+      "Khăn bàn",
+      "Giỏ"
+    ],
+    "aliases": []
+  },
+  {
+    "id": "mix-choice-027",
+    "category": "Thiên nhiên",
+    "type": "choice",
+    "prompt": "Cầu vồng thường được mô tả có mấy màu?",
+    "answer": "7",
+    "options": [
+      "5",
+      "6",
+      "7",
+      "8"
+    ],
+    "aliases": []
+  },
+  {
+    "id": "mix-choice-028",
+    "category": "Thiên nhiên",
+    "type": "choice",
+    "prompt": "Mây được tạo chủ yếu từ gì?",
+    "answer": "Giọt nước và tinh thể băng",
+    "options": [
+      "Khói bếp",
+      "Cát",
+      "Giọt nước và tinh thể băng",
+      "Bụi than"
+    ],
+    "aliases": []
+  },
+  {
+    "id": "mix-choice-029",
+    "category": "Thiên nhiên",
+    "type": "choice",
+    "prompt": "Mùa nào cây thường đâm chồi nảy lộc ở miền Bắc Việt Nam?",
+    "answer": "Xuân",
+    "options": [
+      "Hạ",
+      "Thu",
+      "Đông",
+      "Xuân"
+    ],
+    "aliases": []
+  },
+  {
+    "id": "mix-choice-030",
+    "category": "Thiên nhiên",
+    "type": "choice",
+    "prompt": "Hiện tượng nào thường đi kèm tiếng sấm?",
+    "answer": "Chớp",
+    "options": [
+      "Cầu vồng",
+      "Sương mù",
+      "Chớp",
+      "Tuyết"
+    ],
+    "aliases": []
+  },
+  {
+    "id": "mix-choice-031",
+    "category": "Lịch sử Việt",
+    "type": "choice",
+    "prompt": "Ai đọc Tuyên ngôn Độc lập năm 1945 tại Ba Đình?",
+    "answer": "Hồ Chí Minh",
+    "options": [
+      "Hồ Chí Minh",
+      "Võ Nguyên Giáp",
+      "Phan Bội Châu",
+      "Phan Châu Trinh"
+    ],
+    "aliases": []
+  },
+  {
+    "id": "mix-choice-032",
+    "category": "Lịch sử Việt",
+    "type": "choice",
+    "prompt": "Vị vua nào dời đô từ Hoa Lư ra Thăng Long năm 1010?",
+    "answer": "Lý Công Uẩn",
+    "options": [
+      "Đinh Bộ Lĩnh",
+      "Lý Công Uẩn",
+      "Trần Nhân Tông",
+      "Lê Thánh Tông"
+    ],
+    "aliases": []
+  },
+  {
+    "id": "mix-choice-033",
+    "category": "Lịch sử Việt",
+    "type": "choice",
+    "prompt": "Ai là nữ tướng gắn với cuộc khởi nghĩa năm 248?",
+    "answer": "Bà Triệu",
+    "options": [
+      "Bà Triệu",
+      "Nguyên phi Ỷ Lan",
+      "Bùi Thị Xuân",
+      "Dương Vân Nga"
+    ],
+    "aliases": []
+  },
+  {
+    "id": "mix-choice-034",
+    "category": "Lịch sử Việt",
+    "type": "choice",
+    "prompt": "Chiến thắng Điện Biên Phủ diễn ra năm nào?",
+    "answer": "1954",
+    "options": [
+      "1945",
+      "1954",
+      "1968",
+      "1975"
+    ],
+    "aliases": []
+  },
+  {
+    "id": "mix-choice-035",
+    "category": "Lịch sử Việt",
+    "type": "choice",
+    "prompt": "Tên cũ của Hà Nội do vua Lý Thái Tổ đặt là gì?",
+    "answer": "Thăng Long",
+    "options": [
+      "Phú Xuân",
+      "Gia Định",
+      "Thăng Long",
+      "Hoa Lư"
+    ],
+    "aliases": []
+  }
+]

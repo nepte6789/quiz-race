@@ -1,0 +1,381 @@
+import test from "node:test";
+import assert from "node:assert/strict";
+import { readFileSync } from "node:fs";
+import {
+  Game,
+  normalize,
+  validateBank,
+  scrambleAnswer,
+} from "../server/engine.mjs";
+const bank = [
+  {
+    id: "1",
+    category: "A",
+    type: "text",
+    prompt: "Đồ vật để ngồi?",
+    answer: "Cái ghế",
+    aliases: ["ghế"],
+  },
+  {
+    id: "2",
+    category: "B",
+    type: "choice",
+    prompt: "2+2?",
+    answer: "4",
+    options: ["1", "2", "3", "4"],
+  },
+];
+function fixture() {
+  let time = 10000;
+  const g = new Game([bank[0]], { now: () => time });
+  return { g, advance: (ms) => (time += ms) };
+}
+test("Vietnamese normalization preserves digits and maps Đ", () => {
+  assert.equal(normalize("  CÁI GHẾ!!! "), "caighe");
+  assert.equal(normalize("Đường 123"), "duong123");
+});
+test("bank validates every shipped question and unique IDs", () => {
+  const b = validateBank(
+    JSON.parse(
+      readFileSync(new URL("../data/questions.json", import.meta.url)),
+    ),
+  );
+  assert.equal(b.length, 772);
+  assert.equal(new Set(b.map((q) => q.category)).size, 41);
+  assert.equal(new Set(b.map((q) => q.type)).size, 6);
+});
+test("first correct wins atomically; later comments cannot score", () => {
+  const { g } = fixture();
+  g.next();
+  for (let i = 0; i < 10000; i++)
+    g.comment({ id: String(i), name: "Người " + i, text: "cai ghe" });
+  assert.equal(g.accepted, 1);
+  assert.equal(g.players.size, 1);
+  assert.equal(g.phase, "reveal");
+});
+test("all mode scores once per player and rejects duplicate msg IDs", () => {
+  const { g } = fixture();
+  g.configure({ mode: "all" });
+  g.next();
+  assert(g.comment({ id: "a", name: "A", text: "ghế", msgId: "same" }));
+  assert(!g.comment({ id: "b", name: "B", text: "ghế", msgId: "same" }));
+  assert(!g.comment({ id: "a", name: "A", text: "ghế", msgId: "new" }));
+  assert(g.comment({ id: "b", name: "B", text: "ghế", msgId: "other" }));
+  assert.equal(g.accepted, 2);
+});
+test("wrong answers can retry after rate limit; stale round is rejected", () => {
+  const { g, advance } = fixture();
+  g.next();
+  assert(!g.comment({ id: "a", text: "sai" }));
+  advance(101);
+  assert(g.comment({ id: "a", text: "ghe" }));
+  g.next();
+  assert(!g.comment({ id: "b", text: "ghe", round: 1 }));
+});
+test("deadline checked before answer; pause preserves remaining time", () => {
+  const { g, advance } = fixture();
+  g.next();
+  advance(1000);
+  g.pause();
+  advance(99999);
+  g.tick();
+  assert.equal(g.phase, "question");
+  assert(!g.comment({ id: "a", text: "ghe" }));
+  g.pause();
+  advance(g.settings.duration * 1000 - 1000);
+  assert(!g.comment({ id: "a", text: "ghe" }));
+  assert.equal(g.phase, "reveal");
+});
+test("automatic transition and auto off", () => {
+  const { g, advance } = fixture();
+  g.next();
+  g.reveal();
+  advance(g.settings.breakTime * 1000);
+  g.tick();
+  assert.equal(g.round, 2);
+  g.configure({ auto: false });
+  g.reveal();
+  advance(99999);
+  g.tick();
+  assert.equal(g.round, 2);
+});
+test("settings cannot alter current question scoring mode or value", () => {
+  const { g } = fixture();
+  g.next();
+  g.configure({ mode: "all", points: 10 });
+  g.comment({ id: "a", text: "ghe" });
+  assert.equal(g.players.get("a").score, 1);
+  assert.equal(g.phase, "reveal");
+});
+test("answer is never sent before reveal, including choice", () => {
+  const g = new Game([bank[1]]);
+  g.next();
+  assert(!("answer" in g.snapshot().question));
+  assert(g.comment({ id: "a", text: "D" }));
+  assert.equal(g.snapshot().question.answer, "4");
+});
+test("shuffle exhausts selected bank before repeating", () => {
+  const g = new Game(bank);
+  g.next();
+  const first = g.current.id;
+  g.next();
+  assert.notEqual(g.current.id, first);
+  g.configure({ category: "B" });
+  g.next();
+  assert.equal(g.current.category, "B");
+});
+test("invalid imports and empty selection do not break engine", () => {
+  assert.throws(() => validateBank([{ ...bank[1], options: ["1"] }]));
+  assert.throws(() => validateBank([bank[0], bank[0]]));
+  const g = new Game(bank);
+  g.configure({ category: "A", type: "choice" });
+  assert.throws(() => g.next());
+  g.configure({ type: "text" });
+  g.next();
+  assert.equal(g.phase, "question");
+  assert.throws(() => g.replaceBank([]));
+  assert.equal(g.bank.length, 2);
+});
+test("score and gifts remain separate; reset clears boards", () => {
+  const { g } = fixture();
+  g.gift({ id: "a", name: "A", diamonds: 20 });
+  g.next();
+  g.comment({ id: "b", name: "B", text: "ghế" });
+  assert.equal(g.top("score")[0].id, "b");
+  assert.equal(g.top("diamonds")[0].id, "a");
+  assert(!g.gift({ id: "bad", diamonds: -2 }));
+  g.reset();
+  assert.equal(g.players.size, 0);
+  assert.equal(g.phase, "idle");
+});
+test("10,000 different correct answers counted once with bounded winner payload", () => {
+  const { g } = fixture();
+  g.configure({ mode: "all" });
+  g.next();
+  for (let i = 0; i < 10000; i++)
+    g.comment({ id: String(i), name: "Khách " + i, text: "ghe" });
+  const s = g.snapshot();
+  assert.equal(s.stats.accepted, 10000);
+  assert.equal(s.winners.length, 20);
+  assert.equal(s.topScores.length, 10);
+  assert(JSON.stringify(s).length < 12000);
+});
+test("a correct correction is not suppressed even one millisecond after a wrong answer", () => {
+  const { g } = fixture();
+  g.next();
+  assert(!g.comment({ id: "fast", name: "Nhanh", text: "sai" }));
+  assert(g.comment({ id: "fast", name: "Nhanh", text: "ghe" }));
+  assert(!g.comment({ id: "second", text: "ghe" }));
+  assert.equal(g.winners[0].id, "fast");
+});
+test("late answers from previous question cannot win repeated answers on the next round", () => {
+  const { g, advance } = fixture();
+  g.next();
+  const old = g.startedAt;
+  advance(2000);
+  g.next();
+  assert(
+    !g.comment({ id: "late", text: "ghe", sentAt: old, timePrecision: 1 }),
+  );
+  assert(g.comment({ id: "fresh", text: "ghe", sentAt: g.startedAt }));
+  assert.equal(g.winners[0].id, "fresh");
+});
+test("seconds-only timestamps are rounded consistently, not reordered", () => {
+  const { g, advance } = fixture();
+  advance(250);
+  g.next();
+  assert(
+    !g.comment({ id: "old", text: "ghe", sentAt: 9000, timePrecision: 1000 }),
+  );
+  assert(
+    g.comment({
+      id: "same-second",
+      text: "ghe",
+      sentAt: 10000,
+      timePrecision: 1000,
+    }),
+  );
+});
+test("LIVE switches to first-only, clears demo players and does not replace the winner", () => {
+  const { g } = fixture();
+  g.configure({ mode: "all" });
+  g.gift({ id: "demo:Test", name: "Test", diamonds: 10 });
+  g.setLive(true);
+  assert.equal(g.settings.mode, "first");
+  assert.equal(g.phase, "idle");
+  assert.equal(g.players.size, 0);
+  assert.throws(() => g.configure({ mode: "all" }));
+  g.next();
+  for (let i = 1; i <= 4; i++)
+    g.comment({ id: "real" + i, name: "Người " + i, text: "ghe" });
+  assert.equal(g.accepted, 1);
+  assert.equal(g.winners[0].id, "real1");
+  assert.equal(g.lastEvent.name, "Người 1");
+});
+
+test("scrambled tiles retain word groups 2 + 4 for HỒ GƯƠM", () => {
+  const original = "HỒGƯƠM";
+  const groups = scrambleAnswer("HỒ GƯƠM", (n) => n - 1);
+  assert.deepEqual(
+    groups.map((g) => g.length),
+    [2, 4],
+  );
+  assert.deepEqual(groups.flat().slice().sort(), Array.from(original).sort());
+  assert.notEqual(groups.flat().join(""), original);
+});
+test("Vietnamese combining marks, repeated whitespace and identical letters are safe", () => {
+  assert.deepEqual(
+    scrambleAnswer("  Hồ  Gươm  ".normalize("NFD")).map((g) => g.length),
+    [2, 4],
+  );
+  assert.deepEqual(scrambleAnswer("A AA"), [["A"], ["A", "A"]]);
+  assert.deepEqual(scrambleAnswer(""), []);
+});
+test("ordinary text and emoji guessing also expose grouped shuffled tiles, without plain answer", () => {
+  for (const type of ["text", "scramble", "riddle", "emoji"]) {
+    const g = new Game([
+      {
+        id: "tiles",
+        category: "Test",
+        type,
+        prompt: "Hồ ở Hà Nội",
+        answer: "Hồ Gươm",
+      },
+    ]);
+    g.next();
+    const q = g.snapshot().question;
+    assert.deepEqual(
+      q.letterGroups.map((g) => g.length),
+      [2, 4],
+    );
+    assert.equal(q.scrambled.length, 6);
+    assert(!("answer" in q));
+  }
+});
+test("math and multiple choice do not leak answer via tile hints", () => {
+  for (const q of [
+    { id: "m", category: "Test", type: "math", prompt: "2+2", answer: "4" },
+    bank[1],
+  ]) {
+    const g = new Game([q]);
+    g.next();
+    assert.equal(g.snapshot().question.letterGroups, undefined);
+    assert.equal(g.snapshot().question.scrambled, undefined);
+  }
+});
+
+test("TỦ LẠNH never mixes letters across words over 1,000 shuffles", () => {
+  for (let i = 0; i < 1000; i++) {
+    const groups = scrambleAnswer("TỦ LẠNH");
+    assert.deepEqual(groups[0].slice().sort(), ["T", "Ủ"].sort());
+    assert.deepEqual(groups[1].slice().sort(), ["L", "Ạ", "N", "H"].sort());
+    assert.notEqual(groups[0].join(""), "TỦ");
+    assert.notEqual(groups[1].join(""), "LẠNH");
+  }
+});
+test("each word preserves its own letters, accents, repeats and single-letter words", () => {
+  for (const answer of [
+    "HỒ GƯƠM",
+    "A AA TỦ LẠNH",
+    "CÀ PHÊ",
+    "QUẢ VẢI",
+    "ĐỒNG HỒ",
+  ]) {
+    const words = answer.split(" ");
+    for (let i = 0; i < 100; i++) {
+      const groups = scrambleAnswer(answer);
+      assert.equal(groups.length, words.length);
+      groups.forEach((g, j) =>
+        assert.deepEqual(g.slice().sort(), Array.from(words[j]).sort()),
+      );
+    }
+  }
+});
+
+test("expanded bank contains 500 distinct scramble answers and 8 simple math questions", () => {
+  const b = validateBank(
+      JSON.parse(
+        readFileSync(new URL("../data/questions.json", import.meta.url)),
+      ),
+    ),
+    words = b.filter((q) => q.type === "scramble"),
+    math = b.filter((q) => q.type === "math");
+  assert.equal(words.length, 500);
+  assert.equal(new Set(words.map((q) => normalize(q.answer))).size, 500);
+  assert.equal(math.length, 8);
+  for (const op of ["+", "×", "÷"])
+    assert(math.some((q) => q.prompt.includes(op)));
+  assert.equal(b.filter((q) => q.type === "text").length, 194);
+  for (const q of words) {
+    const groups = scrambleAnswer(q.answer),
+      original = q.answer
+        .normalize("NFC")
+        .toLocaleUpperCase("vi")
+        .trim()
+        .split(/\s+/);
+    assert.equal(groups.length, original.length);
+    groups.forEach((g, i) =>
+      assert.deepEqual(g.slice().sort(), Array.from(original[i]).sort()),
+    );
+  }
+});
+
+test("voice selection persists and rejects unknown provider names", () => {
+  const g = new Game([
+    {
+      id: "voice",
+      category: "Test",
+      type: "text",
+      prompt: "Test",
+      answer: "ok",
+    },
+  ]);
+  assert.equal(g.settings.voice, "female");
+  g.configure({ voice: "male" });
+  assert.equal(new Game(g.bank, { saved: g.export() }).settings.voice, "male");
+  assert.throws(() => g.configure({ voice: "unknown" }));
+});
+
+test("reference result exposes true rank and server reveal timestamp", () => {
+  let now = 1000;
+  const g = new Game(
+    [
+      {
+        id: "rank",
+        category: "Test",
+        type: "text",
+        prompt: "Thủ đô?",
+        answer: "Hà Nội",
+      },
+    ],
+    { now: () => now },
+  );
+  for (let i = 0; i < 12; i++) {
+    const p = g.player("old" + i, "Người " + i);
+    p.score = 10;
+    p.order = i + 1;
+  }
+  g.next();
+  now = 1250;
+  g.comment({ id: "new", name: "Lan", text: "ha noi" });
+  const s = g.snapshot();
+  assert.equal(s.winners[0].rank, 13);
+  assert.equal(s.revealedAt, 1250);
+  assert.equal(s.nextAt, 7250);
+  assert.equal(s.winners[0].score, 1);
+});
+test("arithmetic stays below two percent and diverse topics remain available", () => {
+  const b = JSON.parse(
+    readFileSync(new URL("../data/questions.json", import.meta.url)),
+  );
+  assert(b.filter((q) => q.type === "math").length / b.length < 0.02);
+  for (const topic of [
+    "Địa lý Việt Nam",
+    "Văn học",
+    "An toàn số",
+    "Vũ trụ",
+    "Văn hóa Việt",
+    "Thể thao vui",
+  ])
+    assert(b.some((q) => q.category === topic));
+});
