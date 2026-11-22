@@ -31,4 +31,4 @@ Không sao chép khung chat, nút Follow, đồng hồ điện thoại, tên hay
 
 ## Các lớp tương tác bổ sung
 
-Thanh tim cộng đồng nằm giữa đầu màn hình và phần hỏi; câu được mở từ mục tiêu có viền/nhãn ×2 vàng. Điểm chặng tách tổng buổi, hai tab Tổng/Chặng và màn vinh danh top 3 sau mỗi 10 câu. Banner riêng cho lần đầu ghi điểm, chuỗi ba câu và lội ngược dòng. Màn trao giải hiện sau lời giải câu cuối, giữ khoảng nghỉ tối thiểu 22 giây để đọc top 3. Lời mời rủ bạn chỉ xuất hiện ở màn trao giải, không giả lập lượt chia sẻ và không có bình chọn chủ đề.
+Thanh tim cộng đồng nằm giữa đầu màn hình và phần hỏi; câu được mở từ mục tiêu có viền/nhãn ×2 vàng. Điểm chặng tách tổng buổi, bảng tổng bên trái, cột phải chia Top quà/Top chặng và màn vinh danh top 3 sau mỗi 10 câu. Banner riêng cho lần đầu ghi điểm, chuỗi ba câu và lội ngược dòng. Màn trao giải hiện sau lời giải câu cuối, giữ khoảng nghỉ tối thiểu 22 giây để đọc top 3. Lời mời rủ bạn chỉ xuất hiện ở màn trao giải, không giả lập lượt chia sẻ và không có bình chọn chủ đề.

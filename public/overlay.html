@@ -62,21 +62,26 @@
       <div id="ticker" class="ticker">
         💬 Gõ đáp án vào bình luận để ghi điểm · Tặng quà để lên bảng vàng 🎁
       </div>
-      <section class="boards">
+      <section class="boards" aria-label="Bảng xếp hạng buổi LIVE">
         <article class="board scores-board">
           <div class="board-title">
-            <span id="scoreBoardTitle">🏆 TOP ĐIỂM</span>
-            <div class="board-tabs">
-              <button id="totalTab" class="selected">Tổng</button
-              ><button id="segmentTab">Chặng</button>
-            </div>
+            <span id="scoreBoardTitle">🏆 TỔNG XẾP HẠNG</span>
           </div>
           <ol id="scores"></ol>
         </article>
-        <article class="board gifts-board">
-          <div class="board-title">🎁 TOP QUÀ</div>
-          <ol id="gifts"></ol>
-        </article>
+        <div class="board-stack">
+          <article class="board gifts-board">
+            <div class="board-title">🎁 TOP QUÀ</div>
+            <ol id="gifts"></ol>
+          </article>
+          <article class="board segment-board">
+            <div class="board-title">
+              <span>⚡ TOP CHẶNG</span
+              ><small id="segmentBoardNumber">CHẶNG 1</small>
+            </div>
+            <ol id="segmentScores"></ol>
+          </article>
+        </div>
       </section>
       <footer class="live-footer">
         <span id="liveSubtitle"
