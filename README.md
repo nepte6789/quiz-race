@@ -26,7 +26,7 @@ Mở **http://localhost:3000/** hoặc đúng địa chỉ in trong terminal. Ch
 4. Thêm nguồn Browser/Liên kết **http://localhost:3000/overlay.html** vào OBS/LIVE Studio, kích thước **1080 × 1920**.
 5. Bấm **Bật âm thanh & giọng đọc** một lần trên nguồn LIVE. Preview trong bảng điều khiển luôn im lặng.
 
-Khi chưa nối LIVE, bấm **Thử trả lời đúng** để xem thẻ thắng, lời giải xanh, giọng đọc và chibi tung bông. Dữ liệu thử có hậu tố “thử”, không phải người xem TikTok. Không tự tạo bot hoặc người giả trong LIVE.
+Khi chưa nối LIVE, bấm **Thử trả lời đúng** để xem thẻ thắng, lời giải xanh, giọng đọc và chibi tung bông. Tên hiển thị đúng như bạn nhập, không thêm đuôi “thử”. Dữ liệu vẫn dùng mã nội bộ riêng, không phải người xem TikTok. Không tự tạo bot hoặc người giả trong LIVE.
 
 ## Giống nhịp trong video
 

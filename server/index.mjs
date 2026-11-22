@@ -349,7 +349,7 @@ wss.on("connection", (ws) => {
           if (game.phase !== "question") throw Error("Bắt đầu câu hỏi trước.");
           game.comment({
             id: "demo:" + String(m.name || "Khách").slice(0, 80),
-            name: String(m.name || "Khách") + " · thử",
+            name: String(m.name || "Khách"),
             text: game.current.answer,
             round: m.round,
           });
@@ -364,7 +364,7 @@ wss.on("connection", (ws) => {
             throw Error("Ngắt kết nối LIVE thật trước khi thử.");
           game.comment({
             id: "demo:" + String(m.name || "Khách").slice(0, 80),
-            name: String(m.name || "Khách") + " · thử",
+            name: String(m.name || "Khách"),
             text: String(m.text || ""),
             round: m.round,
           });
@@ -379,7 +379,7 @@ wss.on("connection", (ws) => {
             throw Error("Ngắt LIVE thật trước khi thử.");
           game.gift({
             id: "demo:" + String(m.name || "Khách").slice(0, 80),
-            name: String(m.name || "Khách") + " · thử",
+            name: String(m.name || "Khách"),
             diamonds: Number(m.diamonds),
           });
           break;
