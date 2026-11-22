@@ -112,6 +112,7 @@ export class Game {
     };
     this.players = new Map((saved.players || []).map((p) => [p.id, p]));
     this.phase = "idle";
+    this.connectionHold = null;
     this.round = 0;
     this.deck = [];
     this.current = null;
@@ -186,6 +187,7 @@ export class Game {
         [this.deck[i], this.deck[j]] = [this.deck[j], this.deck[i]];
       }
     }
+    this.connectionHold = null;
     if (this.phase === "question") this.reveal("skip");
     this.roundBoosted = this.engagement.begin();
     this.current = this.deck.pop();
@@ -216,7 +218,7 @@ export class Game {
     return this.current;
   }
   reveal(reason = "manual") {
-    if (this.phase !== "question") return;
+    if (this.phase !== "question" || this.connectionHold) return;
     this.phase = "reveal";
     this.revealedAt = this.now();
     this.paused = false;
@@ -227,6 +229,7 @@ export class Game {
     this.version++;
   }
   pause() {
+    if (this.connectionHold) return;
     if (this.phase === "question" && !this.paused) {
       this.remaining = Math.max(0, this.endsAt - this.now());
       this.paused = true;
@@ -238,12 +241,13 @@ export class Game {
     }
   }
   stop() {
+    this.connectionHold = null;
     this.phase = "idle";
     this.paused = false;
     this.version++;
   }
   tick() {
-    if (this.paused) return;
+    if (this.paused || this.connectionHold) return;
     if (this.phase === "question" && this.now() >= this.endsAt)
       this.reveal("timeout");
     else if (
@@ -293,23 +297,53 @@ export class Game {
     }
     return p;
   }
-  setLive(active) {
+  suspendLive() {
+    if (this.connectionHold) return;
+    const at = this.now();
+    this.connectionHold = {
+      at,
+      remaining:
+        this.phase === "question"
+          ? this.paused
+            ? this.remaining
+            : Math.max(0, this.endsAt - at)
+          : this.phase === "reveal"
+            ? Math.max(0, this.nextAt - at)
+            : 0,
+    };
+    this.version++;
+  }
+  resumeLive() {
+    if (!this.connectionHold) return;
+    const shift = Math.max(0, this.now() - this.connectionHold.at);
+    if (this.phase === "question" && !this.paused) this.endsAt += shift;
+    if (this.phase === "reveal") {
+      this.revealedAt += shift;
+      this.nextAt += shift;
+      if (this.engagement.summary?.round === this.round)
+        this.engagement.summary.visibleAt += shift;
+    }
+    this.connectionHold = null;
+    this.version++;
+  }
+  setLive(active, { resume = false } = {}) {
     this.live = active;
-    if (active) {
-      if (
-        this.engagement.demoHearts ||
-        [...this.players.keys()].some((id) => id.startsWith("demo:"))
-      )
-        this.engagement = new Engagement(this.settings.heartGoal);
-      for (const id of this.players.keys())
-        if (id.startsWith("demo:")) this.players.delete(id);
-      this.leaderboards = {};
+    if (!active) return;
+    const hasDemos =
+      this.engagement.demoHearts ||
+      [...this.players.keys()].some((id) => id.startsWith("demo:"));
+    if (hasDemos) this.engagement = new Engagement(this.settings.heartGoal);
+    for (const id of this.players.keys())
+      if (id.startsWith("demo:")) this.players.delete(id);
+    this.leaderboards = {};
+    if (!resume || hasDemos) {
       this.stop();
       this.winners = [];
       this.lastEvent = null;
       this.correct = new Set();
-      this.configure({ mode: "first" });
     }
+    this.configure({ mode: "first" });
+    if (resume && this.phase === "question") this.roundMode = "first";
   }
   comment({ id, name, text, msgId, avatar, round, sentAt, timePrecision = 1 }) {
     if (
@@ -320,6 +354,7 @@ export class Game {
       text.length > 500
     )
       return false;
+    if (this.connectionHold) return false;
     this.totalComments++;
     if (msgId) {
       msgId = String(msgId).slice(0, 200);
@@ -447,12 +482,15 @@ export class Game {
       version: this.version,
       serverTime: this.now(),
       phase: this.phase,
-      paused: !!this.paused,
+      paused: !!this.paused || !!this.connectionHold,
+      networkPaused: !!this.connectionHold,
+      holdAt: this.connectionHold?.at,
+      holdRemaining: this.connectionHold?.remaining,
       round: this.round,
       endsAt: this.endsAt,
       nextAt: this.nextAt,
       revealedAt: this.revealedAt,
-      remaining: this.remaining,
+      remaining: this.connectionHold?.remaining ?? this.remaining,
       settings: this.settings,
       roundMode: this.roundMode,
       roundPoints: this.roundPoints,

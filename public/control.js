@@ -95,13 +95,15 @@ function render(m) {
     ackSettings = false;
   }
   $("roundNumber").textContent = m.round;
-  $("phaseText").textContent = m.paused
-    ? "Tạm dừng"
-    : {
-        idle: "Chưa bắt đầu",
-        question: "Đang nhận đáp án",
-        reveal: "Đang hiện kết quả",
-      }[m.phase];
+  $("phaseText").textContent = m.networkPaused
+    ? "Giữ buổi · chờ nối lại LIVE"
+    : m.paused
+      ? "Tạm dừng"
+      : {
+          idle: "Chưa bắt đầu",
+          question: "Đang nhận đáp án",
+          reveal: "Đang hiện kết quả",
+        }[m.phase];
   $("comments").textContent = m.stats.comments.toLocaleString("vi-VN");
   $("accepted").textContent = m.stats.accepted.toLocaleString("vi-VN");
   $("players").textContent = `${m.stats.players} người có điểm`;
@@ -116,8 +118,8 @@ function render(m) {
       ? "Đang nhận đáp án…"
       : "";
   $("pause").textContent = m.paused ? "▶ Tiếp tục" : "Ⅱ Tạm dừng";
-  $("pause").disabled = m.phase !== "question";
-  $("reveal").disabled = m.phase !== "question";
+  $("pause").disabled = m.phase !== "question" || m.networkPaused;
+  $("reveal").disabled = m.phase !== "question" || m.networkPaused;
   $("next").disabled = m.phase === "idle";
   $("stop").disabled = m.phase === "idle";
   const labels = {
@@ -157,12 +159,15 @@ function render(m) {
   $("liveErrorDetail").textContent = m.live.detail || "";
   const busy =
     ["connected", "connecting", "retrying"].includes(m.live.status) ||
-    m.live.auto?.enabled;
+    m.live.auto?.enabled ||
+    m.networkPaused;
   for (const id of ["sendDemo", "correctDemo", "giftDemo", "heartDemo"])
     $(id).disabled = !!busy;
-  $("demoHint").textContent = busy
-    ? "Đang kết nối hoặc tự thử lại LIVE thật. Bấm Ngắt trước khi dùng dữ liệu thử."
-    : "Điểm thử không lưu sau khi khởi động lại. Mở câu hỏi rồi thử đáp án.";
+  $("demoHint").textContent = m.networkPaused
+    ? "Buổi LIVE đang được giữ nguyên. Kết nối lại cùng kênh để tiếp tục, hoặc bấm Bắt đầu để chạy thử câu mới."
+    : busy
+      ? "Đang kết nối hoặc tự thử lại LIVE thật. Bấm Ngắt trước khi dùng dữ liệu thử."
+      : "Điểm thử không lưu sau khi khởi động lại. Mở câu hỏi rồi thử đáp án.";
   $("connectBtn").disabled = ["connecting", "retrying"].includes(m.live.status);
   form.elements.mode.disabled = !!busy;
   const community = m.engagement;

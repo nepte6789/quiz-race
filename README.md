@@ -97,6 +97,16 @@ Tự nối lại sau 2 phút khi mất kết nối; tôn trọng thời gian gi�
 
 Dùng **Sao chép lỗi** để đối chiếu: `OFFLINE` (phòng chưa phát/không tìm đúng), `ROOM_ID` (chưa lấy mã phòng), `RATE_LIMIT` (đợi), `SIGN_PERMISSION` (khóa/quyền endpoint, có tài khoản chưa chắc có quyền Business), `NETWORK` (mạng). Không yêu cầu cookie, mật khẩu hay mã đăng nhập TikTok. Thư viện cộng đồng phụ thuộc thay đổi của TikTok.
 
+## Mất kết nối rồi nối lại
+
+Bật **Tự nối lại khi mất LIVE** và giữ cửa sổ `npm start` mở. Khi SDK báo mất kết nối, ứng dụng giữ nguyên điểm/hạng, top quà, chuỗi/danh hiệu, tim/câu ×2 đang chờ, chặng, đáp án đã ghi nhận và câu hiện tại. Đồng hồ và vị trí di chuyển của chibi tạm dừng; không tự chạy qua các câu trong lúc chờ. Giọng đọc tạm ngừng.
+
+Kết nối lại **cùng @kênh** (tự động hoặc bấm Kết nối) sẽ tiếp tục với thời gian còn lại. Kết quả cũ và mã sự kiện đã xử lý vẫn được giữ để không cộng trùng. Nếu đang ở màn trao giải thì giữ thời gian chờ/trao giải còn lại. Người dẫn đã bấm Tạm dừng trước đó thì sau khi nối lại vẫn tạm dừng.
+
+Nút **Ngắt** hủy lịch tự nối và giữ buổi. Muốn chuyển sang chạy thử, bấm **Bắt đầu/Câu tiếp** để chủ động mở câu mới; dữ liệu thử vẫn tách khỏi người thật. Kết nối một kênh khác dùng bước chuẩn bị LIVE mới, không tự tiếp tục câu của kênh cũ.
+
+Chỉ nối lại LIVE hoặc tải lại trình duyệt thì không xóa buổi. **Tắt tiến trình rồi chạy lại npm start vẫn reset bảng xếp hạng và tiến độ**, đúng chế độ buổi mới đã thiết lập. Vì vậy không tắt terminal chỉ để sửa lỗi kết nối TikTok.
+
 ## Dữ liệu và vận hành
 
 Mỗi lần khởi động máy chủ là một buổi mới: reset người chơi, top điểm, top quà và thống kê. Reload trình duyệt trong cùng buổi không reset. Giữ thiết lập và bộ riêng trong `data/runtime`; file hỏng không bị tự ghi đè. Top quà tính theo giá trị xu sự kiện, quà chuỗi cộng khi kết thúc, không phải doanh thu rút về.
