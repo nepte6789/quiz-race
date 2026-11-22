@@ -62,7 +62,7 @@ function roam(now) {
     dt,
     roamLimits,
     Math.random,
-    runners[0].classList.contains("cheering"),
+    runners[0].classList.contains("cheering") || state?.networkPaused,
   );
   placeActors();
   if (!reducedMotion.matches) roamFrame = requestAnimationFrame(roam);
@@ -477,6 +477,7 @@ function render(s) {
     (s.round !== state.round ||
       s.phase !== state.phase ||
       s.paused !== state.paused ||
+      s.networkPaused !== state.networkPaused ||
       s.settings.voice !== state.settings.voice)
   ) {
     speaker.stop();
@@ -505,8 +506,9 @@ function render(s) {
   $("category").textContent = s.question?.category || "";
   $("liveSubtitle").textContent = s.settings.subtitle;
   $("playerCount").textContent = s.stats.players;
-  $("connection").textContent =
-    s.live.status === "connected"
+  $("connection").textContent = s.networkPaused
+    ? "⏸ Giữ nguyên buổi · chờ nối lại LIVE"
+    : s.live.status === "connected"
       ? `● LIVE @${s.live.username}`
       : ["connecting", "retrying"].includes(s.live.status)
         ? "◌ Đang nối TikTok"
@@ -546,6 +548,7 @@ function render(s) {
     s.phase === "reveal" &&
     w &&
     s.settings.speech &&
+    !s.networkPaused &&
     !(
       s.engagement?.summary?.round === s.round &&
       Date.now() + offset >= s.engagement.summary.visibleAt
@@ -570,7 +573,7 @@ function render(s) {
 function clock() {
   if (!state) return;
   const s = state,
-    now = Date.now() + offset,
+    now = s.networkPaused ? s.holdAt : Date.now() + offset,
     left =
       s.phase === "question"
         ? s.paused
@@ -599,7 +602,7 @@ function clock() {
     $("podiumNext").textContent = s.settings.auto
       ? `Chặng mới bắt đầu sau ${Math.max(0, Math.ceil(left / 1000))} giây`
       : "Sẵn sàng chặng mới · Chờ người dẫn mở câu";
-    if (s.settings.speech)
+    if (s.settings.speech && !s.networkPaused)
       speaker.speak({
         key: `podium:${summary.id}:${s.settings.voice}`,
         kind: "podium",

@@ -150,6 +150,7 @@ const server = http.createServer(async (req, res) => {
       summary = game.engagement.summary;
     const valid = () =>
       game.settings.speech &&
+      !game.connectionHold &&
       round === game.round &&
       selectedVoice === (game.settings.voice || "female") &&
       (!url.searchParams.has("voice") ||
@@ -340,6 +341,10 @@ wss.on("connection", (ws) => {
           await live.disconnect();
           break;
         case "demoLike":
+          if (game.connectionHold)
+            throw Error(
+              "Buổi LIVE đang được giữ. Kết nối lại hoặc bấm Bắt đầu câu mới trước khi thử.",
+            );
           if (
             ["connected", "connecting", "retrying"].includes(
               live.state.status,
@@ -351,6 +356,10 @@ wss.on("connection", (ws) => {
             throw Error("Số tim không hợp lệ");
           break;
         case "demoCorrect":
+          if (game.connectionHold)
+            throw Error(
+              "Buổi LIVE đang được giữ nguyên. Kết nối lại hoặc bấm Bắt đầu để chạy thử câu mới.",
+            );
           if (
             ["connected", "connecting", "retrying"].includes(
               live.state.status,
@@ -367,6 +376,8 @@ wss.on("connection", (ws) => {
           });
           break;
         case "simulate":
+          if (game.connectionHold)
+            throw Error("Kết nối lại hoặc bấm Bắt đầu câu mới trước khi thử.");
           if (
             ["connected", "connecting", "retrying"].includes(
               live.state.status,
@@ -382,6 +393,10 @@ wss.on("connection", (ws) => {
           });
           break;
         case "demoGift":
+          if (game.connectionHold)
+            throw Error(
+              "Buổi LIVE đang được giữ. Kết nối lại hoặc bấm Bắt đầu câu mới trước khi thử.",
+            );
           if (
             ["connected", "connecting", "retrying"].includes(
               live.state.status,

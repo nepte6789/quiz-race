@@ -272,9 +272,12 @@ export class LiveLink {
   }
   async connect(value) {
     const username = normalizeUsername(value);
+    const resuming =
+      this.sessionUsername?.toLowerCase() === username.toLowerCase();
     await this.disconnect();
+    if (!resuming) this.sessionUsername = null;
     const gen = ++this.generation;
-    this.game.setLive(true);
+    this.game.setLive(true, { resume: resuming });
     for (let attempt = 1; attempt <= this.maxAttempts; attempt++) {
       if (gen !== this.generation) return;
       this.state = {
@@ -330,6 +333,7 @@ export class LiveLink {
         });
         c.on("disconnected", () => {
           if (current() && this.state.status === "connected") {
+            this.game.suspendLive();
             this.game.setLive(false);
             this.state = {
               status: "disconnected",
@@ -347,6 +351,7 @@ export class LiveLink {
             const info = connectionError(error);
             this.state = { ...this.state, ...info };
             if (this.state.status === "connected" && c.isConnected === false) {
+              this.game.suspendLive();
               this.game.setLive(false);
               this.state.status = "disconnected";
               this.onDisconnected();
@@ -372,6 +377,8 @@ export class LiveLink {
           await c.disconnect();
           return;
         }
+        this.sessionUsername = username;
+        this.game.resumeLive();
         this.state = { status: "connected", username, attempt };
         this.changed();
         return;
@@ -403,6 +410,7 @@ export class LiveLink {
     }
   }
   async disconnect() {
+    if (this.sessionUsername) this.game.suspendLive();
     this.game.setLive(false);
     ++this.generation;
     const c = this.client;
